@@ -1,0 +1,19 @@
+# Core ML
+torch>=2.14.0
+torchvision>=0.29.0
+numpy
+Pillow
+scikit-learn
+tqdm
+
+# Data handling
+rasterio
+tifffile
+matplotlib
+
+# Backend
+fastapi
+uvicorn[standard]
+
+# Utilities
+python-dotenv

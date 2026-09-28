@@ -1,0 +1,49 @@
+# Virtual environment
+venv/
+.venv/
+
+# Environment variables
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Dataset - DO NOT commit large data files
+data/raw/
+data/interim/
+data/processed/
+data/reports/
+
+# Trained models (large binary files)
+models/flood/*.pt
+models/flood/*.pth
+models/flood/*.ckpt
+
+# Hugging Face cache
+.cache/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Node
+frontend/node_modules/
+frontend/.next/
+frontend/build/
+frontend/dist/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
