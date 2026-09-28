@@ -103,19 +103,38 @@ class WorldFloodsClassificationDataset(Dataset):
         
         return pairs
     
+    def _get_window(self, src, target_px: int = 512):
+        """Calculate a center window for windowed reading.
+        
+        Reads a target_px × target_px region from the center of the image.
+        For very large TIFFs this avoids reading the entire file.
+        """
+        from rasterio.windows import Window
+        h, w = src.height, src.width
+        
+        # Use min of image size and target_px
+        crop_h = min(h, target_px)
+        crop_w = min(w, target_px)
+        
+        # Center crop
+        row_off = max(0, (h - crop_h) // 2)
+        col_off = max(0, (w - crop_w) // 2)
+        
+        return Window(col_off, row_off, crop_w, crop_h)
+    
     def _read_rgb(self, s2_path: Path) -> np.ndarray:
         """Read and extract RGB bands from a Sentinel-2 TIFF.
         
-        Data format (from inspection):
-            - 15 bands, dtype=int16
-            - Values: 0-14000+ (reflectance × 10000)
-            - Bands 4,3,2 (1-indexed) = Red,Green,Blue for true color
+        Uses windowed reading to avoid loading the entire file (some are 1GB+).
+        Reads a center crop, then resizes to target_size.
         """
         with rasterio.open(s2_path) as src:
-            # Read selected bands (1-indexed for rasterio)
+            window = self._get_window(src)
+            
+            # Read selected bands with window (1-indexed for rasterio)
             bands = []
             for band_idx in self.rgb_bands:
-                band = src.read(band_idx + 1).astype(np.float32)  # rasterio is 1-indexed
+                band = src.read(band_idx + 1, window=window).astype(np.float32)
                 bands.append(band)
             
             rgb = np.stack(bands, axis=-1)  # HxWx3
@@ -124,21 +143,18 @@ class WorldFloodsClassificationDataset(Dataset):
             rgb = np.clip(rgb, 0, None)
             
             # Normalize to [0, 1] range
-            # Sentinel-2 reflectance values are typically 0-10000
             rgb = np.clip(rgb / 10000.0, 0.0, 1.0)
             
             return rgb.astype(np.float32)
     
-    def _read_mask(self, mask_path: Path, band: int = 1) -> np.ndarray:
-        """Read a mask TIFF file.
+    def _read_mask(self, mask_path: Path, s2_path: Path = None, band: int = 1) -> np.ndarray:
+        """Read a mask TIFF file with windowed reading.
         
-        Args:
-            mask_path: Path to the mask TIFF
-            band: Band index to read (1-indexed). GT masks have 2 bands;
-                  band 1 = classification (land/flood/cloud).
+        Uses the same window as the S2 image to ensure alignment.
         """
         with rasterio.open(mask_path) as src:
-            mask = src.read(band)
+            window = self._get_window(src)
+            mask = src.read(band, window=window)
             mask = np.nan_to_num(mask, nan=0)
             return mask
     
@@ -196,10 +212,10 @@ class WorldFloodsClassificationDataset(Dataset):
         sample = self.samples[idx]
         
         try:
-            # Read RGB image
+            # Read RGB image (windowed — fast)
             rgb = self._read_rgb(sample["s2"])
             
-            # Read masks
+            # Read masks (windowed — fast)
             gt_mask = self._read_mask(sample["gt"])
             pw_mask = self._read_mask(sample["pw"]) if sample["pw"] is not None else None
             
@@ -223,10 +239,8 @@ class WorldFloodsClassificationDataset(Dataset):
         except Exception as e:
             # Handle corrupted files — return a different valid sample
             print(f"WARNING: Error reading {sample['name']}: {e}")
-            # Try the next valid sample (wrap around)
             alt_idx = (idx + 1) % len(self.samples)
             if alt_idx == idx:
-                # Only one sample, create a dummy
                 dummy_image = torch.zeros(3, self.target_size, self.target_size)
                 return dummy_image, torch.tensor(0, dtype=torch.long)
             return self.__getitem__(alt_idx)

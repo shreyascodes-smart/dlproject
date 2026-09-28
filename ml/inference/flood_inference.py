@@ -91,20 +91,29 @@ class FloodInference:
         """
         Load and preprocess an image (TIFF or regular image).
         
+        Uses windowed reads for large GeoTIFFs to avoid loading 1GB+ files.
+        
         Returns:
             numpy array (H, W, 3) in range [0, 1]
         """
         path = Path(image_path)
         
         if path.suffix.lower() in ['.tif', '.tiff']:
-            # GeoTIFF (Sentinel-2 data)
+            # GeoTIFF (Sentinel-2 data) — use windowed read
+            from rasterio.windows import Window
             with rasterio.open(image_path) as src:
+                h, w = src.height, src.width
+                crop_size = min(h, w, 512)
+                row_off = max(0, (h - crop_size) // 2)
+                col_off = max(0, (w - crop_size) // 2)
+                window = Window(col_off, row_off, crop_size, crop_size)
+                
                 bands = []
                 for band_idx in rgb_bands:
-                    band = src.read(band_idx + 1)  # 1-indexed
+                    band = src.read(band_idx + 1, window=window).astype(np.float32)
                     bands.append(band)
                 rgb = np.stack(bands, axis=-1)
-                rgb = np.nan_to_num(rgb, nan=0.0)
+                rgb = np.clip(rgb, 0, None)
                 rgb = np.clip(rgb / 10000.0, 0.0, 1.0)
         else:
             # Regular image (JPEG, PNG)
