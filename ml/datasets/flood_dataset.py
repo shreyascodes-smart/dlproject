@@ -104,18 +104,24 @@ class WorldFloodsClassificationDataset(Dataset):
         return pairs
     
     def _read_rgb(self, s2_path: Path) -> np.ndarray:
-        """Read and extract RGB bands from a Sentinel-2 TIFF."""
+        """Read and extract RGB bands from a Sentinel-2 TIFF.
+        
+        Data format (from inspection):
+            - 15 bands, dtype=int16
+            - Values: 0-14000+ (reflectance × 10000)
+            - Bands 4,3,2 (1-indexed) = Red,Green,Blue for true color
+        """
         with rasterio.open(s2_path) as src:
             # Read selected bands (1-indexed for rasterio)
             bands = []
             for band_idx in self.rgb_bands:
-                band = src.read(band_idx + 1)  # rasterio is 1-indexed
+                band = src.read(band_idx + 1).astype(np.float32)  # rasterio is 1-indexed
                 bands.append(band)
             
             rgb = np.stack(bands, axis=-1)  # HxWx3
             
-            # Handle NaN/nodata
-            rgb = np.nan_to_num(rgb, nan=0.0)
+            # Replace negative values (nodata) with 0
+            rgb = np.clip(rgb, 0, None)
             
             # Normalize to [0, 1] range
             # Sentinel-2 reflectance values are typically 0-10000
@@ -123,10 +129,16 @@ class WorldFloodsClassificationDataset(Dataset):
             
             return rgb.astype(np.float32)
     
-    def _read_mask(self, mask_path: Path) -> np.ndarray:
-        """Read a mask TIFF file."""
+    def _read_mask(self, mask_path: Path, band: int = 1) -> np.ndarray:
+        """Read a mask TIFF file.
+        
+        Args:
+            mask_path: Path to the mask TIFF
+            band: Band index to read (1-indexed). GT masks have 2 bands;
+                  band 1 = classification (land/flood/cloud).
+        """
         with rasterio.open(mask_path) as src:
-            mask = src.read(1)
+            mask = src.read(band)
             mask = np.nan_to_num(mask, nan=0)
             return mask
     
@@ -134,16 +146,21 @@ class WorldFloodsClassificationDataset(Dataset):
         """
         Derive binary flood label from segmentation mask.
         
-        WorldFloods gt mask values (from the paper):
+        WorldFloods gt mask values (from data inspection):
             0 = land/dry
             1 = flood water  
             2 = cloud
-            255 or other = invalid/nodata
+        
+        Permanent water mask values (from data inspection):
+            0 = unknown/invalid
+            1 = not water
+            2 = seasonal water
+            3 = permanent water
         
         Returns:
             (label, flood_ratio) where label is 0 (non-flood) or 1 (flood)
         """
-        # Valid pixels: not cloud (2) and not nodata (255)
+        # Valid pixels: not cloud (2) and not nodata
         valid_mask = (gt_mask == 0) | (gt_mask == 1)
         total_valid = valid_mask.sum()
         
@@ -153,9 +170,9 @@ class WorldFloodsClassificationDataset(Dataset):
         # Flood pixels
         flood_pixels = (gt_mask == 1)
         
-        # Optionally exclude permanent water
+        # Optionally exclude permanent water (value 3 = permanent water in JRC)
         if pw_mask is not None and self.use_permanent_water:
-            permanent_water = (pw_mask > 0)
+            permanent_water = (pw_mask == 3)
             flood_pixels = flood_pixels & ~permanent_water
         
         flood_count = flood_pixels.sum()
