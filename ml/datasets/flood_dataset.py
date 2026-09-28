@@ -195,29 +195,41 @@ class WorldFloodsClassificationDataset(Dataset):
     def __getitem__(self, idx):
         sample = self.samples[idx]
         
-        # Read RGB image
-        rgb = self._read_rgb(sample["s2"])
+        try:
+            # Read RGB image
+            rgb = self._read_rgb(sample["s2"])
+            
+            # Read masks
+            gt_mask = self._read_mask(sample["gt"])
+            pw_mask = self._read_mask(sample["pw"]) if sample["pw"] is not None else None
+            
+            # Derive label
+            label, flood_ratio = self._derive_label(gt_mask, pw_mask)
+            
+            # Resize to 224x224
+            rgb = self._resize_image(rgb)
+            
+            # Convert to tensor: HxWx3 -> 3xHxW
+            image_tensor = torch.from_numpy(rgb).permute(2, 0, 1)
+            
+            # Apply transforms if any
+            if self.transform:
+                image_tensor = self.transform(image_tensor)
+            
+            label_tensor = torch.tensor(label, dtype=torch.long)
+            
+            return image_tensor, label_tensor
         
-        # Read masks
-        gt_mask = self._read_mask(sample["gt"])
-        pw_mask = self._read_mask(sample["pw"]) if sample["pw"] is not None else None
-        
-        # Derive label
-        label, flood_ratio = self._derive_label(gt_mask, pw_mask)
-        
-        # Resize to 224x224
-        rgb = self._resize_image(rgb)
-        
-        # Convert to tensor: HxWx3 -> 3xHxW
-        image_tensor = torch.from_numpy(rgb).permute(2, 0, 1)
-        
-        # Apply transforms if any
-        if self.transform:
-            image_tensor = self.transform(image_tensor)
-        
-        label_tensor = torch.tensor(label, dtype=torch.long)
-        
-        return image_tensor, label_tensor
+        except Exception as e:
+            # Handle corrupted files — return a different valid sample
+            print(f"WARNING: Error reading {sample['name']}: {e}")
+            # Try the next valid sample (wrap around)
+            alt_idx = (idx + 1) % len(self.samples)
+            if alt_idx == idx:
+                # Only one sample, create a dummy
+                dummy_image = torch.zeros(3, self.target_size, self.target_size)
+                return dummy_image, torch.tensor(0, dtype=torch.long)
+            return self.__getitem__(alt_idx)
     
     def get_label_distribution(self) -> Dict[str, int]:
         """Calculate label distribution across the dataset."""
