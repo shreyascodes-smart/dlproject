@@ -305,7 +305,7 @@ def run_smoke_tests(config: TrainConfig):
         return False, None, None
     
     print("\n" + "=" * 60)
-    print("ALL SMOKE TESTS PASSED ✓")
+    print("ALL SMOKE TESTS PASSED [OK]")
     print("=" * 60)
     
     return True, model, loaders
