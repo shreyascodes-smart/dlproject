@@ -38,10 +38,20 @@ export default function App() {
   const [mapOpen, setMapOpen] = useState(false)
   const [mapSelection, setMapSelection] = useState(null)
   const [activeTab, setActiveTab] = useState('flood')
+  const [satStatus, setSatStatus] = useState('checking')
+  const [assessMode, setAssessMode] = useState('demo')
 
   useEffect(() => {
     axios.get(`${API}/api/flood/model-status`)
-      .then(r => setModelStatus(r.data.status))
+      .then(r => {
+        setModelStatus(r.data.status)
+        if (r.data.satellite === 'configured') {
+          setSatStatus('ready')
+          setAssessMode('live')
+        } else {
+          setSatStatus('not_configured')
+        }
+      })
       .catch(() => setModelStatus('offline'))
   }, [])
 
@@ -129,8 +139,9 @@ export default function App() {
     }
   }
 
-  const runAssessment = async () => {
+  const runAssessment = async (modeOverride) => {
     if (!loc) return
+    const mode = modeOverride || assessMode
     setLoading(true)
     setError(null)
     setAssessment(null)
@@ -138,7 +149,7 @@ export default function App() {
       const r = await axios.post(`${API}/api/flood/assess`, {
         latitude: loc.lat,
         longitude: loc.lng,
-        mode: 'demo',
+        mode,
       })
       setAssessment(r.data)
       setActiveTab('flood')
@@ -258,7 +269,39 @@ export default function App() {
                     <div className="glass-card action-prompt">
                       <h3>Satellite Flood Analysis</h3>
                       <p>Analyze Sentinel-2 satellite imagery using deep learning to detect flood patterns and assess risk at your selected location.</p>
-                      <button className="btn-hero" onClick={runAssessment} disabled={loading || modelStatus !== 'ready'}>
+
+                      {/* Mode Toggle */}
+                      <div className="mode-toggle">
+                        <button
+                          className={`mode-btn ${assessMode === 'live' ? 'active' : ''}`}
+                          onClick={() => setAssessMode('live')}
+                          disabled={satStatus !== 'ready'}
+                        >
+                          🛰️ Live Satellite
+                        </button>
+                        <button
+                          className={`mode-btn ${assessMode === 'demo' ? 'active' : ''}`}
+                          onClick={() => setAssessMode('demo')}
+                        >
+                          📂 Demo (Archived)
+                        </button>
+                      </div>
+
+                      {assessMode === 'live' && satStatus === 'ready' && (
+                        <p className="mode-info">🛰️ Will fetch real-time Sentinel-2 imagery from <strong>Copernicus Data Space</strong> for your exact coordinates.</p>
+                      )}
+                      {assessMode === 'live' && satStatus !== 'ready' && (
+                        <p className="warn-text">⚠️ Live satellite requires Copernicus credentials. Using demo mode instead.</p>
+                      )}
+                      {assessMode === 'demo' && (
+                        <p className="mode-info">📂 Will analyze an archived WorldFloods Sentinel-2 image.</p>
+                      )}
+
+                      <button
+                        className="btn-hero"
+                        onClick={() => runAssessment(assessMode === 'live' && satStatus !== 'ready' ? 'demo' : undefined)}
+                        disabled={loading || modelStatus !== 'ready'}
+                      >
                         Run Flood Assessment
                       </button>
                       {modelStatus !== 'ready' && modelStatus !== 'checking' && (
@@ -278,9 +321,24 @@ export default function App() {
 
                   {assessment && (
                     <>
-                      <div className="demo-tag">
-                        Demo Mode — Analyzed archived WorldFloods image: <strong>{assessment.location.demo_image}</strong>
-                      </div>
+                      {assessment.mode === 'demo' ? (
+                        <div className="demo-tag">
+                          📂 Demo Mode — Analyzed archived WorldFloods image: <strong>{assessment.location.demo_image}</strong>
+                        </div>
+                      ) : (
+                        <div className="live-tag">
+                          🛰️ Live Satellite — Imagery from <strong>{assessment.location.satellite_data?.source}</strong>
+                          {assessment.location.satellite_data?.date_range && (
+                            <span> · {assessment.location.satellite_data.date_range}</span>
+                          )}
+                          {assessment.location.satellite_data?.resolution && (
+                            <span> · {assessment.location.satellite_data.resolution} resolution</span>
+                          )}
+                          {assessment.location.satellite_data?.coverage && (
+                            <span> · {assessment.location.satellite_data.coverage}</span>
+                          )}
+                        </div>
+                      )}
 
                       {/* Risk Result */}
                       <div className="glass-card risk-card">

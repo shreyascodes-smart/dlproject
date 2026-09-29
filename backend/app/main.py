@@ -1,16 +1,22 @@
 """
-FastAPI backend for Flood Assessment Application.
+FastAPI backend for Disaster Insights — Climate-Induced Natural Disaster Assessment.
 Main entry point for the API server.
 """
+from pathlib import Path
+from dotenv import load_dotenv
+
+# Load .env from backend directory
+load_dotenv(Path(__file__).parent.parent / ".env")
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.flood_routes import router as flood_router
 
 app = FastAPI(
-    title="Flood Assessment API",
-    description="Deep Learning-Based Flood Detection and Assessment using Satellite Imagery",
-    version="0.1.0",
+    title="Disaster Insights API",
+    description="AI-Powered Climate-Induced Natural Disaster Assessment using Satellite Imagery",
+    version="1.0.0",
 )
 
 # Allow React frontend to connect
