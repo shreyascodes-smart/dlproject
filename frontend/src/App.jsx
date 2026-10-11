@@ -79,15 +79,17 @@ export default function App() {
         axios.get(WEATHER, {
           params: {
             latitude: lat, longitude: lng,
-            current: 'temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m,cloud_cover',
-            daily: 'temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,weather_code',
-            timezone: 'auto', forecast_days: 5,
+            // best_match auto-selects most accurate model (ECMWF/ICON/GFS) per location
+            models: 'best_match',
+            current: 'temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m,cloud_cover,pressure_msl,uv_index',
+            daily: 'temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,weather_code,uv_index_max',
+            timezone: 'auto', forecast_days: 7,
           },
         }),
         axios.get(AQI_URL, {
           params: {
             latitude: lat, longitude: lng,
-            current: 'pm10,pm2_5,nitrogen_dioxide,ozone,us_aqi',
+            current: 'pm10,pm2_5,nitrogen_dioxide,ozone,sulphur_dioxide,carbon_monoxide,us_aqi,european_aqi',
           },
         }),
       ])
@@ -409,13 +411,16 @@ export default function App() {
                             <div className="metric"><strong>{weather.current.wind_speed_10m}</strong><span>Wind km/h</span></div>
                             <div className="metric"><strong>{weather.current.precipitation}</strong><span>Rain mm</span></div>
                             <div className="metric"><strong>{weather.current.cloud_cover}%</strong><span>Clouds</span></div>
+                            {weather.current.pressure_msl && <div className="metric"><strong>{Math.round(weather.current.pressure_msl)}</strong><span>hPa</span></div>}
+                            {weather.current.uv_index != null && <div className="metric"><strong>{weather.current.uv_index}</strong><span>UV Index</span></div>}
                           </div>
+                          <p className="data-source">Source: ECMWF/DWD ICON/NOAA GFS (best match)</p>
                         </div>
                       )}
 
                       {weather.daily && (
                         <div className="glass-card">
-                          <h4 className="section-title">5-Day Forecast</h4>
+                          <h4 className="section-title">7-Day Forecast</h4>
                           <div className="forecast">
                             {weather.daily.time.map((d, i) => (
                               <div key={d} className="fc-row">
@@ -444,7 +449,12 @@ export default function App() {
                               <div className="metric"><strong>{aqi.current.pm10?.toFixed(1)}</strong><span>PM10 µg/m³</span></div>
                               <div className="metric"><strong>{aqi.current.ozone?.toFixed(1)}</strong><span>O₃ µg/m³</span></div>
                               <div className="metric"><strong>{aqi.current.nitrogen_dioxide?.toFixed(1)}</strong><span>NO₂ µg/m³</span></div>
+                              {aqi.current.sulphur_dioxide != null && <div className="metric"><strong>{aqi.current.sulphur_dioxide?.toFixed(1)}</strong><span>SO₂ µg/m³</span></div>}
+                              {aqi.current.carbon_monoxide != null && <div className="metric"><strong>{aqi.current.carbon_monoxide?.toFixed(0)}</strong><span>CO µg/m³</span></div>}
                             </div>
+                            {aqi.current.european_aqi != null && (
+                              <p className="data-source">EU AQI: {aqi.current.european_aqi} · US AQI: {aqi.current.us_aqi}</p>
+                            )}
                           </div>
                         )
                       })()}

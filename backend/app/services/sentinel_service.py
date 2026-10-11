@@ -30,12 +30,15 @@ CATALOG_URL = "https://sh.dataspace.copernicus.eu/api/v1/catalog/1.0.0/search"
 
 # ─── Evalscript: Returns 6-band GeoTIFF matching WorldFloods format ─────
 # Bands: B02 (Blue), B03 (Green), B04 (Red), B08 (NIR), B11 (SWIR1), B12 (SWIR2)
+# NOTE: We do NOT mask clouds in the evalscript because zeroed pixels look like
+#       water to the model. Instead we rely on mosaickingOrder: "leastCC" to
+#       automatically pick the least-cloudy acquisition.
 EVALSCRIPT_6BAND = """
 //VERSION=3
 function setup() {
   return {
     input: [{
-      bands: ["B02", "B03", "B04", "B08", "B11", "B12", "SCL"],
+      bands: ["B02", "B03", "B04", "B08", "B11", "B12"],
       units: "DN"
     }],
     output: {
@@ -46,11 +49,6 @@ function setup() {
 }
 
 function evaluatePixel(sample) {
-  // SCL cloud mask: 8=cloud_medium, 9=cloud_high, 10=thin_cirrus, 3=cloud_shadow
-  var scl = sample.SCL;
-  if (scl === 8 || scl === 9 || scl === 10 || scl === 3) {
-    return [0, 0, 0, 0, 0, 0];  // Mask clouds as 0
-  }
   return [sample.B02, sample.B03, sample.B04, sample.B08, sample.B11, sample.B12];
 }
 """
@@ -135,7 +133,7 @@ class SentinelDataService:
             "datetime": f"{start_date.strftime('%Y-%m-%dT00:00:00Z')}/{end_date.strftime('%Y-%m-%dT23:59:59Z')}",
             "collections": ["sentinel-2-l2a"],
             "limit": 5,
-            "filter": "eo:cloud_cover < 30",
+            "filter": "eo:cloud_cover < 80",
             "filter-lang": "cql2-text"
         }
 
@@ -207,7 +205,7 @@ class SentinelDataService:
                             "from": start_date.strftime("%Y-%m-%dT00:00:00Z"),
                             "to": end_date.strftime("%Y-%m-%dT23:59:59Z"),
                         },
-                        "maxCloudCoverage": 30,
+                        "maxCloudCoverage": 80,
                         "mosaickingOrder": "leastCC",
                     },
                 }],

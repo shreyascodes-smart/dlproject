@@ -15,15 +15,15 @@ build/
 *.egg
 
 # Dataset - DO NOT commit large data files
-data/raw/
-data/interim/
-data/processed/
-data/reports/
+data/
+
+# Trash
+trash/
 
 # Trained models (large binary files)
-models/flood/*.pt
-models/flood/*.pth
-models/flood/*.ckpt
+models/**/*.pt
+models/**/*.pth
+models/**/*.ckpt
 
 # Hugging Face cache
 .cache/

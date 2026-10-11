@@ -279,8 +279,10 @@ async def _assess_live(engine, request: AssessmentRequest) -> AssessmentResponse
             _save_array_as_tiff(image_array, tmp_path)
 
         # Run inference on the live image
+        # IMPORTANT: Live GeoTIFF band order is [B02, B03, B04, B08, B11, B12]
+        # So RGB (B04, B03, B02) = band indices (2, 1, 0) — NOT the WorldFloods default (3, 2, 1)
         try:
-            result = engine.predict(tmp_path, generate_gradcam=True)
+            result = engine.predict(tmp_path, generate_gradcam=True, rgb_bands=(2, 1, 0))
         finally:
             # Clean up temp file
             try:
