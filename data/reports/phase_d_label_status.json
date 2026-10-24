@@ -1,0 +1,6609 @@
+{
+  "summary": {
+    "ambiguous": {
+      "train": 22,
+      "total": 30,
+      "val": 7,
+      "test": 1
+    },
+    "positive": {
+      "train": 80,
+      "total": 100,
+      "val": 7,
+      "test": 13
+    },
+    "negative_candidate": {
+      "train": 48,
+      "total": 53,
+      "val": 2,
+      "test": 3
+    }
+  },
+  "samples": [
+    {
+      "name": "01042016_Choctawhatchee_River_near_Bellwood_AL",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "10517 water polygons from 'flood' source, but w_class='water' not 'Flooded area'",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flood",
+      "ems_code": "GLOFIMR01042016",
+      "meta_flood_px": 2292038,
+      "meta_hydro_px": 0,
+      "meta_source": "glofimr",
+      "flood_polys": 0,
+      "water_polys": 10517,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32616"
+        }
+      }
+    },
+    {
+      "name": "01042016_Holmes_Creek_at_Vernon_FL",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "552 water polygons from 'flood' source, but w_class='water' not 'Flooded area'",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flood",
+      "ems_code": "GLOFIMR01042016",
+      "meta_flood_px": 130732,
+      "meta_hydro_px": 0,
+      "meta_source": "glofimr",
+      "flood_polys": 0,
+      "water_polys": 552,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32616"
+        }
+      }
+    },
+    {
+      "name": "01042016_Pea_River_near_Samson_AL",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "1335 water polygons from 'flood' source, but w_class='water' not 'Flooded area'",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flood",
+      "ems_code": "GLOFIMR01042016",
+      "meta_flood_px": 230991,
+      "meta_hydro_px": 0,
+      "meta_source": "glofimr",
+      "flood_polys": 0,
+      "water_polys": 1335,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32616"
+        }
+      }
+    },
+    {
+      "name": "08162016_Mississippi_River_at_Baton_Rouge_LA",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "1751 ML-detected water polygons (WF2 model), no flood/hydro distinction in w_class",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flood",
+      "ems_code": "GLOFIMR08162016",
+      "meta_flood_px": 481993,
+      "meta_hydro_px": 0,
+      "meta_source": "glofimr",
+      "flood_polys": 0,
+      "water_polys": 1751,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "WF2_unet_full_norm_vec",
+        "area_of_interest"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32615"
+        }
+      }
+    },
+    {
+      "name": "10132016_Ashley_River_near_North_Charleston_SC",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "716 water polygons from 'flood' source, but w_class='water' not 'Flooded area'",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flood",
+      "ems_code": "GLOFIMR10132016",
+      "meta_flood_px": 2227901,
+      "meta_hydro_px": 0,
+      "meta_source": "glofimr",
+      "flood_polys": 0,
+      "water_polys": 716,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32617"
+        }
+      }
+    },
+    {
+      "name": "10132016_Cooper_River_at_Monks_Corner_SC",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "910 water polygons from 'flood' source, but w_class='water' not 'Flooded area'",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flood",
+      "ems_code": "GLOFIMR10132016",
+      "meta_flood_px": 1845783,
+      "meta_hydro_px": 0,
+      "meta_source": "glofimr",
+      "flood_polys": 0,
+      "water_polys": 910,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32617"
+        }
+      }
+    },
+    {
+      "name": "EMSR249_03GALWAY_DEL_v2",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "1 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR249",
+      "meta_flood_px": 10267,
+      "meta_hydro_px": 80362,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 1,
+      "water_polys": 0,
+      "hydro_polys": 39,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BA040-Open Water",
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32629"
+        }
+      }
+    },
+    {
+      "name": "EMSR249_07KILRUSHTARBERT_DEL_v2",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "3 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Coastal flood",
+      "ems_code": "EMSR249",
+      "meta_flood_px": 474,
+      "meta_hydro_px": 56494,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 3,
+      "water_polys": 0,
+      "hydro_polys": 69,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BA040-Open Water",
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-River Bank",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32629"
+        }
+      }
+    },
+    {
+      "name": "EMSR249_14WATERVILLE_DEL_v2",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "2 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Coastal flood",
+      "ems_code": "EMSR249",
+      "meta_flood_px": 493,
+      "meta_hydro_px": 15795,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 2,
+      "water_polys": 0,
+      "hydro_polys": 38,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32629"
+        }
+      }
+    },
+    {
+      "name": "EMSR249_15LAHINCH_DEL_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 44 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR249",
+      "meta_flood_px": 4312,
+      "meta_hydro_px": 11887,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 44,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BA040-Open Water",
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32629"
+        }
+      }
+    },
+    {
+      "name": "EMSR251_03KRAGERO_DEL_MONIT01_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 2305 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR251",
+      "meta_flood_px": 7369,
+      "meta_hydro_px": 1030082,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 2305,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR255_03SCHONECK_DEL_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "Only 56 hydrographic features, no flood polygons. Area was surveyed by EMS with no flood identified.",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Other",
+      "ems_code": "EMSR255",
+      "meta_flood_px": 4085,
+      "meta_hydro_px": 0,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 56,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood"
+      ],
+      "fm_w_classes": [
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR258_01DIVJAKE_DEL_v2",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Flash flood event but found only 290 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR258",
+      "meta_flood_px": 96640,
+      "meta_hydro_px": 70800,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 290,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA040-Open Water",
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32634"
+        }
+      }
+    },
+    {
+      "name": "EMSR258_03KOLONJE_DEL_v2",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Flash flood event but found only 115 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR258",
+      "meta_flood_px": 18509,
+      "meta_hydro_px": 48563,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 115,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32634"
+        }
+      }
+    },
+    {
+      "name": "EMSR258_05PATOS_DEL_v3",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Flash flood event but found only 87 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR258",
+      "meta_flood_px": 8260,
+      "meta_hydro_px": 26886,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 87,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32634"
+        }
+      }
+    },
+    {
+      "name": "EMSR258_06VLORE_DEL_v2",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "1677 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR258",
+      "meta_flood_px": 71847,
+      "meta_hydro_px": 138643,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 1677,
+      "water_polys": 0,
+      "hydro_polys": 31,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-River Bank",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32634"
+        }
+      }
+    },
+    {
+      "name": "EMSR258_07ARMEN_DEL_v2",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "261 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR258",
+      "meta_flood_px": 11806,
+      "meta_hydro_px": 185081,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 261,
+      "water_polys": 0,
+      "hydro_polys": 18,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-River Bank",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32634"
+        }
+      }
+    },
+    {
+      "name": "EMSR258_08BELSH_DEL_MONIT01_v3",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "118 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR258",
+      "meta_flood_px": 11698,
+      "meta_hydro_px": 98101,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 118,
+      "water_polys": 0,
+      "hydro_polys": 73,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32634"
+        }
+      }
+    },
+    {
+      "name": "EMSR258_09GRAMSCH_DEL_v3",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "114 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR258",
+      "meta_flood_px": 19467,
+      "meta_hydro_px": 179614,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 114,
+      "water_polys": 0,
+      "hydro_polys": 91,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32634"
+        }
+      }
+    },
+    {
+      "name": "EMSR258_10URAVAJGURORE_DEL_v3",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "193 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR258",
+      "meta_flood_px": 18476,
+      "meta_hydro_px": 48616,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 193,
+      "water_polys": 0,
+      "hydro_polys": 31,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32634"
+        }
+      }
+    },
+    {
+      "name": "EMSR258_12SEVASTER_DEL_v2",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "213 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR258",
+      "meta_flood_px": 4573,
+      "meta_hydro_px": 126856,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 213,
+      "water_polys": 0,
+      "hydro_polys": 21,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-River Bank",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32634"
+        }
+      }
+    },
+    {
+      "name": "EMSR258_13TEPELENE_DEL_v3",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "4821 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR258",
+      "meta_flood_px": 16922,
+      "meta_hydro_px": 135825,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 4821,
+      "water_polys": 0,
+      "hydro_polys": 88,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-River Bank",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32634"
+        }
+      }
+    },
+    {
+      "name": "EMSR260_01CICOGNARA_DEL_MONIT01_v2",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "157 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR260",
+      "meta_flood_px": 38822,
+      "meta_hydro_px": 16903,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 157,
+      "water_polys": 0,
+      "hydro_polys": 74,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-River Bank",
+        "Dike breach",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR260_01CICOGNARA_DEL_v2",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "164 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Coastal flood",
+      "ems_code": "EMSR260",
+      "meta_flood_px": 40952,
+      "meta_hydro_px": 16903,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 164,
+      "water_polys": 0,
+      "hydro_polys": 74,
+      "trace_polys": 1,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-River Bank",
+        "Dike breach",
+        "Flood trace",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR260_01CICOGNARA_GRA_v3",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "8 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR260",
+      "meta_flood_px": 43043,
+      "meta_hydro_px": 16903,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 8,
+      "water_polys": 0,
+      "hydro_polys": 71,
+      "trace_polys": 4,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-River Bank",
+        "Flood trace",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR260_02VIADANA_MANUAL_LABEL",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "6 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR260",
+      "meta_flood_px": 237,
+      "meta_hydro_px": 19945,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 6,
+      "water_polys": 0,
+      "hydro_polys": 47,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "Flooded area",
+        "River",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR260_03SORBOLO_DEL_v2",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "382 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR260",
+      "meta_flood_px": 21120,
+      "meta_hydro_px": 3062,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 382,
+      "water_polys": 0,
+      "hydro_polys": 14,
+      "trace_polys": 1,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flood trace",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR260_09RUBIERA_DEL_MONIT01_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 120 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR260",
+      "meta_flood_px": 13472,
+      "meta_hydro_px": 23614,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 120,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR260_09RUBIERA_DEL_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 46 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR260",
+      "meta_flood_px": 12686,
+      "meta_hydro_px": 23614,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 46,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR265_04ESBLY_DEL_MONIT01_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 480 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR265",
+      "meta_flood_px": 80050,
+      "meta_hydro_px": 49518,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 480,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32631"
+        }
+      }
+    },
+    {
+      "name": "EMSR265_04ESBLY_DEL_MONIT02_v2",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 558 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR265",
+      "meta_flood_px": 77735,
+      "meta_hydro_px": 49518,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 558,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32631"
+        }
+      }
+    },
+    {
+      "name": "EMSR265_04ESBLY_DEL_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 300 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR265",
+      "meta_flood_px": 35473,
+      "meta_hydro_px": 49518,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 300,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32631"
+        }
+      }
+    },
+    {
+      "name": "EMSR265_07DAMMARIELESLYS_DEL_MONIT01_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "159 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR265",
+      "meta_flood_px": 25246,
+      "meta_hydro_px": 55130,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 159,
+      "water_polys": 0,
+      "hydro_polys": 230,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32631"
+        }
+      }
+    },
+    {
+      "name": "EMSR265_07DAMMARIELESLYS_DEL_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "109 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR265",
+      "meta_flood_px": 21741,
+      "meta_hydro_px": 55130,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 109,
+      "water_polys": 0,
+      "hydro_polys": 230,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32631"
+        }
+      }
+    },
+    {
+      "name": "EMSR265_08FONTAINEBLEAU_DEL_MONIT04_v2",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "32 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR265",
+      "meta_flood_px": 26451,
+      "meta_hydro_px": 45352,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 32,
+      "water_polys": 0,
+      "hydro_polys": 707,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32631"
+        }
+      }
+    },
+    {
+      "name": "EMSR265_09VOULX_DEL_MONIT04_v2",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 615 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR265",
+      "meta_flood_px": 77615,
+      "meta_hydro_px": 99646,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 615,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32631"
+        }
+      }
+    },
+    {
+      "name": "EMSR265_13AUXERRE_DEL_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "67 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR265",
+      "meta_flood_px": 16512,
+      "meta_hydro_px": 40764,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 67,
+      "water_polys": 0,
+      "hydro_polys": 121,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32631"
+        }
+      }
+    },
+    {
+      "name": "EMSR265_22LESMUREAUX_DEL_MONIT03_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "128 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR265",
+      "meta_flood_px": 69519,
+      "meta_hydro_px": 118288,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 128,
+      "water_polys": 0,
+      "hydro_polys": 399,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32631"
+        }
+      }
+    },
+    {
+      "name": "EMSR265_22LESMUREAUX_DEL_MONIT04_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "72 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR265",
+      "meta_flood_px": 33723,
+      "meta_hydro_px": 118288,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 72,
+      "water_polys": 0,
+      "hydro_polys": 399,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32631"
+        }
+      }
+    },
+    {
+      "name": "EMSR265_24HONFLEUR_DEL_MONIT01_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 980 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR265",
+      "meta_flood_px": 247258,
+      "meta_hydro_px": 105793,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 980,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BA040-Open Water",
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32631"
+        }
+      }
+    },
+    {
+      "name": "EMSR267_01RUSNE_DEL_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 460 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR267",
+      "meta_flood_px": 356382,
+      "meta_hydro_px": 196258,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 460,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA040-Open Water",
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32634"
+        }
+      }
+    },
+    {
+      "name": "EMSR269_02FAHEFA_GRA_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "Only 7 hydrographic features, no flood polygons. Area was surveyed by EMS with no flood identified.",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Mudflow",
+      "ems_code": "EMSR269",
+      "meta_flood_px": 93,
+      "meta_hydro_px": 0,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 7,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32701"
+        }
+      }
+    },
+    {
+      "name": "EMSR269_06VEITONGO_GRA_MONIT01_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Flash flood event but found only 87 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR269",
+      "meta_flood_px": 4956,
+      "meta_hydro_px": 663,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 87,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH080-Lake",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32701"
+        }
+      }
+    },
+    {
+      "name": "EMSR269_06VEITONGO_GRA_v2",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Flash flood event but found only 60 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR269",
+      "meta_flood_px": 4912,
+      "meta_hydro_px": 663,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 60,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH080-Lake",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32701"
+        }
+      }
+    },
+    {
+      "name": "EMSR271_04STEFANOVIKIO_DEL_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "1 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR271",
+      "meta_flood_px": 4008,
+      "meta_hydro_px": 33906,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 1,
+      "water_polys": 0,
+      "hydro_polys": 36,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH130-Reservoir",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32634"
+        }
+      }
+    },
+    {
+      "name": "EMSR271_05THESSALYOVERVIEW_DEL_MONIT01_v2",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 2617 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR271",
+      "meta_flood_px": 1178320,
+      "meta_hydro_px": 365557,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 2617,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32634"
+        }
+      }
+    },
+    {
+      "name": "EMSR271_05THESSALYOVERVIEW_DEL_MONIT02_v2",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 3150 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR271",
+      "meta_flood_px": 1143194,
+      "meta_hydro_px": 365557,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 3150,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32634"
+        }
+      }
+    },
+    {
+      "name": "EMSR271_05THESSALYOVERVIEW_DEL_v2",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 1483 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR271",
+      "meta_flood_px": 173785,
+      "meta_hydro_px": 365557,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 1483,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32634"
+        }
+      }
+    },
+    {
+      "name": "EMSR274_01AMBILOBE_DEL_v2",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 940 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR274",
+      "meta_flood_px": 480382,
+      "meta_hydro_px": 148635,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 940,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32739"
+        }
+      }
+    },
+    {
+      "name": "EMSR274_02AMBANJA_DEL_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 869 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR274",
+      "meta_flood_px": 331626,
+      "meta_hydro_px": 105188,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 869,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32739"
+        }
+      }
+    },
+    {
+      "name": "EMSR274_03BEFOTAKA_DEL_v1",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "119 ML-detected water polygons (WF2 model), no flood/hydro distinction in w_class",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR274",
+      "meta_flood_px": 354058,
+      "meta_hydro_px": 68105,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 119,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "WF2_unet_full_norm_vec",
+        "area_of_interest"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32739"
+        }
+      }
+    },
+    {
+      "name": "EMSR274_08MAHANORO_DEL_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Flash flood event but found only 220 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR274",
+      "meta_flood_px": 125601,
+      "meta_hydro_px": 65816,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 220,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32739"
+        }
+      }
+    },
+    {
+      "name": "EMSR274_09NOSYVARIKA_DEL_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "328 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR274",
+      "meta_flood_px": 52312,
+      "meta_hydro_px": 27562,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 328,
+      "water_polys": 0,
+      "hydro_polys": 34,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BA040-Open Water",
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32739"
+        }
+      }
+    },
+    {
+      "name": "EMSR274_10MANANJARY_DEL_v2",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "536 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR274",
+      "meta_flood_px": 69346,
+      "meta_hydro_px": 32733,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 536,
+      "water_polys": 0,
+      "hydro_polys": 37,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BA040-Open Water",
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-River Bank",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32739"
+        }
+      }
+    },
+    {
+      "name": "EMSR274_12ANTALAHA_DEL_v1",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "1 Flood trace features but no Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR274",
+      "meta_flood_px": 41941,
+      "meta_hydro_px": 13239,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 301,
+      "trace_polys": 1,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flood trace",
+        "Standing water",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32739"
+        }
+      }
+    },
+    {
+      "name": "EMSR274_15FENERIVE_DEL_v1",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "20 Flood trace features but no Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR274",
+      "meta_flood_px": 979,
+      "meta_hydro_px": 4003,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 9,
+      "trace_polys": 20,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BA040-Open Water",
+        "BH080-Lake",
+        "BH140-River",
+        "Flood trace",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32739"
+        }
+      }
+    },
+    {
+      "name": "EMSR274_16MANANARA_DEL_v2",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "111 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR274",
+      "meta_flood_px": 4522,
+      "meta_hydro_px": 8636,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 111,
+      "water_polys": 0,
+      "hydro_polys": 42,
+      "trace_polys": 20,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BA040-Open Water",
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flood trace",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32739"
+        }
+      }
+    },
+    {
+      "name": "EMSR274_17SOANIERANAIVONGO_DEL_v2",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "31 Flood trace features but no Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR274",
+      "meta_flood_px": 2580,
+      "meta_hydro_px": 17900,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 22,
+      "trace_polys": 31,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flood trace",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32739"
+        }
+      }
+    },
+    {
+      "name": "EMSR274_21NOSYBE_DEL_v2",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "28 Flood trace features but no Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR274",
+      "meta_flood_px": 5774,
+      "meta_hydro_px": 16150,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 49,
+      "trace_polys": 28,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flood trace",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32739"
+        }
+      }
+    },
+    {
+      "name": "EMSR275_01LIJEVIDOBROVCAK_DEL_MONIT01_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "14372 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR275",
+      "meta_flood_px": 1017252,
+      "meta_hydro_px": 183807,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 14372,
+      "water_polys": 0,
+      "hydro_polys": 174,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA040-Open Water",
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR275_01LIJEVIDOBROVCAK_DEL_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "1547 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR275",
+      "meta_flood_px": 790172,
+      "meta_hydro_px": 183807,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 1547,
+      "water_polys": 0,
+      "hydro_polys": 174,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA040-Open Water",
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR275_02KUTINA_DEL_MONIT01_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "16511 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR275",
+      "meta_flood_px": 1091365,
+      "meta_hydro_px": 184315,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 16511,
+      "water_polys": 0,
+      "hydro_polys": 120,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA040-Open Water",
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR279_04TUDELA_DEL_MONIT01_v2",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 2376 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR279",
+      "meta_flood_px": 783431,
+      "meta_hydro_px": 187648,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 2376,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32630"
+        }
+      }
+    },
+    {
+      "name": "EMSR279_04TUDELA_DEL_MONIT02_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 2543 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR279",
+      "meta_flood_px": 632460,
+      "meta_hydro_px": 187648,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 2543,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32630"
+        }
+      }
+    },
+    {
+      "name": "EMSR279_04TUDELA_DEL_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 437 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR279",
+      "meta_flood_px": 673338,
+      "meta_hydro_px": 187648,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 437,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32630"
+        }
+      }
+    },
+    {
+      "name": "EMSR279_05ZARAGOZA_DEL_MONIT01_v2",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "255 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR279",
+      "meta_flood_px": 754355,
+      "meta_hydro_px": 160033,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 255,
+      "water_polys": 0,
+      "hydro_polys": 318,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32630"
+        }
+      }
+    },
+    {
+      "name": "EMSR279_05ZARAGOZA_DEL_MONIT02_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "334 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR279",
+      "meta_flood_px": 766949,
+      "meta_hydro_px": 160033,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 334,
+      "water_polys": 0,
+      "hydro_polys": 318,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32630"
+        }
+      }
+    },
+    {
+      "name": "EMSR279_06CASPE_DEL_MONIT01_v2",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "233 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR279",
+      "meta_flood_px": 128355,
+      "meta_hydro_px": 244185,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 233,
+      "water_polys": 0,
+      "hydro_polys": 71,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32630"
+        }
+      }
+    },
+    {
+      "name": "EMSR279_06CASPE_DEL_MONIT02_v2",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "148 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR279",
+      "meta_flood_px": 316290,
+      "meta_hydro_px": 244185,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 148,
+      "water_polys": 0,
+      "hydro_polys": 424,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "Flooded area",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32630"
+        }
+      }
+    },
+    {
+      "name": "EMSR279_06CASPE_DEL_v2",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "85 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR279",
+      "meta_flood_px": 82745,
+      "meta_hydro_px": 244185,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 85,
+      "water_polys": 0,
+      "hydro_polys": 71,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32630"
+        }
+      }
+    },
+    {
+      "name": "EMSR279_07ALFARO_GRA_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "291 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR279",
+      "meta_flood_px": 59783,
+      "meta_hydro_px": 20886,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 291,
+      "water_polys": 0,
+      "hydro_polys": 73,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH140-River",
+        "BH141-River Bank",
+        "BH141-Stream",
+        "Erosion",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32630"
+        }
+      }
+    },
+    {
+      "name": "EMSR279_08ALCALADEEBRO_GRA_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "131 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR279",
+      "meta_flood_px": 162643,
+      "meta_hydro_px": 32634,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 131,
+      "water_polys": 0,
+      "hydro_polys": 407,
+      "trace_polys": 42,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flood trace",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32630"
+        }
+      }
+    },
+    {
+      "name": "EMSR280_01MALUNG_DEL_MONIT02_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "6340 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR280",
+      "meta_flood_px": 1029697,
+      "meta_hydro_px": 115987,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 6340,
+      "water_polys": 0,
+      "hydro_polys": 302,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR280_01MALUNG_DEL_MONIT03_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "3312 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Ice jam flood",
+      "ems_code": "EMSR280",
+      "meta_flood_px": 319280,
+      "meta_hydro_px": 115987,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 3312,
+      "water_polys": 0,
+      "hydro_polys": 1411,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR280_01MALUNG_DEL_MONIT04_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "1153 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Ice jam flood",
+      "ems_code": "EMSR280",
+      "meta_flood_px": 149839,
+      "meta_hydro_px": 115987,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 1153,
+      "water_polys": 0,
+      "hydro_polys": 1411,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR280_01MALUNG_DEL_MONIT05_v2",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "1667 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Ice jam flood",
+      "ems_code": "EMSR280",
+      "meta_flood_px": 55442,
+      "meta_hydro_px": 115987,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 1667,
+      "water_polys": 0,
+      "hydro_polys": 302,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR280_02VANSBRO_DEL_MONIT02_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "3347 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Ice jam flood",
+      "ems_code": "EMSR280",
+      "meta_flood_px": 489941,
+      "meta_hydro_px": 353595,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 3347,
+      "water_polys": 0,
+      "hydro_polys": 3961,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR280_02VANSBRO_DEL_MONIT04_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "3724 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Ice jam flood",
+      "ems_code": "EMSR280",
+      "meta_flood_px": 159044,
+      "meta_hydro_px": 353595,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 3724,
+      "water_polys": 0,
+      "hydro_polys": 2132,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR280_02VANSBRO_DEL_MONIT05_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "11420 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Ice jam flood",
+      "ems_code": "EMSR280",
+      "meta_flood_px": 184010,
+      "meta_hydro_px": 353595,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 11420,
+      "water_polys": 0,
+      "hydro_polys": 1269,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR280_02VANSBRO_DEL_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "6092 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Ice jam flood",
+      "ems_code": "EMSR280",
+      "meta_flood_px": 595290,
+      "meta_hydro_px": 353595,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 6092,
+      "water_polys": 0,
+      "hydro_polys": 1269,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR280_03FALUN_DEL_MONIT01_v2",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 1927 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR280",
+      "meta_flood_px": 2544,
+      "meta_hydro_px": 459956,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 1927,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR280_03FALUN_DEL_MONIT03_v2",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "27 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR280",
+      "meta_flood_px": 10370,
+      "meta_hydro_px": 459956,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 27,
+      "water_polys": 0,
+      "hydro_polys": 1915,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR280_03FALUN_DEL_MONIT05_v2",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "924 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR280",
+      "meta_flood_px": 120871,
+      "meta_hydro_px": 462199,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 924,
+      "water_polys": 0,
+      "hydro_polys": 2409,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR280_04ENVIKEN_DEL_MONIT01_v2",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "1745 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR280",
+      "meta_flood_px": 427822,
+      "meta_hydro_px": 346673,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 1745,
+      "water_polys": 0,
+      "hydro_polys": 748,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR280_04ENVIKEN_DEL_MONIT02_v2",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "1140 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR280",
+      "meta_flood_px": 411975,
+      "meta_hydro_px": 346673,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 1140,
+      "water_polys": 0,
+      "hydro_polys": 748,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR280_04ENVIKEN_DEL_MONIT03_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "248 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR280",
+      "meta_flood_px": 67986,
+      "meta_hydro_px": 346673,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 248,
+      "water_polys": 0,
+      "hydro_polys": 748,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR280_04ENVIKEN_DEL_MONIT04_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "305 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR280",
+      "meta_flood_px": 10191,
+      "meta_hydro_px": 346673,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 305,
+      "water_polys": 0,
+      "hydro_polys": 748,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR280_04ENVIKEN_DEL_MONIT05_v2",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "261 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR280",
+      "meta_flood_px": 63034,
+      "meta_hydro_px": 346673,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 261,
+      "water_polys": 0,
+      "hydro_polys": 1452,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR280_04ENVIKEN_DEL_MONIT06_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 1465 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR280",
+      "meta_flood_px": 61361,
+      "meta_hydro_px": 346673,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 1465,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR280_04ENVIKEN_DEL_v2",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "801 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR280",
+      "meta_flood_px": 346763,
+      "meta_hydro_px": 346673,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 801,
+      "water_polys": 0,
+      "hydro_polys": 748,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR280_05MORA_DEL_MONIT02_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "645 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR280",
+      "meta_flood_px": 415647,
+      "meta_hydro_px": 251509,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 645,
+      "water_polys": 0,
+      "hydro_polys": 1712,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR280_05MORA_DEL_MONIT03_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "488 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR280",
+      "meta_flood_px": 360191,
+      "meta_hydro_px": 251509,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 488,
+      "water_polys": 0,
+      "hydro_polys": 1712,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR280_05MORA_DEL_MONIT04_v1",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "627 ML-detected water polygons (WF2 model), no flood/hydro distinction in w_class",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Ice jam flood",
+      "ems_code": "EMSR280",
+      "meta_flood_px": 298519,
+      "meta_hydro_px": 251509,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 627,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "WF2_unet_full_norm_vec",
+        "area_of_interest"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR280_05MORA_DEL_MONIT05_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "3158 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Ice jam flood",
+      "ems_code": "EMSR280",
+      "meta_flood_px": 68399,
+      "meta_hydro_px": 251509,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 3158,
+      "water_polys": 0,
+      "hydro_polys": 896,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR280_05MORA_DEL_v2",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "85 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR280",
+      "meta_flood_px": 30488,
+      "meta_hydro_px": 251509,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 85,
+      "water_polys": 0,
+      "hydro_polys": 896,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR283_01JORDET_DEL_MONIT01_v2",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 115 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR283",
+      "meta_flood_px": 3962,
+      "meta_hydro_px": 17863,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 115,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR283_01JORDET_DEL_MONIT02_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 101 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR283",
+      "meta_flood_px": 5283,
+      "meta_hydro_px": 17863,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 101,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR283_01JORDET_DEL_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 75 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR283",
+      "meta_flood_px": 3802,
+      "meta_hydro_px": 17863,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 75,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR283_02TRYSIL_DEL_MONIT01_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 343 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR283",
+      "meta_flood_px": 14693,
+      "meta_hydro_px": 19504,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 343,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR283_02TRYSIL_DEL_MONIT02_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 311 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR283",
+      "meta_flood_px": 19639,
+      "meta_hydro_px": 19504,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 311,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR283_02TRYSIL_DEL_v2",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 199 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR283",
+      "meta_flood_px": 14060,
+      "meta_hydro_px": 19504,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 199,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR283_03ELVERUM_DEL_MONIT01_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 179 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR283",
+      "meta_flood_px": 12338,
+      "meta_hydro_px": 38478,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 179,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR283_03ELVERUM_DEL_MONIT02_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Ice jam flood event but found only 155 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Ice jam flood",
+      "ems_code": "EMSR283",
+      "meta_flood_px": 12056,
+      "meta_hydro_px": 38478,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 155,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR283_04BRASKEREIDFOSS_DEL_MONIT02_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Ice jam flood event but found only 354 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Ice jam flood",
+      "ems_code": "EMSR283",
+      "meta_flood_px": 13919,
+      "meta_hydro_px": 51758,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 354,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR283_05FLISA_DEL_MONIT01_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "1425 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR283",
+      "meta_flood_px": 53973,
+      "meta_hydro_px": 75484,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 1425,
+      "water_polys": 0,
+      "hydro_polys": 67,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR283_06GRINDER_DEL_MONIT01_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "973 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR283",
+      "meta_flood_px": 42403,
+      "meta_hydro_px": 82740,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 973,
+      "water_polys": 0,
+      "hydro_polys": 100,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR283_07KONGSVINGER_DEL_MONIT01_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "1128 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR283",
+      "meta_flood_px": 34603,
+      "meta_hydro_px": 63056,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 1128,
+      "water_polys": 0,
+      "hydro_polys": 63,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR283_07KONGSVINGER_DEL_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "984 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR283",
+      "meta_flood_px": 29282,
+      "meta_hydro_px": 63056,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 984,
+      "water_polys": 0,
+      "hydro_polys": 63,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR283_08SKARNES_DEL_MONIT01_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "853 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR283",
+      "meta_flood_px": 21095,
+      "meta_hydro_px": 55097,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 853,
+      "water_polys": 0,
+      "hydro_polys": 60,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR283_08SKARNES_DEL_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "819 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR283",
+      "meta_flood_px": 15686,
+      "meta_hydro_px": 55097,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 819,
+      "water_polys": 0,
+      "hydro_polys": 60,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR283_09LILLESTROM_DEL_MONIT01_v2",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 709 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR283",
+      "meta_flood_px": 23510,
+      "meta_hydro_px": 114453,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 709,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR283_09LILLESTROM_DEL_MONIT02_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 718 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR283",
+      "meta_flood_px": 25813,
+      "meta_hydro_px": 114453,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 718,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR283_09LILLESTROM_DEL_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 659 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR283",
+      "meta_flood_px": 10538,
+      "meta_hydro_px": 114453,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 659,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR283_10OTTA_DEL_MONIT01_v2",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 107 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR283",
+      "meta_flood_px": 14315,
+      "meta_hydro_px": 34518,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 107,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR283_10OTTA_DEL_MONIT02_v2",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 113 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR283",
+      "meta_flood_px": 13098,
+      "meta_hydro_px": 34518,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 113,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR292_01CHRISOUPOLI_DEL_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "1 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR292",
+      "meta_flood_px": 213948,
+      "meta_hydro_px": 114338,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 1,
+      "water_polys": 0,
+      "hydro_polys": 45,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BA040-Open Water",
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-River Bank",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32635"
+        }
+      }
+    },
+    {
+      "name": "EMSR292_01CHRISOUPOLI_GRA_v2",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "733 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR292",
+      "meta_flood_px": 217256,
+      "meta_hydro_px": 114338,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 733,
+      "water_polys": 0,
+      "hydro_polys": 45,
+      "trace_polys": 1,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BA040-Open Water",
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-River Bank",
+        "BH141-Stream",
+        "Flood trace",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32635"
+        }
+      }
+    },
+    {
+      "name": "EMSR293_01BOTOSANI_DEL_MONIT01_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "143 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR293",
+      "meta_flood_px": 38158,
+      "meta_hydro_px": 30464,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 143,
+      "water_polys": 0,
+      "hydro_polys": 55,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32635"
+        }
+      }
+    },
+    {
+      "name": "EMSR293_01BOTOSANI_DEL_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "34 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR293",
+      "meta_flood_px": 32447,
+      "meta_hydro_px": 30464,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 34,
+      "water_polys": 0,
+      "hydro_polys": 55,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32635"
+        }
+      }
+    },
+    {
+      "name": "EMSR293_01BOTOSANI_GRA_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "148 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR293",
+      "meta_flood_px": 47314,
+      "meta_hydro_px": 30464,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 148,
+      "water_polys": 0,
+      "hydro_polys": 55,
+      "trace_polys": 10,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flood trace",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32635"
+        }
+      }
+    },
+    {
+      "name": "EMSR293_03OZUN_DEL_MONIT01_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "591 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR293",
+      "meta_flood_px": 179681,
+      "meta_hydro_px": 17623,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 591,
+      "water_polys": 0,
+      "hydro_polys": 37,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32635"
+        }
+      }
+    },
+    {
+      "name": "EMSR293_03OZUN_DEL_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "311 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR293",
+      "meta_flood_px": 163535,
+      "meta_hydro_px": 17623,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 311,
+      "water_polys": 0,
+      "hydro_polys": 37,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32635"
+        }
+      }
+    },
+    {
+      "name": "EMSR294_01MANDRAMAGOULA_GRA_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "26 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR294",
+      "meta_flood_px": 459,
+      "meta_hydro_px": 2851,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 26,
+      "water_polys": 0,
+      "hydro_polys": 50,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32634"
+        }
+      }
+    },
+    {
+      "name": "EMSR311_04WILMINGTON_DEL_MONIT01_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "3564 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR311",
+      "meta_flood_px": 193894,
+      "meta_hydro_px": 437842,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 3564,
+      "water_polys": 0,
+      "hydro_polys": 2928,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BA040-Open Water",
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32618"
+        }
+      }
+    },
+    {
+      "name": "EMSR311_05JACKSONVILLE_DEL_MONIT03_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "1110 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR311",
+      "meta_flood_px": 460386,
+      "meta_hydro_px": 198357,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 1110,
+      "water_polys": 0,
+      "hydro_polys": 1790,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BA040-Open Water",
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32618"
+        }
+      }
+    },
+    {
+      "name": "EMSR312_02CALAYAN_GRA_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Flash flood event but found only 17 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR312",
+      "meta_flood_px": 9,
+      "meta_hydro_px": 523,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 17,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH140-River",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32651"
+        }
+      }
+    },
+    {
+      "name": "EMSR312_05TUGUEGARAO_DEL_MONIT01_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Flash flood event but found only 1040 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR312",
+      "meta_flood_px": 432859,
+      "meta_hydro_px": 108373,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 1040,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32651"
+        }
+      }
+    },
+    {
+      "name": "EMSR312_05TUGUEGARAO_DEL_v1",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "423 ML-detected water polygons (WF2 model), no flood/hydro distinction in w_class",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR312",
+      "meta_flood_px": 63971,
+      "meta_hydro_px": 108373,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 423,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "WF2_unet_full_norm_vec",
+        "area_of_interest",
+        "manual_label"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32651"
+        }
+      }
+    },
+    {
+      "name": "EMSR312_06ILAGAN_DEL_MONIT01_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Flash flood event but found only 965 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR312",
+      "meta_flood_px": 244891,
+      "meta_hydro_px": 95399,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 965,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32651"
+        }
+      }
+    },
+    {
+      "name": "EMSR312_06ILAGAN_DEL_v1",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "13 water polygons with unknown semantics",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR312",
+      "meta_flood_px": 87630,
+      "meta_hydro_px": 95399,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 13,
+      "hydro_polys": 520,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l",
+        "manual_label"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32651"
+        }
+      }
+    },
+    {
+      "name": "EMSR312_07VIGAN_DEL_MONIT01_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 3080 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR312",
+      "meta_flood_px": 102725,
+      "meta_hydro_px": 366414,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 3080,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH080-Lake",
+        "BH140-River",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32651"
+        }
+      }
+    },
+    {
+      "name": "EMSR312_07VIGAN_DEL_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 2086 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR312",
+      "meta_flood_px": 86956,
+      "meta_hydro_px": 366414,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 2086,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH080-Lake",
+        "BH140-River",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32651"
+        }
+      }
+    },
+    {
+      "name": "EMSR312_08CANDON_DEL_v1",
+      "split": "train",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 1066 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR312",
+      "meta_flood_px": 50809,
+      "meta_hydro_px": 54734,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 1066,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32651"
+        }
+      }
+    },
+    {
+      "name": "EMSR314_01PATEGI_DEL_v1",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "548 ML-detected water polygons (WF2 model), no flood/hydro distinction in w_class",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR314",
+      "meta_flood_px": 3094621,
+      "meta_hydro_px": 375715,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 548,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "WF2_unet_full_norm_vec",
+        "area_of_interest"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32631"
+        }
+      }
+    },
+    {
+      "name": "EMSR314_02LOKOJA_DEL_v1",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "257 ML-detected water polygons (WF2 model), no flood/hydro distinction in w_class",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR314",
+      "meta_flood_px": 1772327,
+      "meta_hydro_px": 502222,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 257,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "WF2_unet_full_norm_vec",
+        "area_of_interest"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR314_03ENUGUOTU_DEL_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "191 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR314",
+      "meta_flood_px": 2640575,
+      "meta_hydro_px": 84816,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 191,
+      "water_polys": 0,
+      "hydro_polys": 81,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR314_04OTUOCHAAGULERI_DEL_v1",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "135 ML-detected water polygons (WF2 model), no flood/hydro distinction in w_class",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR314",
+      "meta_flood_px": 1577009,
+      "meta_hydro_px": 155517,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 135,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "WF2_unet_full_norm_vec",
+        "area_of_interest"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR314_05ONITSHA_DEL_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "243 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR314",
+      "meta_flood_px": 813494,
+      "meta_hydro_px": 208263,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 243,
+      "water_polys": 0,
+      "hydro_polys": 42,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR319_01TAKLISAH_DEL_v2",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "2 water polygons with unknown semantics",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR319",
+      "meta_flood_px": 4988,
+      "meta_hydro_px": 7302,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 2,
+      "hydro_polys": 334,
+      "trace_polys": 2,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l",
+        "manual_label"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH141-Stream",
+        "Flood trace",
+        "Not Applicable",
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR319_03KORBA_DEL_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "13 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR319",
+      "meta_flood_px": 22784,
+      "meta_hydro_px": 42296,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 13,
+      "water_polys": 1,
+      "hydro_polys": 127,
+      "trace_polys": 35,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l",
+        "manual_label"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flood trace",
+        "Flooded area",
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR319_05SOMAA_DEL_v2",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "8 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR319",
+      "meta_flood_px": 20740,
+      "meta_hydro_px": 24878,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 8,
+      "water_polys": 0,
+      "hydro_polys": 65,
+      "trace_polys": 31,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flood trace",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR321_02CHOLUTECA_DEL_MONIT01_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "1137 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR321",
+      "meta_flood_px": 345007,
+      "meta_hydro_px": 81241,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 1137,
+      "water_polys": 0,
+      "hydro_polys": 332,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32616"
+        }
+      }
+    },
+    {
+      "name": "EMSR322_17MARIANNA_DEL_v1",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "1278 ML-detected water polygons (WF2 model), no flood/hydro distinction in w_class",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR322",
+      "meta_flood_px": 10766,
+      "meta_hydro_px": 602806,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 1278,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "WF2_unet_full_norm_vec",
+        "area_of_interest",
+        "manual_label"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32616"
+        }
+      }
+    },
+    {
+      "name": "EMSR323_08MANACOR_GRA_v1",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "4 Flood trace features but no Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR323",
+      "meta_flood_px": 1518,
+      "meta_hydro_px": 2773,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 43,
+      "trace_polys": 4,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH080-Lake",
+        "BH141-Stream",
+        "Flood trace",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32631"
+        }
+      }
+    },
+    {
+      "name": "EMSR323_09CALAMILLOR_GRA_v1",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "9 Flood trace features but no Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR323",
+      "meta_flood_px": 1616,
+      "meta_hydro_px": 4556,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 40,
+      "trace_polys": 9,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BA040-Open Water",
+        "BH080-Lake",
+        "BH141-Stream",
+        "Flood trace",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32631"
+        }
+      }
+    },
+    {
+      "name": "EMSR324_03MOUSSAN_DEL_MONIT01_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "433 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR324",
+      "meta_flood_px": 90743,
+      "meta_hydro_px": 42101,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 433,
+      "water_polys": 0,
+      "hydro_polys": 136,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32631"
+        }
+      }
+    },
+    {
+      "name": "EMSR324_03MOUSSAN_DEL_MONIT02_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "228 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR324",
+      "meta_flood_px": 22291,
+      "meta_hydro_px": 42101,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 228,
+      "water_polys": 0,
+      "hydro_polys": 136,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32631"
+        }
+      }
+    },
+    {
+      "name": "EMSR324_03MOUSSAN_DEL_MONIT03_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "49 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR324",
+      "meta_flood_px": 11063,
+      "meta_hydro_px": 42101,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 49,
+      "water_polys": 0,
+      "hydro_polys": 136,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32631"
+        }
+      }
+    },
+    {
+      "name": "EMSR324_04LESPIGNAN_MANUAL_LABEL",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "446 water polygons from 'flood' source, but w_class='water' not 'Flooded area'",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR324",
+      "meta_flood_px": 282563,
+      "meta_hydro_px": 0,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 446,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32631"
+        }
+      }
+    },
+    {
+      "name": "EMSR324_06TREBES_GRA_v1",
+      "split": "train",
+      "label_status": "positive",
+      "reason": "41 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR324",
+      "meta_flood_px": 13888,
+      "meta_hydro_px": 5907,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 41,
+      "water_polys": 0,
+      "hydro_polys": 77,
+      "trace_polys": 120,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flood trace",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32631"
+        }
+      }
+    },
+    {
+      "name": "EMSR260_07CAMPOGALLIANO_DEL_MONIT01_v1",
+      "split": "val",
+      "label_status": "ambiguous",
+      "reason": "7 water polygons with unknown semantics",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR260",
+      "meta_flood_px": 6520,
+      "meta_hydro_px": 2883,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 7,
+      "hydro_polys": 26,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "manual_label"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "Not Applicable",
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR271_02FARKADONA_DEL_v1",
+      "split": "val",
+      "label_status": "ambiguous",
+      "reason": "176 ML-detected water polygons (WF2 model), no flood/hydro distinction in w_class",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR271",
+      "meta_flood_px": 520976,
+      "meta_hydro_px": 76319,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 176,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "WF2_unet_full_norm_vec",
+        "area_of_interest"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32634"
+        }
+      }
+    },
+    {
+      "name": "EMSR274_05TOAMASINA_DEL_v1",
+      "split": "val",
+      "label_status": "positive",
+      "reason": "106 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR274",
+      "meta_flood_px": 146534,
+      "meta_hydro_px": 107637,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 106,
+      "water_polys": 0,
+      "hydro_polys": 104,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32739"
+        }
+      }
+    },
+    {
+      "name": "EMSR279_05ZARAGOZA_DEL_v2",
+      "split": "val",
+      "label_status": "ambiguous",
+      "reason": "227 water polygons from 'flood' source, but w_class='water' not 'Flooded area'",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR279",
+      "meta_flood_px": 601551,
+      "meta_hydro_px": 0,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 227,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32630"
+        }
+      }
+    },
+    {
+      "name": "EMSR279_11TORTOSA_DEL_v1",
+      "split": "val",
+      "label_status": "ambiguous",
+      "reason": "176 water polygons from 'flood' source, but w_class='water' not 'Flooded area'",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR279",
+      "meta_flood_px": 396372,
+      "meta_hydro_px": 0,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 176,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32631"
+        }
+      }
+    },
+    {
+      "name": "EMSR280_03FALUN_DEL_MONIT06_v2",
+      "split": "val",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 2498 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR280",
+      "meta_flood_px": 164099,
+      "meta_hydro_px": 462199,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 2498,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR293_03OZUN_GRA_v1",
+      "split": "val",
+      "label_status": "ambiguous",
+      "reason": "482 water polygons from 'flood' source, but w_class='water' not 'Flooded area'",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR293",
+      "meta_flood_px": 120109,
+      "meta_hydro_px": 0,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 482,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32635"
+        }
+      }
+    },
+    {
+      "name": "EMSR312_08CANDON_DEL_MONIT01_v1",
+      "split": "val",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 1716 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR312",
+      "meta_flood_px": 59414,
+      "meta_hydro_px": 54734,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 1716,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32651"
+        }
+      }
+    },
+    {
+      "name": "EMSR329_05CASTIADAS_GRA_v3",
+      "split": "val",
+      "label_status": "positive",
+      "reason": "5 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR329",
+      "meta_flood_px": 6116,
+      "meta_hydro_px": 8275,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 5,
+      "water_polys": 0,
+      "hydro_polys": 85,
+      "trace_polys": 40,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flood trace",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR358_AOI01_FEP_PRODUCT",
+      "split": "val",
+      "label_status": "positive",
+      "reason": "12 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR358",
+      "meta_flood_px": 30749,
+      "meta_hydro_px": 18423,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 12,
+      "water_polys": 0,
+      "hydro_polys": 13,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR427_AOI03_DEL_MONIT02",
+      "split": "val",
+      "label_status": "positive",
+      "reason": "172 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR427",
+      "meta_flood_px": 183891,
+      "meta_hydro_px": 335277,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 172,
+      "water_polys": 0,
+      "hydro_polys": 879,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR442_AOI03_DEL_PRODUCT",
+      "split": "val",
+      "label_status": "positive",
+      "reason": "36 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR442",
+      "meta_flood_px": 9053,
+      "meta_hydro_px": 6593,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 36,
+      "water_polys": 9,
+      "hydro_polys": 48,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "manual_label"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "Flooded area",
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32634"
+        }
+      }
+    },
+    {
+      "name": "EMSR629_AOI01_DEL_PRODUCT",
+      "split": "val",
+      "label_status": "positive",
+      "reason": "9756 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR629",
+      "meta_flood_px": 5485635,
+      "meta_hydro_px": 594852,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 9756,
+      "water_polys": 0,
+      "hydro_polys": 17,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32642"
+        }
+      }
+    },
+    {
+      "name": "EMSR629_AOI02_DEL_PRODUCT",
+      "split": "val",
+      "label_status": "positive",
+      "reason": "3426 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR629",
+      "meta_flood_px": 6847454,
+      "meta_hydro_px": 331107,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 3426,
+      "water_polys": 0,
+      "hydro_polys": 366,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32642"
+        }
+      }
+    },
+    {
+      "name": "RS2_20161008_Water_Extent_Corail_Pestel",
+      "split": "val",
+      "label_status": "ambiguous",
+      "reason": "32 ML-detected water polygons (WF2 model), no flood/hydro distinction in w_class",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flood",
+      "ems_code": "UNOSATRS220161008",
+      "meta_flood_px": 59590,
+      "meta_hydro_px": 0,
+      "meta_source": "unosat",
+      "flood_polys": 0,
+      "water_polys": 32,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "WF2_unet_full_norm_vec",
+        "area_of_interest"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32618"
+        }
+      }
+    },
+    {
+      "name": "ST1_20161014_WaterExtent_BinhDinh_Lake",
+      "split": "val",
+      "label_status": "ambiguous",
+      "reason": "31 ML-detected water polygons (WF2 model), no flood/hydro distinction in w_class",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flood",
+      "ems_code": "UNOSATST120161014",
+      "meta_flood_px": 46218,
+      "meta_hydro_px": 0,
+      "meta_source": "unosat",
+      "flood_polys": 0,
+      "water_polys": 31,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "WF2_unet_full_norm_vec",
+        "area_of_interest",
+        "manual_label"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32649"
+        }
+      }
+    },
+    {
+      "name": "EMSR264_08VATOMANDRY_DEL_v2",
+      "split": "test",
+      "label_status": "positive",
+      "reason": "136 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR264",
+      "meta_flood_px": 202791,
+      "meta_hydro_px": 94262,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 136,
+      "water_polys": 0,
+      "hydro_polys": 73,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32739"
+        }
+      }
+    },
+    {
+      "name": "EMSR264_18MIANDRIVAZODETAIL_DEL_v2",
+      "split": "test",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Flash flood event but found only 698 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR264",
+      "meta_flood_px": 129988,
+      "meta_hydro_px": 148014,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 698,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32738"
+        }
+      }
+    },
+    {
+      "name": "EMSR273_01GRILE_DEL_MONIT04_v2",
+      "split": "test",
+      "label_status": "positive",
+      "reason": "3846 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "None",
+      "ems_code": "EMSR273",
+      "meta_flood_px": 48613,
+      "meta_hydro_px": 13469,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 3846,
+      "water_polys": 0,
+      "hydro_polys": 4,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32634"
+        }
+      }
+    },
+    {
+      "name": "EMSR286_08ITUANGONORTH_DEL_MONIT02_v1",
+      "split": "test",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Riverine flood event but found only 15 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR286",
+      "meta_flood_px": 146524,
+      "meta_hydro_px": 50873,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 15,
+      "trace_polys": 0,
+      "fm_sources": [
+        "flood",
+        "hydro"
+      ],
+      "fm_w_classes": [
+        "BH140-River",
+        "Not Applicable"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32618"
+        }
+      }
+    },
+    {
+      "name": "EMSR286_09ITUANGOSOUTH_DEL_MONIT02_v1",
+      "split": "test",
+      "label_status": "positive",
+      "reason": "14 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR286",
+      "meta_flood_px": 14207,
+      "meta_hydro_px": 34317,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 14,
+      "water_polys": 0,
+      "hydro_polys": 1,
+      "trace_polys": 0,
+      "fm_sources": [
+        "flood",
+        "hydro"
+      ],
+      "fm_w_classes": [
+        "BH140-River",
+        "Flooded area"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32618"
+        }
+      }
+    },
+    {
+      "name": "EMSR333_01RATTALORO_DEL_MONIT01_v1",
+      "split": "test",
+      "label_status": "ambiguous",
+      "reason": "17 Flood trace features but no Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR333",
+      "meta_flood_px": 11890,
+      "meta_hydro_px": 10983,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 21,
+      "trace_polys": 17,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro"
+      ],
+      "fm_w_classes": [
+        "BH130-Reservoir",
+        "Flood trace",
+        "Not Applicable",
+        "River",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR333_02PORTOPALO_DEL_MONIT01_v1",
+      "split": "test",
+      "label_status": "positive",
+      "reason": "11 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR333",
+      "meta_flood_px": 54923,
+      "meta_hydro_px": 12243,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 11,
+      "water_polys": 0,
+      "hydro_polys": 20,
+      "trace_polys": 36,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro"
+      ],
+      "fm_w_classes": [
+        "BA040-Open Water",
+        "BH130-Reservoir",
+        "Flood trace",
+        "Flooded area",
+        "Not Applicable",
+        "River",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR342_06NORTHNORMANTON_DEL_v1",
+      "split": "test",
+      "label_status": "negative_candidate",
+      "reason": "EMS mapped this area during a Flash flood event but found only 1052 hydrographic features, no flood extent",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR342",
+      "meta_flood_px": 11097799,
+      "meta_hydro_px": 74025,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 1052,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32754"
+        }
+      }
+    },
+    {
+      "name": "EMSR342_07SOUTHNORMANTON_DEL_MONIT03_v2",
+      "split": "test",
+      "label_status": "positive",
+      "reason": "221 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR342",
+      "meta_flood_px": 18223678,
+      "meta_hydro_px": 6103,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 221,
+      "water_polys": 0,
+      "hydro_polys": 80,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "Flooded area",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32754"
+        }
+      }
+    },
+    {
+      "name": "EMSR347_07ZOMBA_DEL_MONIT01_v1",
+      "split": "test",
+      "label_status": "positive",
+      "reason": "13 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR347",
+      "meta_flood_px": 872018,
+      "meta_hydro_px": 2061114,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 13,
+      "water_polys": 0,
+      "hydro_polys": 42,
+      "trace_polys": 163,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "Flood trace",
+        "Flooded area",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32736"
+        }
+      }
+    },
+    {
+      "name": "EMSR347_07ZOMBA_DEL_v2",
+      "split": "test",
+      "label_status": "positive",
+      "reason": "313 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR347",
+      "meta_flood_px": 95937,
+      "meta_hydro_px": 26165,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 313,
+      "water_polys": 0,
+      "hydro_polys": 3,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro"
+      ],
+      "fm_w_classes": [
+        "BH140-River",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32736"
+        }
+      }
+    },
+    {
+      "name": "EMSR419_AOI01_DEL_MONIT01",
+      "split": "test",
+      "label_status": "positive",
+      "reason": "355 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR419",
+      "meta_flood_px": 126432,
+      "meta_hydro_px": 9345,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 355,
+      "water_polys": 0,
+      "hydro_polys": 12,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro"
+      ],
+      "fm_w_classes": [
+        "BA040-Open Water",
+        "BH080-Lake",
+        "Flooded area",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32640"
+        }
+      }
+    },
+    {
+      "name": "EMSR422_AOI06_DEL_PRODUCT",
+      "split": "test",
+      "label_status": "positive",
+      "reason": "37 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Coastal flood",
+      "ems_code": "EMSR422",
+      "meta_flood_px": 14350,
+      "meta_hydro_px": 12522,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 37,
+      "water_polys": 0,
+      "hydro_polys": 111,
+      "trace_polys": 28,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA040-Open Water",
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flood trace",
+        "Flooded area",
+        "Not Applicable",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32630"
+        }
+      }
+    },
+    {
+      "name": "EMSR438_AOI02_DEL_MONIT03",
+      "split": "test",
+      "label_status": "positive",
+      "reason": "216 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR438",
+      "meta_flood_px": 86810,
+      "meta_hydro_px": 144142,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 216,
+      "water_polys": 0,
+      "hydro_polys": 5504,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32636"
+        }
+      }
+    },
+    {
+      "name": "EMSR438_AOI06_DEL_PRODUCT",
+      "split": "test",
+      "label_status": "positive",
+      "reason": "4 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Coastal flood",
+      "ems_code": "EMSR438",
+      "meta_flood_px": 37363,
+      "meta_hydro_px": 14161,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 4,
+      "water_polys": 0,
+      "hydro_polys": 10,
+      "trace_polys": 6,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flood trace",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32736"
+        }
+      }
+    },
+    {
+      "name": "EMSR466_AOI01_DEL_PRODUCT",
+      "split": "test",
+      "label_status": "positive",
+      "reason": "670 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR466",
+      "meta_flood_px": 817275,
+      "meta_hydro_px": 79286,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 670,
+      "water_polys": 0,
+      "hydro_polys": 31,
+      "trace_polys": 531,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BH130-Reservoir",
+        "BH140-River",
+        "Flood trace",
+        "Flooded area",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR9284_01YLITORNIONORTHERN_DEL_MONIT01_v1",
+      "split": "test",
+      "label_status": "positive",
+      "reason": "41 verified Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Ice jam flood",
+      "ems_code": "EMSR9284",
+      "meta_flood_px": 140868,
+      "meta_hydro_px": 77105,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 41,
+      "water_polys": 0,
+      "hydro_polys": 89,
+      "trace_polys": 0,
+      "fm_sources": [
+        "flood",
+        "hydro"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "Flooded area",
+        "Not Applicable"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32634"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,703 @@
+[
+  {
+    "name": "EMSR274_02AMBANJA_DEL_v1",
+    "split": "train",
+    "s2": {
+      "path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\train\\S2\\EMSR274_02AMBANJA_DEL_v1.tif",
+      "bands": 15,
+      "width": 3727,
+      "height": 3054,
+      "crs": "EPSG:32739",
+      "transform": [
+        10.0,
+        0.0,
+        208260.0,
+        0.0,
+        -10.0,
+        8491790.0
+      ],
+      "dtypes": [
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16"
+      ],
+      "bounds": [
+        208260.0,
+        8461250.0,
+        245530.0,
+        8491790.0
+      ]
+    },
+    "gt": {
+      "path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\train\\gt\\EMSR274_02AMBANJA_DEL_v1.tif",
+      "bands": 2,
+      "width": 3727,
+      "height": 3054,
+      "crs": "EPSG:32739",
+      "transform": [
+        10.0,
+        0.0,
+        208260.0,
+        0.0,
+        -10.0,
+        8491790.0
+      ],
+      "dtypes": [
+        "int16",
+        "int16"
+      ],
+      "bounds": [
+        208260.0,
+        8461250.0,
+        245530.0,
+        8491790.0
+      ]
+    },
+    "pw": {
+      "path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\train\\PERMANENTWATERJRC\\EMSR274_02AMBANJA_DEL_v1.tif",
+      "bands": 1,
+      "width": 3727,
+      "height": 3054,
+      "crs": "EPSG:32739",
+      "transform": [
+        10.0,
+        0.0,
+        208260.0,
+        0.0,
+        -10.0,
+        8491790.0
+      ],
+      "dtypes": [
+        "int16"
+      ],
+      "bounds": [
+        208260.0,
+        8461250.0,
+        245530.0,
+        8491790.0
+      ]
+    },
+    "s2_gt_dims_match": true,
+    "s2_pw_dims_match": true,
+    "s2_gt_crs_match": true,
+    "s2_pw_crs_match": true,
+    "s2_gt_transform_match": true,
+    "s2_pw_transform_match": true,
+    "gt_band1_full": {
+      "0": 7095527,
+      "1": 4263575,
+      "2": 23156
+    },
+    "gt_band2_full": {
+      "0": 7104681,
+      "1": 3753213,
+      "2": 524364
+    },
+    "gt_band1_window": {
+      "0": 262144
+    },
+    "gt_band2_window": {
+      "0": 262144
+    },
+    "valid_px_window": 0,
+    "total_px_window": 262144,
+    "reason": "Entirely invalid (all Band1=0)",
+    "valid_px_full_image": 4263575
+  },
+  {
+    "name": "EMSR280_05MORA_DEL_MONIT02_v1",
+    "split": "train",
+    "s2": {
+      "path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\train\\S2\\EMSR280_05MORA_DEL_MONIT02_v1.tif",
+      "bands": 15,
+      "width": 4478,
+      "height": 3683,
+      "crs": "EPSG:32633",
+      "transform": [
+        10.0,
+        0.0,
+        441320.0,
+        0.0,
+        -10.0,
+        6796370.0
+      ],
+      "dtypes": [
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16"
+      ],
+      "bounds": [
+        441320.0,
+        6759540.0,
+        486100.0,
+        6796370.0
+      ]
+    },
+    "gt": {
+      "path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\train\\gt\\EMSR280_05MORA_DEL_MONIT02_v1.tif",
+      "bands": 2,
+      "width": 4478,
+      "height": 3683,
+      "crs": "EPSG:32633",
+      "transform": [
+        10.0,
+        0.0,
+        441320.0,
+        0.0,
+        -10.0,
+        6796370.0
+      ],
+      "dtypes": [
+        "int16",
+        "int16"
+      ],
+      "bounds": [
+        441320.0,
+        6759540.0,
+        486100.0,
+        6796370.0
+      ]
+    },
+    "pw": {
+      "path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\train\\PERMANENTWATERJRC\\EMSR280_05MORA_DEL_MONIT02_v1.tif",
+      "bands": 1,
+      "width": 4478,
+      "height": 3683,
+      "crs": "EPSG:32633",
+      "transform": [
+        10.0,
+        0.0,
+        441320.0,
+        0.0,
+        -10.0,
+        6796370.0
+      ],
+      "dtypes": [
+        "int16"
+      ],
+      "bounds": [
+        441320.0,
+        6759540.0,
+        486100.0,
+        6796370.0
+      ]
+    },
+    "s2_gt_dims_match": true,
+    "s2_pw_dims_match": true,
+    "s2_gt_crs_match": true,
+    "s2_pw_crs_match": true,
+    "s2_gt_transform_match": true,
+    "s2_pw_transform_match": true,
+    "gt_band1_full": {
+      "0": 10911330,
+      "1": 5537924,
+      "2": 43220
+    },
+    "gt_band2_full": {
+      "0": 10929032,
+      "1": 4718063,
+      "2": 845379
+    },
+    "gt_band1_window": {
+      "0": 262144
+    },
+    "gt_band2_window": {
+      "0": 262144
+    },
+    "valid_px_window": 0,
+    "total_px_window": 262144,
+    "reason": "Entirely invalid (all Band1=0)",
+    "valid_px_full_image": 5537924
+  },
+  {
+    "name": "EMSR280_05MORA_DEL_MONIT03_v1",
+    "split": "train",
+    "s2": {
+      "path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\train\\S2\\EMSR280_05MORA_DEL_MONIT03_v1.tif",
+      "bands": 15,
+      "width": 4478,
+      "height": 3683,
+      "crs": "EPSG:32633",
+      "transform": [
+        10.0,
+        0.0,
+        441320.0,
+        0.0,
+        -10.0,
+        6796370.0
+      ],
+      "dtypes": [
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16"
+      ],
+      "bounds": [
+        441320.0,
+        6759540.0,
+        486100.0,
+        6796370.0
+      ]
+    },
+    "gt": {
+      "path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\train\\gt\\EMSR280_05MORA_DEL_MONIT03_v1.tif",
+      "bands": 2,
+      "width": 4478,
+      "height": 3683,
+      "crs": "EPSG:32633",
+      "transform": [
+        10.0,
+        0.0,
+        441320.0,
+        0.0,
+        -10.0,
+        6796370.0
+      ],
+      "dtypes": [
+        "int16",
+        "int16"
+      ],
+      "bounds": [
+        441320.0,
+        6759540.0,
+        486100.0,
+        6796370.0
+      ]
+    },
+    "pw": {
+      "path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\train\\PERMANENTWATERJRC\\EMSR280_05MORA_DEL_MONIT03_v1.tif",
+      "bands": 1,
+      "width": 4478,
+      "height": 3683,
+      "crs": "EPSG:32633",
+      "transform": [
+        10.0,
+        0.0,
+        441320.0,
+        0.0,
+        -10.0,
+        6796370.0
+      ],
+      "dtypes": [
+        "int16"
+      ],
+      "bounds": [
+        441320.0,
+        6759540.0,
+        486100.0,
+        6796370.0
+      ]
+    },
+    "s2_gt_dims_match": true,
+    "s2_pw_dims_match": true,
+    "s2_gt_crs_match": true,
+    "s2_pw_crs_match": true,
+    "s2_gt_transform_match": true,
+    "s2_pw_transform_match": true,
+    "gt_band1_full": {
+      "0": 10689053,
+      "1": 1462242,
+      "2": 4341179
+    },
+    "gt_band2_full": {
+      "0": 13910548,
+      "1": 2153778,
+      "2": 428148
+    },
+    "gt_band1_window": {
+      "0": 262144
+    },
+    "gt_band2_window": {
+      "0": 262144
+    },
+    "valid_px_window": 0,
+    "total_px_window": 262144,
+    "reason": "Entirely invalid (all Band1=0)",
+    "valid_px_full_image": 1462242
+  },
+  {
+    "name": "EMSR280_05MORA_DEL_v2",
+    "split": "train",
+    "s2": {
+      "path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\train\\S2\\EMSR280_05MORA_DEL_v2.tif",
+      "bands": 15,
+      "width": 4478,
+      "height": 3683,
+      "crs": "EPSG:32633",
+      "transform": [
+        10.0,
+        0.0,
+        441320.0,
+        0.0,
+        -10.0,
+        6796370.0
+      ],
+      "dtypes": [
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16"
+      ],
+      "bounds": [
+        441320.0,
+        6759540.0,
+        486100.0,
+        6796370.0
+      ]
+    },
+    "gt": {
+      "path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\train\\gt\\EMSR280_05MORA_DEL_v2.tif",
+      "bands": 2,
+      "width": 4478,
+      "height": 3683,
+      "crs": "EPSG:32633",
+      "transform": [
+        10.0,
+        0.0,
+        441320.0,
+        0.0,
+        -10.0,
+        6796370.0
+      ],
+      "dtypes": [
+        "int16",
+        "int16"
+      ],
+      "bounds": [
+        441320.0,
+        6759540.0,
+        486100.0,
+        6796370.0
+      ]
+    },
+    "pw": {
+      "path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\train\\PERMANENTWATERJRC\\EMSR280_05MORA_DEL_v2.tif",
+      "bands": 1,
+      "width": 4478,
+      "height": 3683,
+      "crs": "EPSG:32633",
+      "transform": [
+        10.0,
+        0.0,
+        441320.0,
+        0.0,
+        -10.0,
+        6796370.0
+      ],
+      "dtypes": [
+        "int16"
+      ],
+      "bounds": [
+        441320.0,
+        6759540.0,
+        486100.0,
+        6796370.0
+      ]
+    },
+    "s2_gt_dims_match": true,
+    "s2_pw_dims_match": true,
+    "s2_gt_crs_match": true,
+    "s2_pw_crs_match": true,
+    "s2_gt_transform_match": true,
+    "s2_pw_transform_match": true,
+    "gt_band1_full": {
+      "0": 10705458,
+      "1": 5005528,
+      "2": 781488
+    },
+    "gt_band2_full": {
+      "0": 10859099,
+      "1": 4938455,
+      "2": 694920
+    },
+    "gt_band1_window": {
+      "0": 262144
+    },
+    "gt_band2_window": {
+      "0": 262144
+    },
+    "valid_px_window": 0,
+    "total_px_window": 262144,
+    "reason": "Entirely invalid (all Band1=0)",
+    "valid_px_full_image": 5005528
+  },
+  {
+    "name": "EMSR347_07ZOMBA_DEL_MONIT01_v1",
+    "split": "test",
+    "s2": {
+      "path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\test\\S2\\EMSR347_07ZOMBA_DEL_MONIT01_v1.tif",
+      "bands": 15,
+      "width": 7573,
+      "height": 6204,
+      "crs": "EPSG:32736",
+      "transform": [
+        10.0,
+        0.0,
+        719390.0,
+        0.0,
+        -10.0,
+        8313390.0
+      ],
+      "dtypes": [
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16"
+      ],
+      "bounds": [
+        719390.0,
+        8251350.0,
+        795120.0,
+        8313390.0
+      ]
+    },
+    "gt": {
+      "path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\test\\gt\\EMSR347_07ZOMBA_DEL_MONIT01_v1.tif",
+      "bands": 2,
+      "width": 7573,
+      "height": 6204,
+      "crs": "EPSG:32736",
+      "transform": [
+        10.0,
+        0.0,
+        719390.0,
+        0.0,
+        -10.0,
+        8313390.0
+      ],
+      "dtypes": [
+        "int16",
+        "int16"
+      ],
+      "bounds": [
+        719390.0,
+        8251350.0,
+        795120.0,
+        8313390.0
+      ]
+    },
+    "pw": {
+      "path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\test\\PERMANENTWATERJRC\\EMSR347_07ZOMBA_DEL_MONIT01_v1.tif",
+      "bands": 1,
+      "width": 7573,
+      "height": 6204,
+      "crs": "EPSG:32736",
+      "transform": [
+        10.0,
+        0.0,
+        719390.0,
+        0.0,
+        -10.0,
+        8313390.0
+      ],
+      "dtypes": [
+        "int16"
+      ],
+      "bounds": [
+        719390.0,
+        8251350.0,
+        795120.0,
+        8313390.0
+      ]
+    },
+    "s2_gt_dims_match": true,
+    "s2_pw_dims_match": true,
+    "s2_gt_crs_match": true,
+    "s2_pw_crs_match": true,
+    "s2_gt_transform_match": true,
+    "s2_pw_transform_match": true,
+    "gt_band1_full": {
+      "0": 32497070,
+      "1": 10049839,
+      "2": 4435983
+    },
+    "gt_band2_full": {
+      "0": 36933053,
+      "1": 6054652,
+      "2": 3995187
+    },
+    "gt_band1_window": {
+      "0": 262144
+    },
+    "gt_band2_window": {
+      "0": 262144
+    },
+    "valid_px_window": 0,
+    "total_px_window": 262144,
+    "reason": "Entirely invalid (all Band1=0)",
+    "valid_px_full_image": 10049839
+  },
+  {
+    "name": "EMSR347_07ZOMBA_DEL_v2",
+    "split": "test",
+    "s2": {
+      "path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\test\\S2\\EMSR347_07ZOMBA_DEL_v2.tif",
+      "bands": 15,
+      "width": 7573,
+      "height": 6204,
+      "crs": "EPSG:32736",
+      "transform": [
+        10.0,
+        0.0,
+        719390.0,
+        0.0,
+        -10.0,
+        8313390.0
+      ],
+      "dtypes": [
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16",
+        "int16"
+      ],
+      "bounds": [
+        719390.0,
+        8251350.0,
+        795120.0,
+        8313390.0
+      ]
+    },
+    "gt": {
+      "path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\test\\gt\\EMSR347_07ZOMBA_DEL_v2.tif",
+      "bands": 2,
+      "width": 7573,
+      "height": 6204,
+      "crs": "EPSG:32736",
+      "transform": [
+        10.0,
+        0.0,
+        719390.0,
+        0.0,
+        -10.0,
+        8313390.0
+      ],
+      "dtypes": [
+        "int16",
+        "int16"
+      ],
+      "bounds": [
+        719390.0,
+        8251350.0,
+        795120.0,
+        8313390.0
+      ]
+    },
+    "pw": {
+      "path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\test\\PERMANENTWATERJRC\\EMSR347_07ZOMBA_DEL_v2.tif",
+      "bands": 1,
+      "width": 7573,
+      "height": 6204,
+      "crs": "EPSG:32736",
+      "transform": [
+        10.0,
+        0.0,
+        719390.0,
+        0.0,
+        -10.0,
+        8313390.0
+      ],
+      "dtypes": [
+        "int16"
+      ],
+      "bounds": [
+        719390.0,
+        8251350.0,
+        795120.0,
+        8313390.0
+      ]
+    },
+    "s2_gt_dims_match": true,
+    "s2_pw_dims_match": true,
+    "s2_gt_crs_match": true,
+    "s2_pw_crs_match": true,
+    "s2_gt_transform_match": true,
+    "s2_pw_transform_match": true,
+    "gt_band1_full": {
+      "0": 46059167,
+      "1": 923725
+    },
+    "gt_band2_full": {
+      "0": 46059167,
+      "1": 795214,
+      "2": 128511
+    },
+    "gt_band1_window": {
+      "0": 262144
+    },
+    "gt_band2_window": {
+      "0": 262144
+    },
+    "valid_px_window": 0,
+    "total_px_window": 262144,
+    "reason": "Entirely invalid (all Band1=0)",
+    "valid_px_full_image": 923725
+  }
+]

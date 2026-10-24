@@ -1,0 +1,29 @@
+{
+  "split": "70/30 stratified",
+  "best_epoch": 16,
+  "metrics": {
+    "accuracy": 0.9814814814814815,
+    "precision": 0.9811320754716981,
+    "recall": 1.0,
+    "f1_score": 0.9904761904761905,
+    "specificity": 0.5,
+    "confusion_matrix": {
+      "TP": 52,
+      "TN": 1,
+      "FP": 1,
+      "FN": 0
+    },
+    "total_samples": 54,
+    "flood_count": 52,
+    "non_flood_count": 2
+  },
+  "training_config": {
+    "epochs": 20,
+    "freeze_epochs": 5,
+    "class_weighted": true,
+    "class_weights": [
+      9.214285850524902,
+      0.5286885499954224
+    ]
+  }
+}

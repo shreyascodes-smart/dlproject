@@ -1,0 +1,45 @@
+{
+  "findings": [
+    {
+      "level": "MISSING",
+      "message": "Segmentation dataset loader (flood_seg_dataset.py)"
+    },
+    {
+      "level": "MISSING",
+      "message": "Segmentation training script (train_flood_seg.py)"
+    },
+    {
+      "level": "MISSING",
+      "message": "segmentation_models_pytorch (recommended for U-Net)"
+    }
+  ],
+  "actual_counts": {
+    "train": {
+      "flood": 18445231,
+      "non_flood": 945554015,
+      "ignore": 560436880,
+      "total": 1524436126
+    },
+    "val": {
+      "flood": 17903524,
+      "non_flood": 124576349,
+      "ignore": 66480501,
+      "total": 208960374
+    },
+    "test": {
+      "flood": 722271,
+      "non_flood": 63023082,
+      "ignore": 45259891,
+      "total": 109005244
+    }
+  },
+  "crs_cases": {
+    "matched": 153,
+    "missing_assumed": 0,
+    "mismatch": 0
+  },
+  "train_class_weights": {
+    "non_flood": 0.5098,
+    "flood": 26.1314
+  }
+}

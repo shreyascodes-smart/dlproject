@@ -1,0 +1,3136 @@
+{
+  "meta": {
+    "created": "2026-10-24T00:23:07.157257",
+    "seed": 42,
+    "data_root": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2",
+    "mask_dir": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks",
+    "mask_values": {
+      "0": "ignore",
+      "1": "non_flood",
+      "2": "flood"
+    },
+    "total_rasterized": 153,
+    "total_events": 39,
+    "task": "Pixel-level flood segmentation using verified Copernicus EMS polygons",
+    "label_semantics": "Positive class: verified flood extent from Copernicus EMS 'Flooded area' polygons. Negative class: supervised area mapped by EMS but no flood extent found. Ignore: cloud, invalid, outside AOI, or insufficient supervision."
+  },
+  "splits": {
+    "train": {
+      "split": "train",
+      "event_ids": [
+        "EMSR249",
+        "EMSR251",
+        "EMSR255",
+        "EMSR260",
+        "EMSR269",
+        "EMSR271",
+        "EMSR273",
+        "EMSR275",
+        "EMSR279",
+        "EMSR280",
+        "EMSR283",
+        "EMSR286",
+        "EMSR292",
+        "EMSR293",
+        "EMSR294",
+        "EMSR311",
+        "EMSR319",
+        "EMSR321",
+        "EMSR324",
+        "EMSR333",
+        "EMSR347",
+        "EMSR358",
+        "EMSR419",
+        "EMSR427",
+        "EMSR438",
+        "EMSR466",
+        "EMSR629"
+      ],
+      "n_events": 27,
+      "n_samples": 107,
+      "n_positive": 75,
+      "n_negative": 32,
+      "total_flood_px": 18445231,
+      "total_supervised_px": 963999246,
+      "flood_pct": 1.9134,
+      "samples": [
+        {
+          "name": "EMSR249_03GALWAY_DEL_v2",
+          "original_split": "train",
+          "event_id": "EMSR249",
+          "label_status": "positive",
+          "flood_px": 2380,
+          "non_flood_px": 247497,
+          "supervised_px": 249877,
+          "flood_pct": 0.9525,
+          "meta_flood_px": 10267,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR249_03GALWAY_DEL_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR249_03GALWAY_DEL_v2_validity.tif"
+        },
+        {
+          "name": "EMSR249_07KILRUSHTARBERT_DEL_v2",
+          "original_split": "train",
+          "event_id": "EMSR249",
+          "label_status": "positive",
+          "flood_px": 421,
+          "non_flood_px": 1250963,
+          "supervised_px": 1251384,
+          "flood_pct": 0.0336,
+          "meta_flood_px": 474,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR249_07KILRUSHTARBERT_DEL_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR249_07KILRUSHTARBERT_DEL_v2_validity.tif"
+        },
+        {
+          "name": "EMSR249_14WATERVILLE_DEL_v2",
+          "original_split": "train",
+          "event_id": "EMSR249",
+          "label_status": "positive",
+          "flood_px": 17,
+          "non_flood_px": 204379,
+          "supervised_px": 204396,
+          "flood_pct": 0.0083,
+          "meta_flood_px": 493,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR249_14WATERVILLE_DEL_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR249_14WATERVILLE_DEL_v2_validity.tif"
+        },
+        {
+          "name": "EMSR249_15LAHINCH_DEL_v1",
+          "original_split": "train",
+          "event_id": "EMSR249",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 24864,
+          "supervised_px": 24864,
+          "flood_pct": 0.0,
+          "meta_flood_px": 4312,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR249_15LAHINCH_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR249_15LAHINCH_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR251_03KRAGERO_DEL_MONIT01_v1",
+          "original_split": "train",
+          "event_id": "EMSR251",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 37338672,
+          "supervised_px": 37338672,
+          "flood_pct": 0.0,
+          "meta_flood_px": 7369,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR251_03KRAGERO_DEL_MONIT01_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR251_03KRAGERO_DEL_MONIT01_v1_validity.tif"
+        },
+        {
+          "name": "EMSR255_03SCHONECK_DEL_v1",
+          "original_split": "train",
+          "event_id": "EMSR255",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 242781,
+          "supervised_px": 242781,
+          "flood_pct": 0.0,
+          "meta_flood_px": 4085,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR255_03SCHONECK_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR255_03SCHONECK_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR260_01CICOGNARA_DEL_MONIT01_v2",
+          "original_split": "train",
+          "event_id": "EMSR260",
+          "label_status": "positive",
+          "flood_px": 1240,
+          "non_flood_px": 764114,
+          "supervised_px": 765354,
+          "flood_pct": 0.162,
+          "meta_flood_px": 38822,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR260_01CICOGNARA_DEL_MONIT01_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR260_01CICOGNARA_DEL_MONIT01_v2_validity.tif"
+        },
+        {
+          "name": "EMSR260_01CICOGNARA_DEL_v2",
+          "original_split": "train",
+          "event_id": "EMSR260",
+          "label_status": "positive",
+          "flood_px": 24867,
+          "non_flood_px": 828489,
+          "supervised_px": 853356,
+          "flood_pct": 2.914,
+          "meta_flood_px": 40952,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR260_01CICOGNARA_DEL_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR260_01CICOGNARA_DEL_v2_validity.tif"
+        },
+        {
+          "name": "EMSR260_01CICOGNARA_GRA_v3",
+          "original_split": "train",
+          "event_id": "EMSR260",
+          "label_status": "positive",
+          "flood_px": 6750,
+          "non_flood_px": 758604,
+          "supervised_px": 765354,
+          "flood_pct": 0.8819,
+          "meta_flood_px": 43043,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR260_01CICOGNARA_GRA_v3_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR260_01CICOGNARA_GRA_v3_validity.tif"
+        },
+        {
+          "name": "EMSR260_02VIADANA_MANUAL_LABEL",
+          "original_split": "train",
+          "event_id": "EMSR260",
+          "label_status": "positive",
+          "flood_px": 158,
+          "non_flood_px": 857858,
+          "supervised_px": 858016,
+          "flood_pct": 0.0184,
+          "meta_flood_px": 237,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR260_02VIADANA_MANUAL_LABEL_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR260_02VIADANA_MANUAL_LABEL_validity.tif"
+        },
+        {
+          "name": "EMSR260_03SORBOLO_DEL_v2",
+          "original_split": "train",
+          "event_id": "EMSR260",
+          "label_status": "positive",
+          "flood_px": 15869,
+          "non_flood_px": 838441,
+          "supervised_px": 854310,
+          "flood_pct": 1.8575,
+          "meta_flood_px": 21120,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR260_03SORBOLO_DEL_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR260_03SORBOLO_DEL_v2_validity.tif"
+        },
+        {
+          "name": "EMSR260_09RUBIERA_DEL_MONIT01_v1",
+          "original_split": "train",
+          "event_id": "EMSR260",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 823242,
+          "supervised_px": 823242,
+          "flood_pct": 0.0,
+          "meta_flood_px": 13472,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR260_09RUBIERA_DEL_MONIT01_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR260_09RUBIERA_DEL_MONIT01_v1_validity.tif"
+        },
+        {
+          "name": "EMSR260_09RUBIERA_DEL_v1",
+          "original_split": "train",
+          "event_id": "EMSR260",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 823242,
+          "supervised_px": 823242,
+          "flood_pct": 0.0,
+          "meta_flood_px": 12686,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR260_09RUBIERA_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR260_09RUBIERA_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR269_02FAHEFA_GRA_v1",
+          "original_split": "train",
+          "event_id": "EMSR269",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 34309,
+          "supervised_px": 34309,
+          "flood_pct": 0.0,
+          "meta_flood_px": 93,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR269_02FAHEFA_GRA_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR269_02FAHEFA_GRA_v1_validity.tif"
+        },
+        {
+          "name": "EMSR269_06VEITONGO_GRA_MONIT01_v1",
+          "original_split": "train",
+          "event_id": "EMSR269",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 196449,
+          "supervised_px": 196449,
+          "flood_pct": 0.0,
+          "meta_flood_px": 4956,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR269_06VEITONGO_GRA_MONIT01_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR269_06VEITONGO_GRA_MONIT01_v1_validity.tif"
+        },
+        {
+          "name": "EMSR269_06VEITONGO_GRA_v2",
+          "original_split": "train",
+          "event_id": "EMSR269",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 196449,
+          "supervised_px": 196449,
+          "flood_pct": 0.0,
+          "meta_flood_px": 4912,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR269_06VEITONGO_GRA_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR269_06VEITONGO_GRA_v2_validity.tif"
+        },
+        {
+          "name": "EMSR271_04STEFANOVIKIO_DEL_v1",
+          "original_split": "train",
+          "event_id": "EMSR271",
+          "label_status": "positive",
+          "flood_px": 3190,
+          "non_flood_px": 3777636,
+          "supervised_px": 3780826,
+          "flood_pct": 0.0844,
+          "meta_flood_px": 4008,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR271_04STEFANOVIKIO_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR271_04STEFANOVIKIO_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR271_05THESSALYOVERVIEW_DEL_MONIT01_v2",
+          "original_split": "train",
+          "event_id": "EMSR271",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 93737902,
+          "supervised_px": 93737902,
+          "flood_pct": 0.0,
+          "meta_flood_px": 1178320,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR271_05THESSALYOVERVIEW_DEL_MONIT01_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR271_05THESSALYOVERVIEW_DEL_MONIT01_v2_validity.tif"
+        },
+        {
+          "name": "EMSR271_05THESSALYOVERVIEW_DEL_MONIT02_v2",
+          "original_split": "train",
+          "event_id": "EMSR271",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 98239331,
+          "supervised_px": 98239331,
+          "flood_pct": 0.0,
+          "meta_flood_px": 1143194,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR271_05THESSALYOVERVIEW_DEL_MONIT02_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR271_05THESSALYOVERVIEW_DEL_MONIT02_v2_validity.tif"
+        },
+        {
+          "name": "EMSR271_05THESSALYOVERVIEW_DEL_v2",
+          "original_split": "train",
+          "event_id": "EMSR271",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 93737902,
+          "supervised_px": 93737902,
+          "flood_pct": 0.0,
+          "meta_flood_px": 173785,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR271_05THESSALYOVERVIEW_DEL_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR271_05THESSALYOVERVIEW_DEL_v2_validity.tif"
+        },
+        {
+          "name": "EMSR273_01GRILE_DEL_MONIT04_v2",
+          "original_split": "test",
+          "event_id": "EMSR273",
+          "label_status": "positive",
+          "flood_px": 42414,
+          "non_flood_px": 720630,
+          "supervised_px": 763044,
+          "flood_pct": 5.5585,
+          "meta_flood_px": 48613,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR273_01GRILE_DEL_MONIT04_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR273_01GRILE_DEL_MONIT04_v2_validity.tif"
+        },
+        {
+          "name": "EMSR275_01LIJEVIDOBROVCAK_DEL_MONIT01_v1",
+          "original_split": "train",
+          "event_id": "EMSR275",
+          "label_status": "positive",
+          "flood_px": 182833,
+          "non_flood_px": 1942257,
+          "supervised_px": 2125090,
+          "flood_pct": 8.6035,
+          "meta_flood_px": 1017252,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR275_01LIJEVIDOBROVCAK_DEL_MONIT01_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR275_01LIJEVIDOBROVCAK_DEL_MONIT01_v1_validity.tif"
+        },
+        {
+          "name": "EMSR275_01LIJEVIDOBROVCAK_DEL_v1",
+          "original_split": "train",
+          "event_id": "EMSR275",
+          "label_status": "positive",
+          "flood_px": 151724,
+          "non_flood_px": 1973366,
+          "supervised_px": 2125090,
+          "flood_pct": 7.1397,
+          "meta_flood_px": 790172,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR275_01LIJEVIDOBROVCAK_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR275_01LIJEVIDOBROVCAK_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR275_02KUTINA_DEL_MONIT01_v1",
+          "original_split": "train",
+          "event_id": "EMSR275",
+          "label_status": "positive",
+          "flood_px": 344749,
+          "non_flood_px": 1143589,
+          "supervised_px": 1488338,
+          "flood_pct": 23.1634,
+          "meta_flood_px": 1091365,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR275_02KUTINA_DEL_MONIT01_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR275_02KUTINA_DEL_MONIT01_v1_validity.tif"
+        },
+        {
+          "name": "EMSR279_04TUDELA_DEL_MONIT01_v2",
+          "original_split": "train",
+          "event_id": "EMSR279",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 23963613,
+          "supervised_px": 23963613,
+          "flood_pct": 0.0,
+          "meta_flood_px": 783431,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR279_04TUDELA_DEL_MONIT01_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR279_04TUDELA_DEL_MONIT01_v2_validity.tif"
+        },
+        {
+          "name": "EMSR279_04TUDELA_DEL_MONIT02_v1",
+          "original_split": "train",
+          "event_id": "EMSR279",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 23963613,
+          "supervised_px": 23963613,
+          "flood_pct": 0.0,
+          "meta_flood_px": 632460,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR279_04TUDELA_DEL_MONIT02_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR279_04TUDELA_DEL_MONIT02_v1_validity.tif"
+        },
+        {
+          "name": "EMSR279_04TUDELA_DEL_v1",
+          "original_split": "train",
+          "event_id": "EMSR279",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 22405926,
+          "supervised_px": 22405926,
+          "flood_pct": 0.0,
+          "meta_flood_px": 673338,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR279_04TUDELA_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR279_04TUDELA_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR279_05ZARAGOZA_DEL_MONIT01_v2",
+          "original_split": "train",
+          "event_id": "EMSR279",
+          "label_status": "positive",
+          "flood_px": 285840,
+          "non_flood_px": 1066931,
+          "supervised_px": 1352771,
+          "flood_pct": 21.13,
+          "meta_flood_px": 754355,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR279_05ZARAGOZA_DEL_MONIT01_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR279_05ZARAGOZA_DEL_MONIT01_v2_validity.tif"
+        },
+        {
+          "name": "EMSR279_05ZARAGOZA_DEL_MONIT02_v1",
+          "original_split": "train",
+          "event_id": "EMSR279",
+          "label_status": "positive",
+          "flood_px": 289501,
+          "non_flood_px": 1063270,
+          "supervised_px": 1352771,
+          "flood_pct": 21.4006,
+          "meta_flood_px": 766949,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR279_05ZARAGOZA_DEL_MONIT02_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR279_05ZARAGOZA_DEL_MONIT02_v1_validity.tif"
+        },
+        {
+          "name": "EMSR279_06CASPE_DEL_MONIT01_v2",
+          "original_split": "train",
+          "event_id": "EMSR279",
+          "label_status": "positive",
+          "flood_px": 124190,
+          "non_flood_px": 23401871,
+          "supervised_px": 23526061,
+          "flood_pct": 0.5279,
+          "meta_flood_px": 128355,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR279_06CASPE_DEL_MONIT01_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR279_06CASPE_DEL_MONIT01_v2_validity.tif"
+        },
+        {
+          "name": "EMSR279_06CASPE_DEL_MONIT02_v2",
+          "original_split": "train",
+          "event_id": "EMSR279",
+          "label_status": "positive",
+          "flood_px": 98245,
+          "non_flood_px": 23427816,
+          "supervised_px": 23526061,
+          "flood_pct": 0.4176,
+          "meta_flood_px": 316290,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR279_06CASPE_DEL_MONIT02_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR279_06CASPE_DEL_MONIT02_v2_validity.tif"
+        },
+        {
+          "name": "EMSR279_06CASPE_DEL_v2",
+          "original_split": "train",
+          "event_id": "EMSR279",
+          "label_status": "positive",
+          "flood_px": 80246,
+          "non_flood_px": 23445815,
+          "supervised_px": 23526061,
+          "flood_pct": 0.3411,
+          "meta_flood_px": 82745,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR279_06CASPE_DEL_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR279_06CASPE_DEL_v2_validity.tif"
+        },
+        {
+          "name": "EMSR279_07ALFARO_GRA_v1",
+          "original_split": "train",
+          "event_id": "EMSR279",
+          "label_status": "positive",
+          "flood_px": 44578,
+          "non_flood_px": 543052,
+          "supervised_px": 587630,
+          "flood_pct": 7.5861,
+          "meta_flood_px": 59783,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR279_07ALFARO_GRA_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR279_07ALFARO_GRA_v1_validity.tif"
+        },
+        {
+          "name": "EMSR279_08ALCALADEEBRO_GRA_v1",
+          "original_split": "train",
+          "event_id": "EMSR279",
+          "label_status": "positive",
+          "flood_px": 149770,
+          "non_flood_px": 436148,
+          "supervised_px": 585918,
+          "flood_pct": 25.5616,
+          "meta_flood_px": 162643,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR279_08ALCALADEEBRO_GRA_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR279_08ALCALADEEBRO_GRA_v1_validity.tif"
+        },
+        {
+          "name": "EMSR280_01MALUNG_DEL_MONIT02_v1",
+          "original_split": "train",
+          "event_id": "EMSR280",
+          "label_status": "positive",
+          "flood_px": 677226,
+          "non_flood_px": 4825985,
+          "supervised_px": 5503211,
+          "flood_pct": 12.306,
+          "meta_flood_px": 1029697,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_01MALUNG_DEL_MONIT02_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_01MALUNG_DEL_MONIT02_v1_validity.tif"
+        },
+        {
+          "name": "EMSR280_01MALUNG_DEL_MONIT03_v1",
+          "original_split": "train",
+          "event_id": "EMSR280",
+          "label_status": "positive",
+          "flood_px": 119186,
+          "non_flood_px": 5384025,
+          "supervised_px": 5503211,
+          "flood_pct": 2.1658,
+          "meta_flood_px": 319280,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_01MALUNG_DEL_MONIT03_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_01MALUNG_DEL_MONIT03_v1_validity.tif"
+        },
+        {
+          "name": "EMSR280_01MALUNG_DEL_MONIT04_v1",
+          "original_split": "train",
+          "event_id": "EMSR280",
+          "label_status": "positive",
+          "flood_px": 43624,
+          "non_flood_px": 6621602,
+          "supervised_px": 6665226,
+          "flood_pct": 0.6545,
+          "meta_flood_px": 149839,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_01MALUNG_DEL_MONIT04_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_01MALUNG_DEL_MONIT04_v1_validity.tif"
+        },
+        {
+          "name": "EMSR280_01MALUNG_DEL_MONIT05_v2",
+          "original_split": "train",
+          "event_id": "EMSR280",
+          "label_status": "positive",
+          "flood_px": 12741,
+          "non_flood_px": 1723776,
+          "supervised_px": 1736517,
+          "flood_pct": 0.7337,
+          "meta_flood_px": 55442,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_01MALUNG_DEL_MONIT05_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_01MALUNG_DEL_MONIT05_v2_validity.tif"
+        },
+        {
+          "name": "EMSR280_02VANSBRO_DEL_MONIT02_v1",
+          "original_split": "train",
+          "event_id": "EMSR280",
+          "label_status": "positive",
+          "flood_px": 171910,
+          "non_flood_px": 3773513,
+          "supervised_px": 3945423,
+          "flood_pct": 4.3572,
+          "meta_flood_px": 489941,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_02VANSBRO_DEL_MONIT02_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_02VANSBRO_DEL_MONIT02_v1_validity.tif"
+        },
+        {
+          "name": "EMSR280_02VANSBRO_DEL_MONIT04_v1",
+          "original_split": "train",
+          "event_id": "EMSR280",
+          "label_status": "positive",
+          "flood_px": 98603,
+          "non_flood_px": 16190724,
+          "supervised_px": 16289327,
+          "flood_pct": 0.6053,
+          "meta_flood_px": 159044,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_02VANSBRO_DEL_MONIT04_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_02VANSBRO_DEL_MONIT04_v1_validity.tif"
+        },
+        {
+          "name": "EMSR280_02VANSBRO_DEL_MONIT05_v1",
+          "original_split": "train",
+          "event_id": "EMSR280",
+          "label_status": "positive",
+          "flood_px": 111560,
+          "non_flood_px": 10629332,
+          "supervised_px": 10740892,
+          "flood_pct": 1.0386,
+          "meta_flood_px": 184010,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_02VANSBRO_DEL_MONIT05_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_02VANSBRO_DEL_MONIT05_v1_validity.tif"
+        },
+        {
+          "name": "EMSR280_02VANSBRO_DEL_v1",
+          "original_split": "train",
+          "event_id": "EMSR280",
+          "label_status": "positive",
+          "flood_px": 274184,
+          "non_flood_px": 17159786,
+          "supervised_px": 17433970,
+          "flood_pct": 1.5727,
+          "meta_flood_px": 595290,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_02VANSBRO_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_02VANSBRO_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR280_03FALUN_DEL_MONIT01_v2",
+          "original_split": "train",
+          "event_id": "EMSR280",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 8495307,
+          "supervised_px": 8495307,
+          "flood_pct": 0.0,
+          "meta_flood_px": 2544,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_03FALUN_DEL_MONIT01_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_03FALUN_DEL_MONIT01_v2_validity.tif"
+        },
+        {
+          "name": "EMSR280_03FALUN_DEL_MONIT03_v2",
+          "original_split": "train",
+          "event_id": "EMSR280",
+          "label_status": "positive",
+          "flood_px": 156,
+          "non_flood_px": 2872760,
+          "supervised_px": 2872916,
+          "flood_pct": 0.0054,
+          "meta_flood_px": 10370,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_03FALUN_DEL_MONIT03_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_03FALUN_DEL_MONIT03_v2_validity.tif"
+        },
+        {
+          "name": "EMSR280_03FALUN_DEL_MONIT05_v2",
+          "original_split": "train",
+          "event_id": "EMSR280",
+          "label_status": "positive",
+          "flood_px": 26012,
+          "non_flood_px": 18709245,
+          "supervised_px": 18735257,
+          "flood_pct": 0.1388,
+          "meta_flood_px": 120871,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_03FALUN_DEL_MONIT05_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_03FALUN_DEL_MONIT05_v2_validity.tif"
+        },
+        {
+          "name": "EMSR280_03FALUN_DEL_MONIT06_v2",
+          "original_split": "val",
+          "event_id": "EMSR280",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 12670251,
+          "supervised_px": 12670251,
+          "flood_pct": 0.0,
+          "meta_flood_px": 164099,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_03FALUN_DEL_MONIT06_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_03FALUN_DEL_MONIT06_v2_validity.tif"
+        },
+        {
+          "name": "EMSR280_04ENVIKEN_DEL_MONIT01_v2",
+          "original_split": "train",
+          "event_id": "EMSR280",
+          "label_status": "positive",
+          "flood_px": 167908,
+          "non_flood_px": 9841392,
+          "supervised_px": 10009300,
+          "flood_pct": 1.6775,
+          "meta_flood_px": 427822,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_04ENVIKEN_DEL_MONIT01_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_04ENVIKEN_DEL_MONIT01_v2_validity.tif"
+        },
+        {
+          "name": "EMSR280_04ENVIKEN_DEL_MONIT02_v2",
+          "original_split": "train",
+          "event_id": "EMSR280",
+          "label_status": "positive",
+          "flood_px": 109565,
+          "non_flood_px": 8076898,
+          "supervised_px": 8186463,
+          "flood_pct": 1.3384,
+          "meta_flood_px": 411975,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_04ENVIKEN_DEL_MONIT02_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_04ENVIKEN_DEL_MONIT02_v2_validity.tif"
+        },
+        {
+          "name": "EMSR280_04ENVIKEN_DEL_MONIT03_v1",
+          "original_split": "train",
+          "event_id": "EMSR280",
+          "label_status": "positive",
+          "flood_px": 36179,
+          "non_flood_px": 9371801,
+          "supervised_px": 9407980,
+          "flood_pct": 0.3846,
+          "meta_flood_px": 67986,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_04ENVIKEN_DEL_MONIT03_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_04ENVIKEN_DEL_MONIT03_v1_validity.tif"
+        },
+        {
+          "name": "EMSR280_04ENVIKEN_DEL_MONIT04_v1",
+          "original_split": "train",
+          "event_id": "EMSR280",
+          "label_status": "positive",
+          "flood_px": 9452,
+          "non_flood_px": 20860463,
+          "supervised_px": 20869915,
+          "flood_pct": 0.0453,
+          "meta_flood_px": 10191,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_04ENVIKEN_DEL_MONIT04_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_04ENVIKEN_DEL_MONIT04_v1_validity.tif"
+        },
+        {
+          "name": "EMSR280_04ENVIKEN_DEL_MONIT05_v2",
+          "original_split": "train",
+          "event_id": "EMSR280",
+          "label_status": "positive",
+          "flood_px": 3690,
+          "non_flood_px": 21490751,
+          "supervised_px": 21494441,
+          "flood_pct": 0.0172,
+          "meta_flood_px": 63034,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_04ENVIKEN_DEL_MONIT05_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_04ENVIKEN_DEL_MONIT05_v2_validity.tif"
+        },
+        {
+          "name": "EMSR280_04ENVIKEN_DEL_MONIT06_v1",
+          "original_split": "train",
+          "event_id": "EMSR280",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 3646317,
+          "supervised_px": 3646317,
+          "flood_pct": 0.0,
+          "meta_flood_px": 61361,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_04ENVIKEN_DEL_MONIT06_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_04ENVIKEN_DEL_MONIT06_v1_validity.tif"
+        },
+        {
+          "name": "EMSR280_04ENVIKEN_DEL_v2",
+          "original_split": "train",
+          "event_id": "EMSR280",
+          "label_status": "positive",
+          "flood_px": 294930,
+          "non_flood_px": 20990957,
+          "supervised_px": 21285887,
+          "flood_pct": 1.3856,
+          "meta_flood_px": 346763,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_04ENVIKEN_DEL_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_04ENVIKEN_DEL_v2_validity.tif"
+        },
+        {
+          "name": "EMSR280_05MORA_DEL_MONIT02_v1",
+          "original_split": "train",
+          "event_id": "EMSR280",
+          "label_status": "positive",
+          "flood_px": 117729,
+          "non_flood_px": 5420195,
+          "supervised_px": 5537924,
+          "flood_pct": 2.1259,
+          "meta_flood_px": 415647,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_05MORA_DEL_MONIT02_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_05MORA_DEL_MONIT02_v1_validity.tif"
+        },
+        {
+          "name": "EMSR280_05MORA_DEL_MONIT03_v1",
+          "original_split": "train",
+          "event_id": "EMSR280",
+          "label_status": "positive",
+          "flood_px": 8519,
+          "non_flood_px": 1453723,
+          "supervised_px": 1462242,
+          "flood_pct": 0.5826,
+          "meta_flood_px": 360191,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_05MORA_DEL_MONIT03_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_05MORA_DEL_MONIT03_v1_validity.tif"
+        },
+        {
+          "name": "EMSR280_05MORA_DEL_MONIT05_v1",
+          "original_split": "train",
+          "event_id": "EMSR280",
+          "label_status": "positive",
+          "flood_px": 40037,
+          "non_flood_px": 8442230,
+          "supervised_px": 8482267,
+          "flood_pct": 0.472,
+          "meta_flood_px": 68399,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_05MORA_DEL_MONIT05_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_05MORA_DEL_MONIT05_v1_validity.tif"
+        },
+        {
+          "name": "EMSR280_05MORA_DEL_v2",
+          "original_split": "train",
+          "event_id": "EMSR280",
+          "label_status": "positive",
+          "flood_px": 7308,
+          "non_flood_px": 4998220,
+          "supervised_px": 5005528,
+          "flood_pct": 0.146,
+          "meta_flood_px": 30488,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_05MORA_DEL_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR280_05MORA_DEL_v2_validity.tif"
+        },
+        {
+          "name": "EMSR283_01JORDET_DEL_MONIT01_v2",
+          "original_split": "train",
+          "event_id": "EMSR283",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 1753947,
+          "supervised_px": 1753947,
+          "flood_pct": 0.0,
+          "meta_flood_px": 3962,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_01JORDET_DEL_MONIT01_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_01JORDET_DEL_MONIT01_v2_validity.tif"
+        },
+        {
+          "name": "EMSR283_01JORDET_DEL_MONIT02_v1",
+          "original_split": "train",
+          "event_id": "EMSR283",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 1999042,
+          "supervised_px": 1999042,
+          "flood_pct": 0.0,
+          "meta_flood_px": 5283,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_01JORDET_DEL_MONIT02_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_01JORDET_DEL_MONIT02_v1_validity.tif"
+        },
+        {
+          "name": "EMSR283_01JORDET_DEL_v1",
+          "original_split": "train",
+          "event_id": "EMSR283",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 1753947,
+          "supervised_px": 1753947,
+          "flood_pct": 0.0,
+          "meta_flood_px": 3802,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_01JORDET_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_01JORDET_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR283_02TRYSIL_DEL_MONIT01_v1",
+          "original_split": "train",
+          "event_id": "EMSR283",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 1027148,
+          "supervised_px": 1027148,
+          "flood_pct": 0.0,
+          "meta_flood_px": 14693,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_02TRYSIL_DEL_MONIT01_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_02TRYSIL_DEL_MONIT01_v1_validity.tif"
+        },
+        {
+          "name": "EMSR283_02TRYSIL_DEL_MONIT02_v1",
+          "original_split": "train",
+          "event_id": "EMSR283",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 2392835,
+          "supervised_px": 2392835,
+          "flood_pct": 0.0,
+          "meta_flood_px": 19639,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_02TRYSIL_DEL_MONIT02_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_02TRYSIL_DEL_MONIT02_v1_validity.tif"
+        },
+        {
+          "name": "EMSR283_02TRYSIL_DEL_v2",
+          "original_split": "train",
+          "event_id": "EMSR283",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 1027148,
+          "supervised_px": 1027148,
+          "flood_pct": 0.0,
+          "meta_flood_px": 14060,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_02TRYSIL_DEL_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_02TRYSIL_DEL_v2_validity.tif"
+        },
+        {
+          "name": "EMSR283_03ELVERUM_DEL_MONIT01_v1",
+          "original_split": "train",
+          "event_id": "EMSR283",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 412317,
+          "supervised_px": 412317,
+          "flood_pct": 0.0,
+          "meta_flood_px": 12338,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_03ELVERUM_DEL_MONIT01_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_03ELVERUM_DEL_MONIT01_v1_validity.tif"
+        },
+        {
+          "name": "EMSR283_03ELVERUM_DEL_MONIT02_v1",
+          "original_split": "train",
+          "event_id": "EMSR283",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 3513391,
+          "supervised_px": 3513391,
+          "flood_pct": 0.0,
+          "meta_flood_px": 12056,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_03ELVERUM_DEL_MONIT02_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_03ELVERUM_DEL_MONIT02_v1_validity.tif"
+        },
+        {
+          "name": "EMSR283_04BRASKEREIDFOSS_DEL_MONIT02_v1",
+          "original_split": "train",
+          "event_id": "EMSR283",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 2074094,
+          "supervised_px": 2074094,
+          "flood_pct": 0.0,
+          "meta_flood_px": 13919,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_04BRASKEREIDFOSS_DEL_MONIT02_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_04BRASKEREIDFOSS_DEL_MONIT02_v1_validity.tif"
+        },
+        {
+          "name": "EMSR283_05FLISA_DEL_MONIT01_v1",
+          "original_split": "train",
+          "event_id": "EMSR283",
+          "label_status": "positive",
+          "flood_px": 46923,
+          "non_flood_px": 2993748,
+          "supervised_px": 3040671,
+          "flood_pct": 1.5432,
+          "meta_flood_px": 53973,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_05FLISA_DEL_MONIT01_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_05FLISA_DEL_MONIT01_v1_validity.tif"
+        },
+        {
+          "name": "EMSR283_06GRINDER_DEL_MONIT01_v1",
+          "original_split": "train",
+          "event_id": "EMSR283",
+          "label_status": "positive",
+          "flood_px": 10621,
+          "non_flood_px": 908157,
+          "supervised_px": 918778,
+          "flood_pct": 1.156,
+          "meta_flood_px": 42403,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_06GRINDER_DEL_MONIT01_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_06GRINDER_DEL_MONIT01_v1_validity.tif"
+        },
+        {
+          "name": "EMSR283_07KONGSVINGER_DEL_MONIT01_v1",
+          "original_split": "train",
+          "event_id": "EMSR283",
+          "label_status": "positive",
+          "flood_px": 29080,
+          "non_flood_px": 3034159,
+          "supervised_px": 3063239,
+          "flood_pct": 0.9493,
+          "meta_flood_px": 34603,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_07KONGSVINGER_DEL_MONIT01_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_07KONGSVINGER_DEL_MONIT01_v1_validity.tif"
+        },
+        {
+          "name": "EMSR283_07KONGSVINGER_DEL_v1",
+          "original_split": "train",
+          "event_id": "EMSR283",
+          "label_status": "positive",
+          "flood_px": 9469,
+          "non_flood_px": 682774,
+          "supervised_px": 692243,
+          "flood_pct": 1.3679,
+          "meta_flood_px": 29282,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_07KONGSVINGER_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_07KONGSVINGER_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR283_08SKARNES_DEL_MONIT01_v1",
+          "original_split": "train",
+          "event_id": "EMSR283",
+          "label_status": "positive",
+          "flood_px": 17684,
+          "non_flood_px": 2790780,
+          "supervised_px": 2808464,
+          "flood_pct": 0.6297,
+          "meta_flood_px": 21095,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_08SKARNES_DEL_MONIT01_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_08SKARNES_DEL_MONIT01_v1_validity.tif"
+        },
+        {
+          "name": "EMSR283_08SKARNES_DEL_v1",
+          "original_split": "train",
+          "event_id": "EMSR283",
+          "label_status": "positive",
+          "flood_px": 12645,
+          "non_flood_px": 2795819,
+          "supervised_px": 2808464,
+          "flood_pct": 0.4502,
+          "meta_flood_px": 15686,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_08SKARNES_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_08SKARNES_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR283_09LILLESTROM_DEL_MONIT01_v2",
+          "original_split": "train",
+          "event_id": "EMSR283",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 864634,
+          "supervised_px": 864634,
+          "flood_pct": 0.0,
+          "meta_flood_px": 23510,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_09LILLESTROM_DEL_MONIT01_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_09LILLESTROM_DEL_MONIT01_v2_validity.tif"
+        },
+        {
+          "name": "EMSR283_09LILLESTROM_DEL_MONIT02_v1",
+          "original_split": "train",
+          "event_id": "EMSR283",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 2108544,
+          "supervised_px": 2108544,
+          "flood_pct": 0.0,
+          "meta_flood_px": 25813,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_09LILLESTROM_DEL_MONIT02_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_09LILLESTROM_DEL_MONIT02_v1_validity.tif"
+        },
+        {
+          "name": "EMSR283_09LILLESTROM_DEL_v1",
+          "original_split": "train",
+          "event_id": "EMSR283",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 864634,
+          "supervised_px": 864634,
+          "flood_pct": 0.0,
+          "meta_flood_px": 10538,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_09LILLESTROM_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_09LILLESTROM_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR283_10OTTA_DEL_MONIT01_v2",
+          "original_split": "train",
+          "event_id": "EMSR283",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 839298,
+          "supervised_px": 839298,
+          "flood_pct": 0.0,
+          "meta_flood_px": 14315,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_10OTTA_DEL_MONIT01_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_10OTTA_DEL_MONIT01_v2_validity.tif"
+        },
+        {
+          "name": "EMSR283_10OTTA_DEL_MONIT02_v2",
+          "original_split": "train",
+          "event_id": "EMSR283",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 839298,
+          "supervised_px": 839298,
+          "flood_pct": 0.0,
+          "meta_flood_px": 13098,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_10OTTA_DEL_MONIT02_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR283_10OTTA_DEL_MONIT02_v2_validity.tif"
+        },
+        {
+          "name": "EMSR286_08ITUANGONORTH_DEL_MONIT02_v1",
+          "original_split": "test",
+          "event_id": "EMSR286",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 5320889,
+          "supervised_px": 5320889,
+          "flood_pct": 0.0,
+          "meta_flood_px": 146524,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR286_08ITUANGONORTH_DEL_MONIT02_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR286_08ITUANGONORTH_DEL_MONIT02_v1_validity.tif"
+        },
+        {
+          "name": "EMSR286_09ITUANGOSOUTH_DEL_MONIT02_v1",
+          "original_split": "test",
+          "event_id": "EMSR286",
+          "label_status": "positive",
+          "flood_px": 13217,
+          "non_flood_px": 5524391,
+          "supervised_px": 5537608,
+          "flood_pct": 0.2387,
+          "meta_flood_px": 14207,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR286_09ITUANGOSOUTH_DEL_MONIT02_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR286_09ITUANGOSOUTH_DEL_MONIT02_v1_validity.tif"
+        },
+        {
+          "name": "EMSR292_01CHRISOUPOLI_DEL_v1",
+          "original_split": "train",
+          "event_id": "EMSR292",
+          "label_status": "positive",
+          "flood_px": 143400,
+          "non_flood_px": 7550270,
+          "supervised_px": 7693670,
+          "flood_pct": 1.8639,
+          "meta_flood_px": 213948,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR292_01CHRISOUPOLI_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR292_01CHRISOUPOLI_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR292_01CHRISOUPOLI_GRA_v2",
+          "original_split": "train",
+          "event_id": "EMSR292",
+          "label_status": "positive",
+          "flood_px": 153510,
+          "non_flood_px": 7540160,
+          "supervised_px": 7693670,
+          "flood_pct": 1.9953,
+          "meta_flood_px": 217256,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR292_01CHRISOUPOLI_GRA_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR292_01CHRISOUPOLI_GRA_v2_validity.tif"
+        },
+        {
+          "name": "EMSR293_01BOTOSANI_DEL_MONIT01_v1",
+          "original_split": "train",
+          "event_id": "EMSR293",
+          "label_status": "positive",
+          "flood_px": 36344,
+          "non_flood_px": 1597654,
+          "supervised_px": 1633998,
+          "flood_pct": 2.2242,
+          "meta_flood_px": 38158,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR293_01BOTOSANI_DEL_MONIT01_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR293_01BOTOSANI_DEL_MONIT01_v1_validity.tif"
+        },
+        {
+          "name": "EMSR293_01BOTOSANI_DEL_v1",
+          "original_split": "train",
+          "event_id": "EMSR293",
+          "label_status": "positive",
+          "flood_px": 30736,
+          "non_flood_px": 1603262,
+          "supervised_px": 1633998,
+          "flood_pct": 1.881,
+          "meta_flood_px": 32447,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR293_01BOTOSANI_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR293_01BOTOSANI_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR293_01BOTOSANI_GRA_v1",
+          "original_split": "train",
+          "event_id": "EMSR293",
+          "label_status": "positive",
+          "flood_px": 26054,
+          "non_flood_px": 801995,
+          "supervised_px": 828049,
+          "flood_pct": 3.1464,
+          "meta_flood_px": 47314,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR293_01BOTOSANI_GRA_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR293_01BOTOSANI_GRA_v1_validity.tif"
+        },
+        {
+          "name": "EMSR293_03OZUN_DEL_MONIT01_v1",
+          "original_split": "train",
+          "event_id": "EMSR293",
+          "label_status": "positive",
+          "flood_px": 142604,
+          "non_flood_px": 1918178,
+          "supervised_px": 2060782,
+          "flood_pct": 6.9199,
+          "meta_flood_px": 179681,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR293_03OZUN_DEL_MONIT01_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR293_03OZUN_DEL_MONIT01_v1_validity.tif"
+        },
+        {
+          "name": "EMSR293_03OZUN_DEL_v1",
+          "original_split": "train",
+          "event_id": "EMSR293",
+          "label_status": "positive",
+          "flood_px": 124721,
+          "non_flood_px": 1936061,
+          "supervised_px": 2060782,
+          "flood_pct": 6.0521,
+          "meta_flood_px": 163535,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR293_03OZUN_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR293_03OZUN_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR294_01MANDRAMAGOULA_GRA_v1",
+          "original_split": "train",
+          "event_id": "EMSR294",
+          "label_status": "positive",
+          "flood_px": 195,
+          "non_flood_px": 377481,
+          "supervised_px": 377676,
+          "flood_pct": 0.0516,
+          "meta_flood_px": 459,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR294_01MANDRAMAGOULA_GRA_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR294_01MANDRAMAGOULA_GRA_v1_validity.tif"
+        },
+        {
+          "name": "EMSR311_04WILMINGTON_DEL_MONIT01_v1",
+          "original_split": "train",
+          "event_id": "EMSR311",
+          "label_status": "positive",
+          "flood_px": 189257,
+          "non_flood_px": 37214505,
+          "supervised_px": 37403762,
+          "flood_pct": 0.506,
+          "meta_flood_px": 193894,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR311_04WILMINGTON_DEL_MONIT01_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR311_04WILMINGTON_DEL_MONIT01_v1_validity.tif"
+        },
+        {
+          "name": "EMSR311_05JACKSONVILLE_DEL_MONIT03_v1",
+          "original_split": "train",
+          "event_id": "EMSR311",
+          "label_status": "positive",
+          "flood_px": 342495,
+          "non_flood_px": 21720798,
+          "supervised_px": 22063293,
+          "flood_pct": 1.5523,
+          "meta_flood_px": 460386,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR311_05JACKSONVILLE_DEL_MONIT03_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR311_05JACKSONVILLE_DEL_MONIT03_v1_validity.tif"
+        },
+        {
+          "name": "EMSR319_03KORBA_DEL_v1",
+          "original_split": "train",
+          "event_id": "EMSR319",
+          "label_status": "positive",
+          "flood_px": 17751,
+          "non_flood_px": 5130929,
+          "supervised_px": 5148680,
+          "flood_pct": 0.3448,
+          "meta_flood_px": 22784,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR319_03KORBA_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR319_03KORBA_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR319_05SOMAA_DEL_v2",
+          "original_split": "train",
+          "event_id": "EMSR319",
+          "label_status": "positive",
+          "flood_px": 974,
+          "non_flood_px": 3171558,
+          "supervised_px": 3172532,
+          "flood_pct": 0.0307,
+          "meta_flood_px": 20740,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR319_05SOMAA_DEL_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR319_05SOMAA_DEL_v2_validity.tif"
+        },
+        {
+          "name": "EMSR321_02CHOLUTECA_DEL_MONIT01_v1",
+          "original_split": "train",
+          "event_id": "EMSR321",
+          "label_status": "positive",
+          "flood_px": 239094,
+          "non_flood_px": 4218675,
+          "supervised_px": 4457769,
+          "flood_pct": 5.3635,
+          "meta_flood_px": 345007,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR321_02CHOLUTECA_DEL_MONIT01_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR321_02CHOLUTECA_DEL_MONIT01_v1_validity.tif"
+        },
+        {
+          "name": "EMSR324_03MOUSSAN_DEL_MONIT01_v1",
+          "original_split": "train",
+          "event_id": "EMSR324",
+          "label_status": "positive",
+          "flood_px": 76602,
+          "non_flood_px": 3919558,
+          "supervised_px": 3996160,
+          "flood_pct": 1.9169,
+          "meta_flood_px": 90743,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR324_03MOUSSAN_DEL_MONIT01_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR324_03MOUSSAN_DEL_MONIT01_v1_validity.tif"
+        },
+        {
+          "name": "EMSR324_03MOUSSAN_DEL_MONIT02_v1",
+          "original_split": "train",
+          "event_id": "EMSR324",
+          "label_status": "positive",
+          "flood_px": 17444,
+          "non_flood_px": 3978716,
+          "supervised_px": 3996160,
+          "flood_pct": 0.4365,
+          "meta_flood_px": 22291,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR324_03MOUSSAN_DEL_MONIT02_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR324_03MOUSSAN_DEL_MONIT02_v1_validity.tif"
+        },
+        {
+          "name": "EMSR324_03MOUSSAN_DEL_MONIT03_v1",
+          "original_split": "train",
+          "event_id": "EMSR324",
+          "label_status": "positive",
+          "flood_px": 9708,
+          "non_flood_px": 3986452,
+          "supervised_px": 3996160,
+          "flood_pct": 0.2429,
+          "meta_flood_px": 11063,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR324_03MOUSSAN_DEL_MONIT03_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR324_03MOUSSAN_DEL_MONIT03_v1_validity.tif"
+        },
+        {
+          "name": "EMSR324_06TREBES_GRA_v1",
+          "original_split": "train",
+          "event_id": "EMSR324",
+          "label_status": "positive",
+          "flood_px": 2595,
+          "non_flood_px": 396612,
+          "supervised_px": 399207,
+          "flood_pct": 0.65,
+          "meta_flood_px": 13888,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR324_06TREBES_GRA_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR324_06TREBES_GRA_v1_validity.tif"
+        },
+        {
+          "name": "EMSR333_02PORTOPALO_DEL_MONIT01_v1",
+          "original_split": "test",
+          "event_id": "EMSR333",
+          "label_status": "positive",
+          "flood_px": 4740,
+          "non_flood_px": 1635420,
+          "supervised_px": 1640160,
+          "flood_pct": 0.289,
+          "meta_flood_px": 54923,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR333_02PORTOPALO_DEL_MONIT01_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR333_02PORTOPALO_DEL_MONIT01_v1_validity.tif"
+        },
+        {
+          "name": "EMSR347_07ZOMBA_DEL_MONIT01_v1",
+          "original_split": "test",
+          "event_id": "EMSR347",
+          "label_status": "positive",
+          "flood_px": 8008,
+          "non_flood_px": 10041831,
+          "supervised_px": 10049839,
+          "flood_pct": 0.0797,
+          "meta_flood_px": 872018,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR347_07ZOMBA_DEL_MONIT01_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR347_07ZOMBA_DEL_MONIT01_v1_validity.tif"
+        },
+        {
+          "name": "EMSR347_07ZOMBA_DEL_v2",
+          "original_split": "test",
+          "event_id": "EMSR347",
+          "label_status": "positive",
+          "flood_px": 84879,
+          "non_flood_px": 838846,
+          "supervised_px": 923725,
+          "flood_pct": 9.1888,
+          "meta_flood_px": 95937,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR347_07ZOMBA_DEL_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR347_07ZOMBA_DEL_v2_validity.tif"
+        },
+        {
+          "name": "EMSR358_AOI01_FEP_PRODUCT",
+          "original_split": "val",
+          "event_id": "EMSR358",
+          "label_status": "positive",
+          "flood_px": 29878,
+          "non_flood_px": 423506,
+          "supervised_px": 453384,
+          "flood_pct": 6.59,
+          "meta_flood_px": 30749,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR358_AOI01_FEP_PRODUCT_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR358_AOI01_FEP_PRODUCT_validity.tif"
+        },
+        {
+          "name": "EMSR419_AOI01_DEL_MONIT01",
+          "original_split": "test",
+          "event_id": "EMSR419",
+          "label_status": "positive",
+          "flood_px": 124065,
+          "non_flood_px": 3690157,
+          "supervised_px": 3814222,
+          "flood_pct": 3.2527,
+          "meta_flood_px": 126432,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR419_AOI01_DEL_MONIT01_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR419_AOI01_DEL_MONIT01_validity.tif"
+        },
+        {
+          "name": "EMSR427_AOI03_DEL_MONIT02",
+          "original_split": "val",
+          "event_id": "EMSR427",
+          "label_status": "positive",
+          "flood_px": 178959,
+          "non_flood_px": 45282624,
+          "supervised_px": 45461583,
+          "flood_pct": 0.3936,
+          "meta_flood_px": 183891,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR427_AOI03_DEL_MONIT02_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR427_AOI03_DEL_MONIT02_validity.tif"
+        },
+        {
+          "name": "EMSR438_AOI02_DEL_MONIT03",
+          "original_split": "test",
+          "event_id": "EMSR438",
+          "label_status": "positive",
+          "flood_px": 80874,
+          "non_flood_px": 11537224,
+          "supervised_px": 11618098,
+          "flood_pct": 0.6961,
+          "meta_flood_px": 86810,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR438_AOI02_DEL_MONIT03_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR438_AOI02_DEL_MONIT03_validity.tif"
+        },
+        {
+          "name": "EMSR438_AOI06_DEL_PRODUCT",
+          "original_split": "test",
+          "event_id": "EMSR438",
+          "label_status": "positive",
+          "flood_px": 14252,
+          "non_flood_px": 821598,
+          "supervised_px": 835850,
+          "flood_pct": 1.7051,
+          "meta_flood_px": 37363,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR438_AOI06_DEL_PRODUCT_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR438_AOI06_DEL_PRODUCT_validity.tif"
+        },
+        {
+          "name": "EMSR466_AOI01_DEL_PRODUCT",
+          "original_split": "test",
+          "event_id": "EMSR466",
+          "label_status": "positive",
+          "flood_px": 198224,
+          "non_flood_px": 3235006,
+          "supervised_px": 3433230,
+          "flood_pct": 5.7737,
+          "meta_flood_px": 817275,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR466_AOI01_DEL_PRODUCT_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR466_AOI01_DEL_PRODUCT_validity.tif"
+        },
+        {
+          "name": "EMSR629_AOI01_DEL_PRODUCT",
+          "original_split": "val",
+          "event_id": "EMSR629",
+          "label_status": "positive",
+          "flood_px": 5368451,
+          "non_flood_px": 4242454,
+          "supervised_px": 9610905,
+          "flood_pct": 55.8579,
+          "meta_flood_px": 5485635,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR629_AOI01_DEL_PRODUCT_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR629_AOI01_DEL_PRODUCT_validity.tif"
+        },
+        {
+          "name": "EMSR629_AOI02_DEL_PRODUCT",
+          "original_split": "val",
+          "event_id": "EMSR629",
+          "label_status": "positive",
+          "flood_px": 6480277,
+          "non_flood_px": 3151217,
+          "supervised_px": 9631494,
+          "flood_pct": 67.2822,
+          "meta_flood_px": 6847454,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR629_AOI02_DEL_PRODUCT_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR629_AOI02_DEL_PRODUCT_validity.tif"
+        }
+      ]
+    },
+    "val": {
+      "split": "val",
+      "event_ids": [
+        "EMSR264",
+        "EMSR265",
+        "EMSR312",
+        "EMSR329",
+        "EMSR342",
+        "EMSR422"
+      ],
+      "n_events": 6,
+      "n_samples": 24,
+      "n_positive": 10,
+      "n_negative": 14,
+      "total_flood_px": 17903524,
+      "total_supervised_px": 142479873,
+      "flood_pct": 12.5657,
+      "samples": [
+        {
+          "name": "EMSR264_08VATOMANDRY_DEL_v2",
+          "original_split": "test",
+          "event_id": "EMSR264",
+          "label_status": "positive",
+          "flood_px": 68137,
+          "non_flood_px": 12574733,
+          "supervised_px": 12642870,
+          "flood_pct": 0.5389,
+          "meta_flood_px": 202791,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR264_08VATOMANDRY_DEL_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR264_08VATOMANDRY_DEL_v2_validity.tif"
+        },
+        {
+          "name": "EMSR264_18MIANDRIVAZODETAIL_DEL_v2",
+          "original_split": "test",
+          "event_id": "EMSR264",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 1870161,
+          "supervised_px": 1870161,
+          "flood_pct": 0.0,
+          "meta_flood_px": 129988,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR264_18MIANDRIVAZODETAIL_DEL_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR264_18MIANDRIVAZODETAIL_DEL_v2_validity.tif"
+        },
+        {
+          "name": "EMSR265_04ESBLY_DEL_MONIT01_v1",
+          "original_split": "train",
+          "event_id": "EMSR265",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 209146,
+          "supervised_px": 209146,
+          "flood_pct": 0.0,
+          "meta_flood_px": 80050,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR265_04ESBLY_DEL_MONIT01_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR265_04ESBLY_DEL_MONIT01_v1_validity.tif"
+        },
+        {
+          "name": "EMSR265_04ESBLY_DEL_MONIT02_v2",
+          "original_split": "train",
+          "event_id": "EMSR265",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 209146,
+          "supervised_px": 209146,
+          "flood_pct": 0.0,
+          "meta_flood_px": 77735,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR265_04ESBLY_DEL_MONIT02_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR265_04ESBLY_DEL_MONIT02_v2_validity.tif"
+        },
+        {
+          "name": "EMSR265_04ESBLY_DEL_v1",
+          "original_split": "train",
+          "event_id": "EMSR265",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 209146,
+          "supervised_px": 209146,
+          "flood_pct": 0.0,
+          "meta_flood_px": 35473,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR265_04ESBLY_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR265_04ESBLY_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR265_07DAMMARIELESLYS_DEL_MONIT01_v1",
+          "original_split": "train",
+          "event_id": "EMSR265",
+          "label_status": "positive",
+          "flood_px": 3553,
+          "non_flood_px": 990309,
+          "supervised_px": 993862,
+          "flood_pct": 0.3575,
+          "meta_flood_px": 25246,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR265_07DAMMARIELESLYS_DEL_MONIT01_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR265_07DAMMARIELESLYS_DEL_MONIT01_v1_validity.tif"
+        },
+        {
+          "name": "EMSR265_07DAMMARIELESLYS_DEL_v1",
+          "original_split": "train",
+          "event_id": "EMSR265",
+          "label_status": "positive",
+          "flood_px": 3299,
+          "non_flood_px": 990563,
+          "supervised_px": 993862,
+          "flood_pct": 0.3319,
+          "meta_flood_px": 21741,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR265_07DAMMARIELESLYS_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR265_07DAMMARIELESLYS_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR265_08FONTAINEBLEAU_DEL_MONIT04_v2",
+          "original_split": "train",
+          "event_id": "EMSR265",
+          "label_status": "positive",
+          "flood_px": 6616,
+          "non_flood_px": 5048668,
+          "supervised_px": 5055284,
+          "flood_pct": 0.1309,
+          "meta_flood_px": 26451,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR265_08FONTAINEBLEAU_DEL_MONIT04_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR265_08FONTAINEBLEAU_DEL_MONIT04_v2_validity.tif"
+        },
+        {
+          "name": "EMSR265_09VOULX_DEL_MONIT04_v2",
+          "original_split": "train",
+          "event_id": "EMSR265",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 4650354,
+          "supervised_px": 4650354,
+          "flood_pct": 0.0,
+          "meta_flood_px": 77615,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR265_09VOULX_DEL_MONIT04_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR265_09VOULX_DEL_MONIT04_v2_validity.tif"
+        },
+        {
+          "name": "EMSR265_13AUXERRE_DEL_v1",
+          "original_split": "train",
+          "event_id": "EMSR265",
+          "label_status": "positive",
+          "flood_px": 270,
+          "non_flood_px": 201340,
+          "supervised_px": 201610,
+          "flood_pct": 0.1339,
+          "meta_flood_px": 16512,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR265_13AUXERRE_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR265_13AUXERRE_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR265_22LESMUREAUX_DEL_MONIT03_v1",
+          "original_split": "train",
+          "event_id": "EMSR265",
+          "label_status": "positive",
+          "flood_px": 57075,
+          "non_flood_px": 7246991,
+          "supervised_px": 7304066,
+          "flood_pct": 0.7814,
+          "meta_flood_px": 69519,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR265_22LESMUREAUX_DEL_MONIT03_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR265_22LESMUREAUX_DEL_MONIT03_v1_validity.tif"
+        },
+        {
+          "name": "EMSR265_22LESMUREAUX_DEL_MONIT04_v1",
+          "original_split": "train",
+          "event_id": "EMSR265",
+          "label_status": "positive",
+          "flood_px": 26626,
+          "non_flood_px": 7277440,
+          "supervised_px": 7304066,
+          "flood_pct": 0.3645,
+          "meta_flood_px": 33723,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR265_22LESMUREAUX_DEL_MONIT04_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR265_22LESMUREAUX_DEL_MONIT04_v1_validity.tif"
+        },
+        {
+          "name": "EMSR265_24HONFLEUR_DEL_MONIT01_v1",
+          "original_split": "train",
+          "event_id": "EMSR265",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 5350317,
+          "supervised_px": 5350317,
+          "flood_pct": 0.0,
+          "meta_flood_px": 247258,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR265_24HONFLEUR_DEL_MONIT01_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR265_24HONFLEUR_DEL_MONIT01_v1_validity.tif"
+        },
+        {
+          "name": "EMSR312_02CALAYAN_GRA_v1",
+          "original_split": "train",
+          "event_id": "EMSR312",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 49542,
+          "supervised_px": 49542,
+          "flood_pct": 0.0,
+          "meta_flood_px": 9,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR312_02CALAYAN_GRA_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR312_02CALAYAN_GRA_v1_validity.tif"
+        },
+        {
+          "name": "EMSR312_05TUGUEGARAO_DEL_MONIT01_v1",
+          "original_split": "train",
+          "event_id": "EMSR312",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 7930343,
+          "supervised_px": 7930343,
+          "flood_pct": 0.0,
+          "meta_flood_px": 432859,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR312_05TUGUEGARAO_DEL_MONIT01_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR312_05TUGUEGARAO_DEL_MONIT01_v1_validity.tif"
+        },
+        {
+          "name": "EMSR312_06ILAGAN_DEL_MONIT01_v1",
+          "original_split": "train",
+          "event_id": "EMSR312",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 8127226,
+          "supervised_px": 8127226,
+          "flood_pct": 0.0,
+          "meta_flood_px": 244891,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR312_06ILAGAN_DEL_MONIT01_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR312_06ILAGAN_DEL_MONIT01_v1_validity.tif"
+        },
+        {
+          "name": "EMSR312_07VIGAN_DEL_MONIT01_v1",
+          "original_split": "train",
+          "event_id": "EMSR312",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 6432009,
+          "supervised_px": 6432009,
+          "flood_pct": 0.0,
+          "meta_flood_px": 102725,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR312_07VIGAN_DEL_MONIT01_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR312_07VIGAN_DEL_MONIT01_v1_validity.tif"
+        },
+        {
+          "name": "EMSR312_07VIGAN_DEL_v1",
+          "original_split": "train",
+          "event_id": "EMSR312",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 6432009,
+          "supervised_px": 6432009,
+          "flood_pct": 0.0,
+          "meta_flood_px": 86956,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR312_07VIGAN_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR312_07VIGAN_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR312_08CANDON_DEL_MONIT01_v1",
+          "original_split": "val",
+          "event_id": "EMSR312",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 6529071,
+          "supervised_px": 6529071,
+          "flood_pct": 0.0,
+          "meta_flood_px": 59414,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR312_08CANDON_DEL_MONIT01_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR312_08CANDON_DEL_MONIT01_v1_validity.tif"
+        },
+        {
+          "name": "EMSR312_08CANDON_DEL_v1",
+          "original_split": "train",
+          "event_id": "EMSR312",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 6529071,
+          "supervised_px": 6529071,
+          "flood_pct": 0.0,
+          "meta_flood_px": 50809,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR312_08CANDON_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR312_08CANDON_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR329_05CASTIADAS_GRA_v3",
+          "original_split": "val",
+          "event_id": "EMSR329",
+          "label_status": "positive",
+          "flood_px": 201,
+          "non_flood_px": 913005,
+          "supervised_px": 913206,
+          "flood_pct": 0.022,
+          "meta_flood_px": 6116,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR329_05CASTIADAS_GRA_v3_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR329_05CASTIADAS_GRA_v3_validity.tif"
+        },
+        {
+          "name": "EMSR342_06NORTHNORMANTON_DEL_v1",
+          "original_split": "test",
+          "event_id": "EMSR342",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 21534326,
+          "supervised_px": 21534326,
+          "flood_pct": 0.0,
+          "meta_flood_px": 11097799,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR342_06NORTHNORMANTON_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR342_06NORTHNORMANTON_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR342_07SOUTHNORMANTON_DEL_MONIT03_v2",
+          "original_split": "test",
+          "event_id": "EMSR342",
+          "label_status": "positive",
+          "flood_px": 17736474,
+          "non_flood_px": 12190030,
+          "supervised_px": 29926504,
+          "flood_pct": 59.2668,
+          "meta_flood_px": 18223678,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR342_07SOUTHNORMANTON_DEL_MONIT03_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR342_07SOUTHNORMANTON_DEL_MONIT03_v2_validity.tif"
+        },
+        {
+          "name": "EMSR422_AOI06_DEL_PRODUCT",
+          "original_split": "test",
+          "event_id": "EMSR422",
+          "label_status": "positive",
+          "flood_px": 1273,
+          "non_flood_px": 1081403,
+          "supervised_px": 1082676,
+          "flood_pct": 0.1176,
+          "meta_flood_px": 14350,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR422_AOI06_DEL_PRODUCT_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR422_AOI06_DEL_PRODUCT_validity.tif"
+        }
+      ]
+    },
+    "test": {
+      "split": "test",
+      "event_ids": [
+        "EMSR258",
+        "EMSR267",
+        "EMSR274",
+        "EMSR314",
+        "EMSR442",
+        "EMSR9284"
+      ],
+      "n_events": 6,
+      "n_samples": 22,
+      "n_positive": 15,
+      "n_negative": 7,
+      "total_flood_px": 722271,
+      "total_supervised_px": 63745353,
+      "flood_pct": 1.1331,
+      "samples": [
+        {
+          "name": "EMSR258_01DIVJAKE_DEL_v2",
+          "original_split": "train",
+          "event_id": "EMSR258",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 2359870,
+          "supervised_px": 2359870,
+          "flood_pct": 0.0,
+          "meta_flood_px": 96640,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR258_01DIVJAKE_DEL_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR258_01DIVJAKE_DEL_v2_validity.tif"
+        },
+        {
+          "name": "EMSR258_03KOLONJE_DEL_v2",
+          "original_split": "train",
+          "event_id": "EMSR258",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 2097037,
+          "supervised_px": 2097037,
+          "flood_pct": 0.0,
+          "meta_flood_px": 18509,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR258_03KOLONJE_DEL_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR258_03KOLONJE_DEL_v2_validity.tif"
+        },
+        {
+          "name": "EMSR258_05PATOS_DEL_v3",
+          "original_split": "train",
+          "event_id": "EMSR258",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 3013620,
+          "supervised_px": 3013620,
+          "flood_pct": 0.0,
+          "meta_flood_px": 8260,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR258_05PATOS_DEL_v3_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR258_05PATOS_DEL_v3_validity.tif"
+        },
+        {
+          "name": "EMSR258_06VLORE_DEL_v2",
+          "original_split": "train",
+          "event_id": "EMSR258",
+          "label_status": "positive",
+          "flood_px": 40888,
+          "non_flood_px": 2483871,
+          "supervised_px": 2524759,
+          "flood_pct": 1.6195,
+          "meta_flood_px": 71847,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR258_06VLORE_DEL_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR258_06VLORE_DEL_v2_validity.tif"
+        },
+        {
+          "name": "EMSR258_07ARMEN_DEL_v2",
+          "original_split": "train",
+          "event_id": "EMSR258",
+          "label_status": "positive",
+          "flood_px": 66535,
+          "non_flood_px": 3029371,
+          "supervised_px": 3095906,
+          "flood_pct": 2.1491,
+          "meta_flood_px": 11806,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR258_07ARMEN_DEL_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR258_07ARMEN_DEL_v2_validity.tif"
+        },
+        {
+          "name": "EMSR258_08BELSH_DEL_MONIT01_v3",
+          "original_split": "train",
+          "event_id": "EMSR258",
+          "label_status": "positive",
+          "flood_px": 8933,
+          "non_flood_px": 2727909,
+          "supervised_px": 2736842,
+          "flood_pct": 0.3264,
+          "meta_flood_px": 11698,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR258_08BELSH_DEL_MONIT01_v3_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR258_08BELSH_DEL_MONIT01_v3_validity.tif"
+        },
+        {
+          "name": "EMSR258_09GRAMSCH_DEL_v3",
+          "original_split": "train",
+          "event_id": "EMSR258",
+          "label_status": "positive",
+          "flood_px": 17812,
+          "non_flood_px": 3934029,
+          "supervised_px": 3951841,
+          "flood_pct": 0.4507,
+          "meta_flood_px": 19467,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR258_09GRAMSCH_DEL_v3_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR258_09GRAMSCH_DEL_v3_validity.tif"
+        },
+        {
+          "name": "EMSR258_10URAVAJGURORE_DEL_v3",
+          "original_split": "train",
+          "event_id": "EMSR258",
+          "label_status": "positive",
+          "flood_px": 13573,
+          "non_flood_px": 3826316,
+          "supervised_px": 3839889,
+          "flood_pct": 0.3535,
+          "meta_flood_px": 18476,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR258_10URAVAJGURORE_DEL_v3_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR258_10URAVAJGURORE_DEL_v3_validity.tif"
+        },
+        {
+          "name": "EMSR258_12SEVASTER_DEL_v2",
+          "original_split": "train",
+          "event_id": "EMSR258",
+          "label_status": "positive",
+          "flood_px": 59008,
+          "non_flood_px": 2497361,
+          "supervised_px": 2556369,
+          "flood_pct": 2.3083,
+          "meta_flood_px": 4573,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR258_12SEVASTER_DEL_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR258_12SEVASTER_DEL_v2_validity.tif"
+        },
+        {
+          "name": "EMSR258_13TEPELENE_DEL_v3",
+          "original_split": "train",
+          "event_id": "EMSR258",
+          "label_status": "positive",
+          "flood_px": 25387,
+          "non_flood_px": 6739265,
+          "supervised_px": 6764652,
+          "flood_pct": 0.3753,
+          "meta_flood_px": 16922,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR258_13TEPELENE_DEL_v3_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR258_13TEPELENE_DEL_v3_validity.tif"
+        },
+        {
+          "name": "EMSR267_01RUSNE_DEL_v1",
+          "original_split": "train",
+          "event_id": "EMSR267",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 937577,
+          "supervised_px": 937577,
+          "flood_pct": 0.0,
+          "meta_flood_px": 356382,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR267_01RUSNE_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR267_01RUSNE_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR274_01AMBILOBE_DEL_v2",
+          "original_split": "train",
+          "event_id": "EMSR274",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 11136125,
+          "supervised_px": 11136125,
+          "flood_pct": 0.0,
+          "meta_flood_px": 480382,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR274_01AMBILOBE_DEL_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR274_01AMBILOBE_DEL_v2_validity.tif"
+        },
+        {
+          "name": "EMSR274_02AMBANJA_DEL_v1",
+          "original_split": "train",
+          "event_id": "EMSR274",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 4263575,
+          "supervised_px": 4263575,
+          "flood_pct": 0.0,
+          "meta_flood_px": 331626,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR274_02AMBANJA_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR274_02AMBANJA_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR274_05TOAMASINA_DEL_v1",
+          "original_split": "val",
+          "event_id": "EMSR274",
+          "label_status": "positive",
+          "flood_px": 85123,
+          "non_flood_px": 4893883,
+          "supervised_px": 4979006,
+          "flood_pct": 1.7096,
+          "meta_flood_px": 146534,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR274_05TOAMASINA_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR274_05TOAMASINA_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR274_08MAHANORO_DEL_v1",
+          "original_split": "train",
+          "event_id": "EMSR274",
+          "label_status": "negative_candidate",
+          "flood_px": 0,
+          "non_flood_px": 2991817,
+          "supervised_px": 2991817,
+          "flood_pct": 0.0,
+          "meta_flood_px": 125601,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR274_08MAHANORO_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR274_08MAHANORO_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR274_09NOSYVARIKA_DEL_v1",
+          "original_split": "train",
+          "event_id": "EMSR274",
+          "label_status": "positive",
+          "flood_px": 40187,
+          "non_flood_px": 368226,
+          "supervised_px": 408413,
+          "flood_pct": 9.8398,
+          "meta_flood_px": 52312,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR274_09NOSYVARIKA_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR274_09NOSYVARIKA_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR274_10MANANJARY_DEL_v2",
+          "original_split": "train",
+          "event_id": "EMSR274",
+          "label_status": "positive",
+          "flood_px": 46050,
+          "non_flood_px": 1784511,
+          "supervised_px": 1830561,
+          "flood_pct": 2.5156,
+          "meta_flood_px": 69346,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR274_10MANANJARY_DEL_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR274_10MANANJARY_DEL_v2_validity.tif"
+        },
+        {
+          "name": "EMSR274_16MANANARA_DEL_v2",
+          "original_split": "train",
+          "event_id": "EMSR274",
+          "label_status": "positive",
+          "flood_px": 1306,
+          "non_flood_px": 412672,
+          "supervised_px": 413978,
+          "flood_pct": 0.3155,
+          "meta_flood_px": 4522,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR274_16MANANARA_DEL_v2_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR274_16MANANARA_DEL_v2_validity.tif"
+        },
+        {
+          "name": "EMSR314_03ENUGUOTU_DEL_v1",
+          "original_split": "train",
+          "event_id": "EMSR314",
+          "label_status": "positive",
+          "flood_px": 214957,
+          "non_flood_px": 78239,
+          "supervised_px": 293196,
+          "flood_pct": 73.3151,
+          "meta_flood_px": 2640575,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR314_03ENUGUOTU_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR314_03ENUGUOTU_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR314_05ONITSHA_DEL_v1",
+          "original_split": "train",
+          "event_id": "EMSR314",
+          "label_status": "positive",
+          "flood_px": 77533,
+          "non_flood_px": 157899,
+          "supervised_px": 235432,
+          "flood_pct": 32.9322,
+          "meta_flood_px": 813494,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR314_05ONITSHA_DEL_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR314_05ONITSHA_DEL_v1_validity.tif"
+        },
+        {
+          "name": "EMSR442_AOI03_DEL_PRODUCT",
+          "original_split": "val",
+          "event_id": "EMSR442",
+          "label_status": "positive",
+          "flood_px": 8206,
+          "non_flood_px": 228641,
+          "supervised_px": 236847,
+          "flood_pct": 3.4647,
+          "meta_flood_px": 9053,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR442_AOI03_DEL_PRODUCT_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR442_AOI03_DEL_PRODUCT_validity.tif"
+        },
+        {
+          "name": "EMSR9284_01YLITORNIONORTHERN_DEL_MONIT01_v1",
+          "original_split": "test",
+          "event_id": "EMSR9284",
+          "label_status": "positive",
+          "flood_px": 16773,
+          "non_flood_px": 3061268,
+          "supervised_px": 3078041,
+          "flood_pct": 0.5449,
+          "meta_flood_px": 140868,
+          "seg_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR9284_01YLITORNIONORTHERN_DEL_MONIT01_v1_seg.tif",
+          "validity_mask_path": "d:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks\\EMSR9284_01YLITORNIONORTHERN_DEL_MONIT01_v1_validity.tif"
+        }
+      ]
+    }
+  },
+  "excluded": [
+    {
+      "name": "01042016_Choctawhatchee_River_near_Bellwood_AL",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "10517 water polygons from 'flood' source, but w_class='water' not 'Flooded area'",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flood",
+      "ems_code": "GLOFIMR01042016",
+      "meta_flood_px": 2292038,
+      "meta_hydro_px": 0,
+      "meta_source": "glofimr",
+      "flood_polys": 0,
+      "water_polys": 10517,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32616"
+        }
+      }
+    },
+    {
+      "name": "01042016_Holmes_Creek_at_Vernon_FL",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "552 water polygons from 'flood' source, but w_class='water' not 'Flooded area'",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flood",
+      "ems_code": "GLOFIMR01042016",
+      "meta_flood_px": 130732,
+      "meta_hydro_px": 0,
+      "meta_source": "glofimr",
+      "flood_polys": 0,
+      "water_polys": 552,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32616"
+        }
+      }
+    },
+    {
+      "name": "01042016_Pea_River_near_Samson_AL",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "1335 water polygons from 'flood' source, but w_class='water' not 'Flooded area'",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flood",
+      "ems_code": "GLOFIMR01042016",
+      "meta_flood_px": 230991,
+      "meta_hydro_px": 0,
+      "meta_source": "glofimr",
+      "flood_polys": 0,
+      "water_polys": 1335,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32616"
+        }
+      }
+    },
+    {
+      "name": "08162016_Mississippi_River_at_Baton_Rouge_LA",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "1751 ML-detected water polygons (WF2 model), no flood/hydro distinction in w_class",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flood",
+      "ems_code": "GLOFIMR08162016",
+      "meta_flood_px": 481993,
+      "meta_hydro_px": 0,
+      "meta_source": "glofimr",
+      "flood_polys": 0,
+      "water_polys": 1751,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "WF2_unet_full_norm_vec",
+        "area_of_interest"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32615"
+        }
+      }
+    },
+    {
+      "name": "10132016_Ashley_River_near_North_Charleston_SC",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "716 water polygons from 'flood' source, but w_class='water' not 'Flooded area'",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flood",
+      "ems_code": "GLOFIMR10132016",
+      "meta_flood_px": 2227901,
+      "meta_hydro_px": 0,
+      "meta_source": "glofimr",
+      "flood_polys": 0,
+      "water_polys": 716,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32617"
+        }
+      }
+    },
+    {
+      "name": "10132016_Cooper_River_at_Monks_Corner_SC",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "910 water polygons from 'flood' source, but w_class='water' not 'Flooded area'",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flood",
+      "ems_code": "GLOFIMR10132016",
+      "meta_flood_px": 1845783,
+      "meta_hydro_px": 0,
+      "meta_source": "glofimr",
+      "flood_polys": 0,
+      "water_polys": 910,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32617"
+        }
+      }
+    },
+    {
+      "name": "EMSR274_03BEFOTAKA_DEL_v1",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "119 ML-detected water polygons (WF2 model), no flood/hydro distinction in w_class",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR274",
+      "meta_flood_px": 354058,
+      "meta_hydro_px": 68105,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 119,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "WF2_unet_full_norm_vec",
+        "area_of_interest"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32739"
+        }
+      }
+    },
+    {
+      "name": "EMSR274_12ANTALAHA_DEL_v1",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "1 Flood trace features but no Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR274",
+      "meta_flood_px": 41941,
+      "meta_hydro_px": 13239,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 301,
+      "trace_polys": 1,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flood trace",
+        "Standing water",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32739"
+        }
+      }
+    },
+    {
+      "name": "EMSR274_15FENERIVE_DEL_v1",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "20 Flood trace features but no Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR274",
+      "meta_flood_px": 979,
+      "meta_hydro_px": 4003,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 9,
+      "trace_polys": 20,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BA040-Open Water",
+        "BH080-Lake",
+        "BH140-River",
+        "Flood trace",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32739"
+        }
+      }
+    },
+    {
+      "name": "EMSR274_17SOANIERANAIVONGO_DEL_v2",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "31 Flood trace features but no Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR274",
+      "meta_flood_px": 2580,
+      "meta_hydro_px": 17900,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 22,
+      "trace_polys": 31,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Flood trace",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32739"
+        }
+      }
+    },
+    {
+      "name": "EMSR274_21NOSYBE_DEL_v2",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "28 Flood trace features but no Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR274",
+      "meta_flood_px": 5774,
+      "meta_hydro_px": 16150,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 49,
+      "trace_polys": 28,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH140-River",
+        "BH141-Stream",
+        "Flood trace",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32739"
+        }
+      }
+    },
+    {
+      "name": "EMSR280_05MORA_DEL_MONIT04_v1",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "627 ML-detected water polygons (WF2 model), no flood/hydro distinction in w_class",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Ice jam flood",
+      "ems_code": "EMSR280",
+      "meta_flood_px": 298519,
+      "meta_hydro_px": 251509,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 627,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "WF2_unet_full_norm_vec",
+        "area_of_interest"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    },
+    {
+      "name": "EMSR312_05TUGUEGARAO_DEL_v1",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "423 ML-detected water polygons (WF2 model), no flood/hydro distinction in w_class",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR312",
+      "meta_flood_px": 63971,
+      "meta_hydro_px": 108373,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 423,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "WF2_unet_full_norm_vec",
+        "area_of_interest",
+        "manual_label"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32651"
+        }
+      }
+    },
+    {
+      "name": "EMSR312_06ILAGAN_DEL_v1",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "13 water polygons with unknown semantics",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR312",
+      "meta_flood_px": 87630,
+      "meta_hydro_px": 95399,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 13,
+      "hydro_polys": 520,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l",
+        "manual_label"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "BH141-Stream",
+        "Not Applicable",
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32651"
+        }
+      }
+    },
+    {
+      "name": "EMSR314_01PATEGI_DEL_v1",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "548 ML-detected water polygons (WF2 model), no flood/hydro distinction in w_class",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR314",
+      "meta_flood_px": 3094621,
+      "meta_hydro_px": 375715,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 548,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "WF2_unet_full_norm_vec",
+        "area_of_interest"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32631"
+        }
+      }
+    },
+    {
+      "name": "EMSR314_02LOKOJA_DEL_v1",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "257 ML-detected water polygons (WF2 model), no flood/hydro distinction in w_class",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR314",
+      "meta_flood_px": 1772327,
+      "meta_hydro_px": 502222,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 257,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "WF2_unet_full_norm_vec",
+        "area_of_interest"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR314_04OTUOCHAAGULERI_DEL_v1",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "135 ML-detected water polygons (WF2 model), no flood/hydro distinction in w_class",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR314",
+      "meta_flood_px": 1577009,
+      "meta_hydro_px": 155517,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 135,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "WF2_unet_full_norm_vec",
+        "area_of_interest"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR319_01TAKLISAH_DEL_v2",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "2 water polygons with unknown semantics",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR319",
+      "meta_flood_px": 4988,
+      "meta_hydro_px": 7302,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 2,
+      "hydro_polys": 334,
+      "trace_polys": 2,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l",
+        "manual_label"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH080-Lake",
+        "BH130-Reservoir",
+        "BH141-Stream",
+        "Flood trace",
+        "Not Applicable",
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR322_17MARIANNA_DEL_v1",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "1278 ML-detected water polygons (WF2 model), no flood/hydro distinction in w_class",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR322",
+      "meta_flood_px": 10766,
+      "meta_hydro_px": 602806,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 1278,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "WF2_unet_full_norm_vec",
+        "area_of_interest",
+        "manual_label"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32616"
+        }
+      }
+    },
+    {
+      "name": "EMSR323_08MANACOR_GRA_v1",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "4 Flood trace features but no Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR323",
+      "meta_flood_px": 1518,
+      "meta_hydro_px": 2773,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 43,
+      "trace_polys": 4,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BH080-Lake",
+        "BH141-Stream",
+        "Flood trace",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32631"
+        }
+      }
+    },
+    {
+      "name": "EMSR323_09CALAMILLOR_GRA_v1",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "9 Flood trace features but no Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR323",
+      "meta_flood_px": 1616,
+      "meta_hydro_px": 4556,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 40,
+      "trace_polys": 9,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "hydro_l"
+      ],
+      "fm_w_classes": [
+        "BA010-Coastline",
+        "BA040-Open Water",
+        "BH080-Lake",
+        "BH141-Stream",
+        "Flood trace",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32631"
+        }
+      }
+    },
+    {
+      "name": "EMSR324_04LESPIGNAN_MANUAL_LABEL",
+      "split": "train",
+      "label_status": "ambiguous",
+      "reason": "446 water polygons from 'flood' source, but w_class='water' not 'Flooded area'",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR324",
+      "meta_flood_px": 282563,
+      "meta_hydro_px": 0,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 446,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32631"
+        }
+      }
+    },
+    {
+      "name": "EMSR260_07CAMPOGALLIANO_DEL_MONIT01_v1",
+      "split": "val",
+      "label_status": "ambiguous",
+      "reason": "7 water polygons with unknown semantics",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR260",
+      "meta_flood_px": 6520,
+      "meta_hydro_px": 2883,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 7,
+      "hydro_polys": 26,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro",
+        "manual_label"
+      ],
+      "fm_w_classes": [
+        "BH080-Lake",
+        "BH140-River",
+        "Not Applicable",
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32632"
+        }
+      }
+    },
+    {
+      "name": "EMSR271_02FARKADONA_DEL_v1",
+      "split": "val",
+      "label_status": "ambiguous",
+      "reason": "176 ML-detected water polygons (WF2 model), no flood/hydro distinction in w_class",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR271",
+      "meta_flood_px": 520976,
+      "meta_hydro_px": 76319,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 176,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "WF2_unet_full_norm_vec",
+        "area_of_interest"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32634"
+        }
+      }
+    },
+    {
+      "name": "EMSR279_05ZARAGOZA_DEL_v2",
+      "split": "val",
+      "label_status": "ambiguous",
+      "reason": "227 water polygons from 'flood' source, but w_class='water' not 'Flooded area'",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR279",
+      "meta_flood_px": 601551,
+      "meta_hydro_px": 0,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 227,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32630"
+        }
+      }
+    },
+    {
+      "name": "EMSR279_11TORTOSA_DEL_v1",
+      "split": "val",
+      "label_status": "ambiguous",
+      "reason": "176 water polygons from 'flood' source, but w_class='water' not 'Flooded area'",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR279",
+      "meta_flood_px": 396372,
+      "meta_hydro_px": 0,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 176,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32631"
+        }
+      }
+    },
+    {
+      "name": "EMSR293_03OZUN_GRA_v1",
+      "split": "val",
+      "label_status": "ambiguous",
+      "reason": "482 water polygons from 'flood' source, but w_class='water' not 'Flooded area'",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Riverine flood",
+      "ems_code": "EMSR293",
+      "meta_flood_px": 120109,
+      "meta_hydro_px": 0,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 482,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "area_of_interest",
+        "flood"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32635"
+        }
+      }
+    },
+    {
+      "name": "RS2_20161008_Water_Extent_Corail_Pestel",
+      "split": "val",
+      "label_status": "ambiguous",
+      "reason": "32 ML-detected water polygons (WF2 model), no flood/hydro distinction in w_class",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flood",
+      "ems_code": "UNOSATRS220161008",
+      "meta_flood_px": 59590,
+      "meta_hydro_px": 0,
+      "meta_source": "unosat",
+      "flood_polys": 0,
+      "water_polys": 32,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "WF2_unet_full_norm_vec",
+        "area_of_interest"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32618"
+        }
+      }
+    },
+    {
+      "name": "ST1_20161014_WaterExtent_BinhDinh_Lake",
+      "split": "val",
+      "label_status": "ambiguous",
+      "reason": "31 ML-detected water polygons (WF2 model), no flood/hydro distinction in w_class",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flood",
+      "ems_code": "UNOSATST120161014",
+      "meta_flood_px": 46218,
+      "meta_hydro_px": 0,
+      "meta_source": "unosat",
+      "flood_polys": 0,
+      "water_polys": 31,
+      "hydro_polys": 0,
+      "trace_polys": 0,
+      "fm_sources": [
+        "WF2_unet_full_norm_vec",
+        "area_of_interest",
+        "manual_label"
+      ],
+      "fm_w_classes": [
+        "area_of_interest",
+        "water"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32649"
+        }
+      }
+    },
+    {
+      "name": "EMSR333_01RATTALORO_DEL_MONIT01_v1",
+      "split": "test",
+      "label_status": "ambiguous",
+      "reason": "17 Flood trace features but no Flooded area polygons",
+      "has_gt": true,
+      "has_floodmap": true,
+      "event_type": "Flash flood",
+      "ems_code": "EMSR333",
+      "meta_flood_px": 11890,
+      "meta_hydro_px": 10983,
+      "meta_source": "CopernicusEMS",
+      "flood_polys": 0,
+      "water_polys": 0,
+      "hydro_polys": 21,
+      "trace_polys": 17,
+      "fm_sources": [
+        "area_of_interest",
+        "flood",
+        "hydro"
+      ],
+      "fm_w_classes": [
+        "BH130-Reservoir",
+        "Flood trace",
+        "Not Applicable",
+        "River",
+        "area_of_interest"
+      ],
+      "fm_crs": {
+        "type": "name",
+        "properties": {
+          "name": "urn:ogc:def:crs:EPSG::32633"
+        }
+      }
+    }
+  ],
+  "leakage_proof": {
+    "train_events": [
+      "EMSR249",
+      "EMSR251",
+      "EMSR255",
+      "EMSR260",
+      "EMSR269",
+      "EMSR271",
+      "EMSR273",
+      "EMSR275",
+      "EMSR279",
+      "EMSR280",
+      "EMSR283",
+      "EMSR286",
+      "EMSR292",
+      "EMSR293",
+      "EMSR294",
+      "EMSR311",
+      "EMSR319",
+      "EMSR321",
+      "EMSR324",
+      "EMSR333",
+      "EMSR347",
+      "EMSR358",
+      "EMSR419",
+      "EMSR427",
+      "EMSR438",
+      "EMSR466",
+      "EMSR629"
+    ],
+    "val_events": [
+      "EMSR264",
+      "EMSR265",
+      "EMSR312",
+      "EMSR329",
+      "EMSR342",
+      "EMSR422"
+    ],
+    "test_events": [
+      "EMSR258",
+      "EMSR267",
+      "EMSR274",
+      "EMSR314",
+      "EMSR442",
+      "EMSR9284"
+    ],
+    "train_val_overlap": [],
+    "train_test_overlap": [],
+    "val_test_overlap": []
+  }
+}

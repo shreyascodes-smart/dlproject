@@ -1,0 +1,80 @@
+[
+  {
+    "name": "EMSR274_02AMBANJA_DEL_v1",
+    "original_split": "train",
+    "event_id": "EMSR274",
+    "event_source": "metadata",
+    "s2_path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\train\\S2\\EMSR274_02AMBANJA_DEL_v1.tif",
+    "gt_path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\train\\gt\\EMSR274_02AMBANJA_DEL_v1.tif",
+    "pw_path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\train\\PERMANENTWATERJRC\\EMSR274_02AMBANJA_DEL_v1.tif",
+    "label": null,
+    "label_status": "unknown",
+    "flood_ratio": 0.0,
+    "exclusion_reason": "No valid observation pixels in center window"
+  },
+  {
+    "name": "EMSR280_05MORA_DEL_MONIT02_v1",
+    "original_split": "train",
+    "event_id": "EMSR280",
+    "event_source": "metadata",
+    "s2_path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\train\\S2\\EMSR280_05MORA_DEL_MONIT02_v1.tif",
+    "gt_path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\train\\gt\\EMSR280_05MORA_DEL_MONIT02_v1.tif",
+    "pw_path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\train\\PERMANENTWATERJRC\\EMSR280_05MORA_DEL_MONIT02_v1.tif",
+    "label": null,
+    "label_status": "unknown",
+    "flood_ratio": 0.0,
+    "exclusion_reason": "No valid observation pixels in center window"
+  },
+  {
+    "name": "EMSR280_05MORA_DEL_MONIT03_v1",
+    "original_split": "train",
+    "event_id": "EMSR280",
+    "event_source": "metadata",
+    "s2_path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\train\\S2\\EMSR280_05MORA_DEL_MONIT03_v1.tif",
+    "gt_path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\train\\gt\\EMSR280_05MORA_DEL_MONIT03_v1.tif",
+    "pw_path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\train\\PERMANENTWATERJRC\\EMSR280_05MORA_DEL_MONIT03_v1.tif",
+    "label": null,
+    "label_status": "unknown",
+    "flood_ratio": 0.0,
+    "exclusion_reason": "No valid observation pixels in center window"
+  },
+  {
+    "name": "EMSR280_05MORA_DEL_v2",
+    "original_split": "train",
+    "event_id": "EMSR280",
+    "event_source": "metadata",
+    "s2_path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\train\\S2\\EMSR280_05MORA_DEL_v2.tif",
+    "gt_path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\train\\gt\\EMSR280_05MORA_DEL_v2.tif",
+    "pw_path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\train\\PERMANENTWATERJRC\\EMSR280_05MORA_DEL_v2.tif",
+    "label": null,
+    "label_status": "unknown",
+    "flood_ratio": 0.0,
+    "exclusion_reason": "No valid observation pixels in center window"
+  },
+  {
+    "name": "EMSR347_07ZOMBA_DEL_MONIT01_v1",
+    "original_split": "test",
+    "event_id": "EMSR347",
+    "event_source": "metadata",
+    "s2_path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\test\\S2\\EMSR347_07ZOMBA_DEL_MONIT01_v1.tif",
+    "gt_path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\test\\gt\\EMSR347_07ZOMBA_DEL_MONIT01_v1.tif",
+    "pw_path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\test\\PERMANENTWATERJRC\\EMSR347_07ZOMBA_DEL_MONIT01_v1.tif",
+    "label": null,
+    "label_status": "unknown",
+    "flood_ratio": 0.0,
+    "exclusion_reason": "No valid observation pixels in center window"
+  },
+  {
+    "name": "EMSR347_07ZOMBA_DEL_v2",
+    "original_split": "test",
+    "event_id": "EMSR347",
+    "event_source": "metadata",
+    "s2_path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\test\\S2\\EMSR347_07ZOMBA_DEL_v2.tif",
+    "gt_path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\test\\gt\\EMSR347_07ZOMBA_DEL_v2.tif",
+    "pw_path": "d:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2\\test\\PERMANENTWATERJRC\\EMSR347_07ZOMBA_DEL_v2.tif",
+    "label": null,
+    "label_status": "unknown",
+    "flood_ratio": 0.0,
+    "exclusion_reason": "No valid observation pixels in center window"
+  }
+]
