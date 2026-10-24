@@ -265,12 +265,16 @@ async def _assess_live(engine, request: AssessmentRequest) -> AssessmentResponse
             days_back=60,
         )
 
-        # Check if we got usable data
-        if metadata.get("non_zero_pct", 0) < 10:
+        # Check if we got usable data — based on actual nodata pixels,
+        # NOT a cloud estimate (cloud status is unknown for live data).
+        quality = metadata.get("quality_status", "unknown")
+        coverage = metadata.get("data_coverage_pct", 0)
+        if quality == "empty":
             raise HTTPException(
                 status_code=422,
-                detail=f"Satellite image is {100 - metadata.get('non_zero_pct', 0):.0f}% cloudy or empty. "
-                       "Try again later or use demo mode."
+                detail=f"Satellite image has only {coverage}% data coverage "
+                       "(most pixels are nodata). Try a different location or date range, "
+                       "or use demo mode. Note: cloud status is unknown."
             )
 
         # Save as temporary GeoTIFF for the inference engine

@@ -244,10 +244,26 @@ class SentinelDataService:
             with memfile.open() as dataset:
                 image = dataset.read()  # Shape: (bands, height, width)
 
-        # Check if image is mostly empty (all clouds or no data)
-        non_zero_ratio = np.count_nonzero(image) / image.size
-        if non_zero_ratio < 0.1:
-            logger.warning(f"Image is {(1 - non_zero_ratio) * 100:.0f}% empty/cloudy")
+        # Check for nodata pixels — a pixel is nodata only if ALL bands
+        # are zero simultaneously.  Individual zero values in single bands
+        # (e.g. deep water in SWIR) are legitimate and must not be flagged.
+        # NOTE: This is NOT a cloud detector.  The leastCC mosaicking
+        # strategy already selects the least-cloudy tile.  We cannot
+        # determine cloud percentage from the pixel values alone.
+        num_pixels = image.shape[1] * image.shape[2]  # height * width
+        all_bands_zero = np.all(image == 0, axis=0)  # True where every band is 0
+        nodata_count = int(all_bands_zero.sum())
+        data_coverage_pct = round((1 - nodata_count / num_pixels) * 100, 1) if num_pixels > 0 else 0.0
+
+        if data_coverage_pct < 10:
+            logger.warning(f"Image has only {data_coverage_pct}% data coverage (rest is nodata)")
+            quality_status = "empty"
+        elif data_coverage_pct < 50:
+            logger.warning(f"Image has {data_coverage_pct}% data coverage — partial")
+            quality_status = "partial"
+        else:
+            quality_status = "good"
+        # Cloud status is unknown — we do not have a cloud mask for live data.
 
         metadata = {
             "source": "Copernicus Sentinel-2 L2A",
@@ -257,7 +273,9 @@ class SentinelDataService:
             "size_px": [width_px, height_px],
             "date_range": f"{start_date.strftime('%Y-%m-%d')} to {end_date.strftime('%Y-%m-%d')}",
             "bands": ["B02", "B03", "B04", "B08", "B11", "B12"],
-            "non_zero_pct": round(non_zero_ratio * 100, 1),
+            "data_coverage_pct": data_coverage_pct,
+            "quality_status": quality_status,
+            "cloud_status": "unknown",
             "fetched_at": datetime.utcnow().isoformat(),
         }
 

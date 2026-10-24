@@ -14,13 +14,17 @@ dist/
 build/
 *.egg
 
-# Dataset - DO NOT commit large data files
-data/
+# Dataset - DO NOT commit raw satellite rasters or rasterized masks
+data/raw/
+data/interim/
+data/metadata/
+data/processed/flood/segmentation_v1/masks/
 
-# Trash
+# Trash and scratch
 trash/
+scratch/
 
-# Trained models (large binary files)
+# Trained models (large binary files >100MB exceed GitHub limit)
 models/**/*.pt
 models/**/*.pth
 models/**/*.ckpt
