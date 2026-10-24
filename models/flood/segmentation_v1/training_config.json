@@ -1,0 +1,35 @@
+{
+  "config": {
+    "seed": 42,
+    "encoder_name": "efficientnet-b2",
+    "encoder_weights": "imagenet",
+    "input_size": 256,
+    "batch_size": 4,
+    "grad_accum_steps": 4,
+    "lr": 0.0001,
+    "weight_decay": 0.0001,
+    "max_epochs": 100,
+    "patience": 15,
+    "num_workers": 2,
+    "use_amp": true,
+    "dice_weight": 0.5,
+    "ce_weight": 0.5,
+    "num_classes": 2,
+    "data_root": "D:\\superiorparab\\final year DL project\\data\\raw\\flood\\worldfloods_v2",
+    "masks_dir": "D:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\masks",
+    "manifest_path": "D:\\superiorparab\\final year DL project\\data\\processed\\flood\\segmentation_v1\\seg_split_manifest.json",
+    "checkpoint_dir": "D:\\superiorparab\\final year DL project\\models\\flood\\segmentation_v1"
+  },
+  "pytorch_version": "2.14.0+cu126",
+  "cuda_available": true,
+  "device": "cuda",
+  "n_params": 10046436,
+  "n_trainable": 10046436,
+  "class_weights": {
+    "non_flood": 0.5097536633060566,
+    "flood": 26.1313953183888
+  },
+  "timestamp": "2026-10-24T15:25:41.358905",
+  "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "vram_gb": 6.4
+}
