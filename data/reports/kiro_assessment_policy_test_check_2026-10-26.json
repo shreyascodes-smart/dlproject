@@ -1,0 +1,1219 @@
+{
+  "kind": "assessment_policy_heldout_check",
+  "split": "test",
+  "timestamp": "2026-10-27T00:45:15.123089",
+  "note": "Held-out TEST check of a FROZEN policy; no thresholds were changed.",
+  "known_water_source": "WorldFloods v2 PERMANENTWATERJRC (JRC Global Surface Water, class 3 = permanent)",
+  "policy": {
+    "version": "val-20261027",
+    "none_below_pct": 1.0,
+    "min_assessable_land_frac": 0.25,
+    "water_dominated_frac": 0.5,
+    "inconclusive_ceiling_pct": {
+      "tiled": 28.39,
+      "resize": 17.9
+    },
+    "provenance": "inconclusive_ceiling_pct = maximum flood-like share (outside JRC permanent water) predicted on validation scenes that have no EMS-mapped flood. Other values are documented design choices, not fitted."
+  },
+  "summary": {
+    "tiled": {
+      "n_negative_scenes": 7,
+      "n_positive_scenes": 15,
+      "negative_outside_water_pct": {
+        "min": 1.2844,
+        "max": 6.973,
+        "median": 2.9965
+      },
+      "positive_outside_water_pct": [
+        1.8092,
+        2.1634,
+        2.267,
+        2.6384,
+        2.9985,
+        4.7272,
+        4.8089,
+        5.0159,
+        5.8228,
+        6.3379,
+        6.9051,
+        7.2526,
+        10.0284,
+        13.8996,
+        23.9767
+      ],
+      "pixel_metrics_raw": {
+        "tp": 133211,
+        "fp": 3739452,
+        "fn": 589060,
+        "tn": 59283630,
+        "flood_iou": 0.029856403008434184,
+        "flood_dice": 0.057981681564958275,
+        "flood_precision": 0.034397777446682036,
+        "flood_recall": 0.18443354364220632,
+        "pixel_accuracy": 0.9320968228068327
+      },
+      "pixel_metrics_excluding_known_water": {
+        "tp": 129375,
+        "fp": 2581120,
+        "fn": 592896,
+        "tn": 60441962,
+        "flood_iou": 0.03916430116810272,
+        "flood_dice": 0.0753765330931383,
+        "flood_precision": 0.0477311339810625,
+        "flood_recall": 0.17912251772534132,
+        "pixel_accuracy": 0.9502078841731412
+      },
+      "levels": {
+        "without_mapped_flood": {
+          "inconclusive": 6,
+          "unable": 1
+        },
+        "with_mapped_flood": {
+          "inconclusive": 13,
+          "unable": 2
+        }
+      }
+    },
+    "resize": {
+      "n_negative_scenes": 7,
+      "n_positive_scenes": 15,
+      "negative_outside_water_pct": {
+        "min": 0.5206,
+        "max": 2.6968,
+        "median": 2.0804
+      },
+      "positive_outside_water_pct": [
+        0.113,
+        0.26,
+        0.4387,
+        0.4911,
+        0.7768,
+        1.1648,
+        1.3799,
+        1.5555,
+        1.6099,
+        1.7806,
+        1.7845,
+        1.9523,
+        5.7675,
+        9.8559,
+        13.5283
+      ],
+      "pixel_metrics_raw": {
+        "tp": 25871,
+        "fp": 1132161,
+        "fn": 696400,
+        "tn": 61890921,
+        "flood_iou": 0.013950902486583493,
+        "flood_dice": 0.027517905358870352,
+        "flood_precision": 0.022340488000331598,
+        "flood_recall": 0.03581896545756371,
+        "pixel_accuracy": 0.9713145991990977
+      },
+      "pixel_metrics_excluding_known_water": {
+        "tp": 25501,
+        "fp": 798224,
+        "fn": 696770,
+        "tn": 62224858,
+        "flood_iou": 0.016771511908950702,
+        "flood_dice": 0.03298973606658749,
+        "flood_precision": 0.030958147439983003,
+        "flood_recall": 0.035306692363392685,
+        "pixel_accuracy": 0.9765474041692106
+      },
+      "levels": {
+        "without_mapped_flood": {
+          "inconclusive": 4,
+          "none_detected": 2,
+          "unable": 1
+        },
+        "with_mapped_flood": {
+          "inconclusive": 8,
+          "none_detected": 5,
+          "unable": 2
+        }
+      }
+    }
+  },
+  "per_sample": [
+    {
+      "name": "EMSR258_01DIVJAKE_DEL_v2",
+      "event_id": "EMSR258",
+      "reference_has_flood": false,
+      "reference_flood_px": 0,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_flood_like_pct": 2.8027,
+        "outside_known_water_pct": 2.9965,
+        "known_water_pct_of_eligible": 24.7312,
+        "flood_like_on_known_water_share_pct": 19.524,
+        "eligible_pct": 44.3878,
+        "quality_status": "limited",
+        "counts_raw": {
+          "tp": 0,
+          "fp": 66139,
+          "fn": 0,
+          "tn": 2293731
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 53226,
+          "fn": 0,
+          "tn": 2306644
+        },
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_flood_like_pct": 2.392,
+        "outside_known_water_pct": 2.3793,
+        "known_water_pct_of_eligible": 24.7312,
+        "flood_like_on_known_water_share_pct": 25.1298,
+        "eligible_pct": 44.3878,
+        "quality_status": "limited",
+        "counts_raw": {
+          "tp": 0,
+          "fp": 56447,
+          "fn": 0,
+          "tn": 2303423
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 42262,
+          "fn": 0,
+          "tn": 2317608
+        },
+        "level": "inconclusive"
+      }
+    },
+    {
+      "name": "EMSR258_03KOLONJE_DEL_v2",
+      "event_id": "EMSR258",
+      "reference_has_flood": false,
+      "reference_flood_px": 0,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_flood_like_pct": 2.2569,
+        "outside_known_water_pct": 2.1964,
+        "known_water_pct_of_eligible": 0.3433,
+        "flood_like_on_known_water_share_pct": 3.0151,
+        "eligible_pct": 58.384,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 0,
+          "fp": 47328,
+          "fn": 0,
+          "tn": 2049709
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 45901,
+          "fn": 0,
+          "tn": 2051136
+        },
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_flood_like_pct": 0.6741,
+        "outside_known_water_pct": 0.6754,
+        "known_water_pct_of_eligible": 0.3433,
+        "flood_like_on_known_water_share_pct": 0.1627,
+        "eligible_pct": 58.384,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 0,
+          "fp": 14137,
+          "fn": 0,
+          "tn": 2082900
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 14114,
+          "fn": 0,
+          "tn": 2082923
+        },
+        "level": "none_detected"
+      }
+    },
+    {
+      "name": "EMSR258_05PATOS_DEL_v3",
+      "event_id": "EMSR258",
+      "reference_has_flood": false,
+      "reference_flood_px": 0,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_flood_like_pct": 1.3632,
+        "outside_known_water_pct": 1.2844,
+        "known_water_pct_of_eligible": 0.6254,
+        "flood_like_on_known_water_share_pct": 6.3702,
+        "eligible_pct": 82.3952,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 0,
+          "fp": 41082,
+          "fn": 0,
+          "tn": 2972538
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 38465,
+          "fn": 0,
+          "tn": 2975155
+        },
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_flood_like_pct": 0.5225,
+        "outside_known_water_pct": 0.5206,
+        "known_water_pct_of_eligible": 0.6254,
+        "flood_like_on_known_water_share_pct": 0.9717,
+        "eligible_pct": 82.3952,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 0,
+          "fp": 15745,
+          "fn": 0,
+          "tn": 2997875
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 15592,
+          "fn": 0,
+          "tn": 2998028
+        },
+        "level": "none_detected"
+      }
+    },
+    {
+      "name": "EMSR258_06VLORE_DEL_v2",
+      "event_id": "EMSR258",
+      "reference_has_flood": true,
+      "reference_flood_px": 40888,
+      "reference_flood_on_permanent_water_px": 1479,
+      "tiled": {
+        "raw_flood_like_pct": 6.109,
+        "outside_known_water_pct": 7.2526,
+        "known_water_pct_of_eligible": 28.0393,
+        "flood_like_on_known_water_share_pct": 14.5685,
+        "eligible_pct": 70.7876,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 13496,
+          "fp": 140741,
+          "fn": 27392,
+          "tn": 2343130
+        },
+        "counts_excluding_known_water": {
+          "tp": 12936,
+          "fp": 118831,
+          "fn": 27952,
+          "tn": 2365040
+        },
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_flood_like_pct": 1.5662,
+        "outside_known_water_pct": 1.7806,
+        "known_water_pct_of_eligible": 28.0393,
+        "flood_like_on_known_water_share_pct": 18.1924,
+        "eligible_pct": 70.7876,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 2925,
+          "fp": 36619,
+          "fn": 37963,
+          "tn": 2447252
+        },
+        "counts_excluding_known_water": {
+          "tp": 2795,
+          "fp": 29555,
+          "fn": 38093,
+          "tn": 2454316
+        },
+        "level": "inconclusive"
+      }
+    },
+    {
+      "name": "EMSR258_07ARMEN_DEL_v2",
+      "event_id": "EMSR258",
+      "reference_has_flood": true,
+      "reference_flood_px": 66535,
+      "reference_flood_on_permanent_water_px": 2169,
+      "tiled": {
+        "raw_flood_like_pct": 5.3222,
+        "outside_known_water_pct": 5.0159,
+        "known_water_pct_of_eligible": 0.5277,
+        "flood_like_on_known_water_share_pct": 6.2512,
+        "eligible_pct": 94.7601,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 27587,
+          "fp": 137182,
+          "fn": 38948,
+          "tn": 2892189
+        },
+        "counts_excluding_known_water": {
+          "tp": 26180,
+          "fp": 128289,
+          "fn": 40355,
+          "tn": 2901082
+        },
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_flood_like_pct": 0.5123,
+        "outside_known_water_pct": 0.4911,
+        "known_water_pct_of_eligible": 0.5277,
+        "flood_like_on_known_water_share_pct": 4.6469,
+        "eligible_pct": 94.7601,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 1763,
+          "fp": 14097,
+          "fn": 64772,
+          "tn": 3015274
+        },
+        "counts_excluding_known_water": {
+          "tp": 1710,
+          "fp": 13413,
+          "fn": 64825,
+          "tn": 3015958
+        },
+        "level": "none_detected"
+      }
+    },
+    {
+      "name": "EMSR258_08BELSH_DEL_MONIT01_v3",
+      "event_id": "EMSR258",
+      "reference_has_flood": true,
+      "reference_flood_px": 8933,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_flood_like_pct": 3.0423,
+        "outside_known_water_pct": 2.267,
+        "known_water_pct_of_eligible": 3.2884,
+        "flood_like_on_known_water_share_pct": 27.934,
+        "eligible_pct": 97.8459,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 406,
+          "fp": 82858,
+          "fn": 8527,
+          "tn": 2645051
+        },
+        "counts_excluding_known_water": {
+          "tp": 406,
+          "fp": 59599,
+          "fn": 8527,
+          "tn": 2668310
+        },
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_flood_like_pct": 0.1345,
+        "outside_known_water_pct": 0.113,
+        "known_water_pct_of_eligible": 3.2884,
+        "flood_like_on_known_water_share_pct": 18.7228,
+        "eligible_pct": 97.8459,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 42,
+          "fp": 3638,
+          "fn": 8891,
+          "tn": 2724271
+        },
+        "counts_excluding_known_water": {
+          "tp": 42,
+          "fp": 2949,
+          "fn": 8891,
+          "tn": 2724960
+        },
+        "level": "none_detected"
+      }
+    },
+    {
+      "name": "EMSR258_09GRAMSCH_DEL_v3",
+      "event_id": "EMSR258",
+      "reference_has_flood": true,
+      "reference_flood_px": 17812,
+      "reference_flood_on_permanent_water_px": 190,
+      "tiled": {
+        "raw_flood_like_pct": 1.8199,
+        "outside_known_water_pct": 1.8092,
+        "known_water_pct_of_eligible": 1.2467,
+        "flood_like_on_known_water_share_pct": 1.8229,
+        "eligible_pct": 94.1623,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 2355,
+          "fp": 69563,
+          "fn": 15457,
+          "tn": 3864466
+        },
+        "counts_excluding_known_water": {
+          "tp": 2328,
+          "fp": 68279,
+          "fn": 15484,
+          "tn": 3865750
+        },
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_flood_like_pct": 0.2629,
+        "outside_known_water_pct": 0.26,
+        "known_water_pct_of_eligible": 1.2467,
+        "flood_like_on_known_water_share_pct": 2.3486,
+        "eligible_pct": 94.1623,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 253,
+          "fp": 10136,
+          "fn": 17559,
+          "tn": 3923893
+        },
+        "counts_excluding_known_water": {
+          "tp": 252,
+          "fp": 9893,
+          "fn": 17560,
+          "tn": 3924136
+        },
+        "level": "none_detected"
+      }
+    },
+    {
+      "name": "EMSR258_10URAVAJGURORE_DEL_v3",
+      "event_id": "EMSR258",
+      "reference_has_flood": true,
+      "reference_flood_px": 13573,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_flood_like_pct": 2.1693,
+        "outside_known_water_pct": 2.1634,
+        "known_water_pct_of_eligible": 0.1719,
+        "flood_like_on_known_water_share_pct": 0.4454,
+        "eligible_pct": 95.4109,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 2280,
+          "fp": 81020,
+          "fn": 11293,
+          "tn": 3745296
+        },
+        "counts_excluding_known_water": {
+          "tp": 2280,
+          "fp": 80649,
+          "fn": 11293,
+          "tn": 3745667
+        },
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_flood_like_pct": 0.4396,
+        "outside_known_water_pct": 0.4387,
+        "known_water_pct_of_eligible": 0.1719,
+        "flood_like_on_known_water_share_pct": 0.385,
+        "eligible_pct": 95.4109,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 14,
+          "fp": 16868,
+          "fn": 13559,
+          "tn": 3809448
+        },
+        "counts_excluding_known_water": {
+          "tp": 14,
+          "fp": 16803,
+          "fn": 13559,
+          "tn": 3809513
+        },
+        "level": "none_detected"
+      }
+    },
+    {
+      "name": "EMSR258_12SEVASTER_DEL_v2",
+      "event_id": "EMSR258",
+      "reference_has_flood": true,
+      "reference_flood_px": 59008,
+      "reference_flood_on_permanent_water_px": 1273,
+      "tiled": {
+        "raw_flood_like_pct": 7.1062,
+        "outside_known_water_pct": 6.9051,
+        "known_water_pct_of_eligible": 0.3924,
+        "flood_like_on_known_water_share_pct": 3.212,
+        "eligible_pct": 93.2236,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 25320,
+          "fp": 156341,
+          "fn": 33688,
+          "tn": 2341020
+        },
+        "counts_excluding_known_water": {
+          "tp": 24647,
+          "fp": 151179,
+          "fn": 34361,
+          "tn": 2346182
+        },
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_flood_like_pct": 1.3839,
+        "outside_known_water_pct": 1.3799,
+        "known_water_pct_of_eligible": 0.3924,
+        "flood_like_on_known_water_share_pct": 0.6812,
+        "eligible_pct": 93.2236,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 1319,
+          "fp": 34058,
+          "fn": 57689,
+          "tn": 2463303
+        },
+        "counts_excluding_known_water": {
+          "tp": 1289,
+          "fp": 33847,
+          "fn": 57719,
+          "tn": 2463514
+        },
+        "level": "inconclusive"
+      }
+    },
+    {
+      "name": "EMSR258_13TEPELENE_DEL_v3",
+      "event_id": "EMSR258",
+      "reference_has_flood": true,
+      "reference_flood_px": 25387,
+      "reference_flood_on_permanent_water_px": 1700,
+      "tiled": {
+        "raw_flood_like_pct": 5.867,
+        "outside_known_water_pct": 5.8228,
+        "known_water_pct_of_eligible": 0.1584,
+        "flood_like_on_known_water_share_pct": 0.9091,
+        "eligible_pct": 83.3968,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 7782,
+          "fp": 389097,
+          "fn": 17605,
+          "tn": 6350168
+        },
+        "counts_excluding_known_water": {
+          "tp": 7381,
+          "fp": 385890,
+          "fn": 18006,
+          "tn": 6353375
+        },
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_flood_like_pct": 1.9503,
+        "outside_known_water_pct": 1.9523,
+        "known_water_pct_of_eligible": 0.1584,
+        "flood_like_on_known_water_share_pct": 0.0538,
+        "eligible_pct": 83.3968,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 159,
+          "fp": 131770,
+          "fn": 25228,
+          "tn": 6607495
+        },
+        "counts_excluding_known_water": {
+          "tp": 143,
+          "fp": 131715,
+          "fn": 25244,
+          "tn": 6607550
+        },
+        "level": "inconclusive"
+      }
+    },
+    {
+      "name": "EMSR267_01RUSNE_DEL_v1",
+      "event_id": "EMSR267",
+      "reference_has_flood": false,
+      "reference_flood_px": 0,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_flood_like_pct": 2.9111,
+        "outside_known_water_pct": 1.6967,
+        "known_water_pct_of_eligible": 79.0416,
+        "flood_like_on_known_water_share_pct": 87.7849,
+        "eligible_pct": 10.2952,
+        "quality_status": "limited",
+        "counts_raw": {
+          "tp": 0,
+          "fp": 27294,
+          "fn": 0,
+          "tn": 910283
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 3334,
+          "fn": 0,
+          "tn": 934243
+        },
+        "level": "unable"
+      },
+      "resize": {
+        "raw_flood_like_pct": 1.3393,
+        "outside_known_water_pct": 2.4529,
+        "known_water_pct_of_eligible": 79.0416,
+        "flood_like_on_known_water_share_pct": 61.615,
+        "eligible_pct": 10.2952,
+        "quality_status": "limited",
+        "counts_raw": {
+          "tp": 0,
+          "fp": 12557,
+          "fn": 0,
+          "tn": 925020
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 4820,
+          "fn": 0,
+          "tn": 932757
+        },
+        "level": "unable"
+      }
+    },
+    {
+      "name": "EMSR274_01AMBILOBE_DEL_v2",
+      "event_id": "EMSR274",
+      "reference_has_flood": false,
+      "reference_flood_px": 0,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_flood_like_pct": 9.2306,
+        "outside_known_water_pct": 6.973,
+        "known_water_pct_of_eligible": 10.8236,
+        "flood_like_on_known_water_share_pct": 32.6347,
+        "eligible_pct": 87.9658,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 0,
+          "fp": 1027935,
+          "fn": 0,
+          "tn": 10108190
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 692471,
+          "fn": 0,
+          "tn": 10443654
+        },
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_flood_like_pct": 3.2766,
+        "outside_known_water_pct": 2.0804,
+        "known_water_pct_of_eligible": 10.8236,
+        "flood_like_on_known_water_share_pct": 43.3786,
+        "eligible_pct": 87.9658,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 0,
+          "fp": 364887,
+          "fn": 0,
+          "tn": 10771238
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 206604,
+          "fn": 0,
+          "tn": 10929521
+        },
+        "level": "inconclusive"
+      }
+    },
+    {
+      "name": "EMSR274_02AMBANJA_DEL_v1",
+      "event_id": "EMSR274",
+      "reference_has_flood": false,
+      "reference_flood_px": 0,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_flood_like_pct": 11.9179,
+        "outside_known_water_pct": 6.4649,
+        "known_water_pct_of_eligible": 6.6776,
+        "flood_like_on_known_water_share_pct": 49.3771,
+        "eligible_pct": 36.5262,
+        "quality_status": "limited",
+        "counts_raw": {
+          "tp": 0,
+          "fp": 495489,
+          "fn": 0,
+          "tn": 3768086
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 250831,
+          "fn": 0,
+          "tn": 4012744
+        },
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_flood_like_pct": 2.0644,
+        "outside_known_water_pct": 1.5554,
+        "known_water_pct_of_eligible": 6.6776,
+        "flood_like_on_known_water_share_pct": 29.6865,
+        "eligible_pct": 36.5262,
+        "quality_status": "limited",
+        "counts_raw": {
+          "tp": 0,
+          "fp": 85827,
+          "fn": 0,
+          "tn": 4177748
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 60348,
+          "fn": 0,
+          "tn": 4203227
+        },
+        "level": "inconclusive"
+      }
+    },
+    {
+      "name": "EMSR274_05TOAMASINA_DEL_v1",
+      "event_id": "EMSR274",
+      "reference_has_flood": true,
+      "reference_flood_px": 85123,
+      "reference_flood_on_permanent_water_px": 275,
+      "tiled": {
+        "raw_flood_like_pct": 2.7165,
+        "outside_known_water_pct": 2.9985,
+        "known_water_pct_of_eligible": 26.4542,
+        "flood_like_on_known_water_share_pct": 18.8194,
+        "eligible_pct": 65.827,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 4110,
+          "fp": 131144,
+          "fn": 81013,
+          "tn": 4762739
+        },
+        "counts_excluding_known_water": {
+          "tp": 4079,
+          "fp": 105721,
+          "fn": 81044,
+          "tn": 4788162
+        },
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_flood_like_pct": 1.4711,
+        "outside_known_water_pct": 1.7845,
+        "known_water_pct_of_eligible": 26.4542,
+        "flood_like_on_known_water_share_pct": 10.7894,
+        "eligible_pct": 65.827,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 2292,
+          "fp": 70956,
+          "fn": 82831,
+          "tn": 4822927
+        },
+        "counts_excluding_known_water": {
+          "tp": 2261,
+          "fp": 63084,
+          "fn": 82862,
+          "tn": 4830799
+        },
+        "level": "inconclusive"
+      }
+    },
+    {
+      "name": "EMSR274_08MAHANORO_DEL_v1",
+      "event_id": "EMSR274",
+      "reference_has_flood": false,
+      "reference_flood_px": 0,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_flood_like_pct": 9.7041,
+        "outside_known_water_pct": 5.5276,
+        "known_water_pct_of_eligible": 46.532,
+        "flood_like_on_known_water_share_pct": 69.5439,
+        "eligible_pct": 50.977,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 0,
+          "fp": 290329,
+          "fn": 0,
+          "tn": 2701488
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 88423,
+          "fn": 0,
+          "tn": 2903394
+        },
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_flood_like_pct": 3.0138,
+        "outside_known_water_pct": 2.6968,
+        "known_water_pct_of_eligible": 46.532,
+        "flood_like_on_known_water_share_pct": 52.1549,
+        "eligible_pct": 50.977,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 0,
+          "fp": 90166,
+          "fn": 0,
+          "tn": 2901651
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 43140,
+          "fn": 0,
+          "tn": 2948677
+        },
+        "level": "inconclusive"
+      }
+    },
+    {
+      "name": "EMSR274_09NOSYVARIKA_DEL_v1",
+      "event_id": "EMSR274",
+      "reference_has_flood": true,
+      "reference_flood_px": 40187,
+      "reference_flood_on_permanent_water_px": 59,
+      "tiled": {
+        "raw_flood_like_pct": 11.6277,
+        "outside_known_water_pct": 10.0284,
+        "known_water_pct_of_eligible": 14.1641,
+        "flood_like_on_known_water_share_pct": 25.9702,
+        "eligible_pct": 82.0467,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 10102,
+          "fp": 37387,
+          "fn": 30085,
+          "tn": 330839
+        },
+        "counts_excluding_known_water": {
+          "tp": 10084,
+          "fp": 25072,
+          "fn": 30103,
+          "tn": 343154
+        },
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_flood_like_pct": 6.5297,
+        "outside_known_water_pct": 5.7675,
+        "known_water_pct_of_eligible": 14.1641,
+        "flood_like_on_known_water_share_pct": 24.1825,
+        "eligible_pct": 82.0467,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 1605,
+          "fp": 25063,
+          "fn": 38582,
+          "tn": 343163
+        },
+        "counts_excluding_known_water": {
+          "tp": 1591,
+          "fp": 18628,
+          "fn": 38596,
+          "tn": 349598
+        },
+        "level": "inconclusive"
+      }
+    },
+    {
+      "name": "EMSR274_10MANANJARY_DEL_v2",
+      "event_id": "EMSR274",
+      "reference_has_flood": true,
+      "reference_flood_px": 46050,
+      "reference_flood_on_permanent_water_px": 964,
+      "tiled": {
+        "raw_flood_like_pct": 10.3658,
+        "outside_known_water_pct": 4.7272,
+        "known_water_pct_of_eligible": 12.7253,
+        "flood_like_on_known_water_share_pct": 60.1996,
+        "eligible_pct": 74.5067,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 3471,
+          "fp": 186281,
+          "fn": 42579,
+          "tn": 1598230
+        },
+        "counts_excluding_known_water": {
+          "tp": 2903,
+          "fp": 72619,
+          "fn": 43147,
+          "tn": 1711892
+        },
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_flood_like_pct": 3.4523,
+        "outside_known_water_pct": 1.5555,
+        "known_water_pct_of_eligible": 12.7253,
+        "flood_like_on_known_water_share_pct": 60.6763,
+        "eligible_pct": 74.5067,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 981,
+          "fp": 62215,
+          "fn": 45069,
+          "tn": 1722296
+        },
+        "counts_excluding_known_water": {
+          "tp": 942,
+          "fp": 23909,
+          "fn": 45108,
+          "tn": 1760602
+        },
+        "level": "inconclusive"
+      }
+    },
+    {
+      "name": "EMSR274_16MANANARA_DEL_v2",
+      "event_id": "EMSR274",
+      "reference_has_flood": true,
+      "reference_flood_px": 1306,
+      "reference_flood_on_permanent_water_px": 243,
+      "tiled": {
+        "raw_flood_like_pct": 5.1404,
+        "outside_known_water_pct": 2.6384,
+        "known_water_pct_of_eligible": 29.1358,
+        "flood_like_on_known_water_share_pct": 63.6278,
+        "eligible_pct": 74.7416,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 81,
+          "fp": 21199,
+          "fn": 1225,
+          "tn": 391473
+        },
+        "counts_excluding_known_water": {
+          "tp": 52,
+          "fp": 7688,
+          "fn": 1254,
+          "tn": 404984
+        },
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_flood_like_pct": 1.8035,
+        "outside_known_water_pct": 1.1648,
+        "known_water_pct_of_eligible": 29.1358,
+        "flood_like_on_known_water_share_pct": 54.2325,
+        "eligible_pct": 74.7416,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 50,
+          "fp": 7416,
+          "fn": 1256,
+          "tn": 405256
+        },
+        "counts_excluding_known_water": {
+          "tp": 31,
+          "fp": 3386,
+          "fn": 1275,
+          "tn": 409286
+        },
+        "level": "inconclusive"
+      }
+    },
+    {
+      "name": "EMSR314_03ENUGUOTU_DEL_v1",
+      "event_id": "EMSR314",
+      "reference_has_flood": true,
+      "reference_flood_px": 214957,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_flood_like_pct": 6.3377,
+        "outside_known_water_pct": 6.3379,
+        "known_water_pct_of_eligible": 0.0031,
+        "flood_like_on_known_water_share_pct": 0.0,
+        "eligible_pct": 6.6541,
+        "quality_status": "limited",
+        "counts_raw": {
+          "tp": 14010,
+          "fp": 4572,
+          "fn": 200947,
+          "tn": 73667
+        },
+        "counts_excluding_known_water": {
+          "tp": 14010,
+          "fp": 4572,
+          "fn": 200947,
+          "tn": 73667
+        },
+        "level": "unable"
+      },
+      "resize": {
+        "raw_flood_like_pct": 1.6098,
+        "outside_known_water_pct": 1.6099,
+        "known_water_pct_of_eligible": 0.0031,
+        "flood_like_on_known_water_share_pct": 0.0,
+        "eligible_pct": 6.6541,
+        "quality_status": "limited",
+        "counts_raw": {
+          "tp": 3742,
+          "fp": 978,
+          "fn": 211215,
+          "tn": 77261
+        },
+        "counts_excluding_known_water": {
+          "tp": 3742,
+          "fp": 978,
+          "fn": 211215,
+          "tn": 77261
+        },
+        "level": "unable"
+      }
+    },
+    {
+      "name": "EMSR314_05ONITSHA_DEL_v1",
+      "event_id": "EMSR314",
+      "reference_has_flood": true,
+      "reference_flood_px": 77533,
+      "reference_flood_on_permanent_water_px": 95,
+      "tiled": {
+        "raw_flood_like_pct": 14.9117,
+        "outside_known_water_pct": 13.8996,
+        "known_water_pct_of_eligible": 9.4121,
+        "flood_like_on_known_water_share_pct": 15.561,
+        "eligible_pct": 2.4615,
+        "quality_status": "limited",
+        "counts_raw": {
+          "tp": 18717,
+          "fp": 16390,
+          "fn": 58816,
+          "tn": 141509
+        },
+        "counts_excluding_known_water": {
+          "tp": 18682,
+          "fp": 10962,
+          "fn": 58851,
+          "tn": 146937
+        },
+        "level": "unable"
+      },
+      "resize": {
+        "raw_flood_like_pct": 9.9294,
+        "outside_known_water_pct": 9.8559,
+        "known_water_pct_of_eligible": 9.4121,
+        "flood_like_on_known_water_share_pct": 10.0826,
+        "eligible_pct": 2.4615,
+        "quality_status": "limited",
+        "counts_raw": {
+          "tp": 9788,
+          "fp": 13589,
+          "fn": 67745,
+          "tn": 144310
+        },
+        "counts_excluding_known_water": {
+          "tp": 9760,
+          "fp": 11260,
+          "fn": 67773,
+          "tn": 146639
+        },
+        "level": "unable"
+      }
+    },
+    {
+      "name": "EMSR442_AOI03_DEL_PRODUCT",
+      "event_id": "EMSR442",
+      "reference_has_flood": true,
+      "reference_flood_px": 8206,
+      "reference_flood_on_permanent_water_px": 146,
+      "tiled": {
+        "raw_flood_like_pct": 23.321,
+        "outside_known_water_pct": 23.9767,
+        "known_water_pct_of_eligible": 4.8728,
+        "flood_like_on_known_water_share_pct": 2.1979,
+        "eligible_pct": 72.9883,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 586,
+          "fp": 54649,
+          "fn": 7620,
+          "tn": 173992
+        },
+        "counts_excluding_known_water": {
+          "tp": 570,
+          "fp": 53451,
+          "fn": 7636,
+          "tn": 175190
+        },
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_flood_like_pct": 13.2035,
+        "outside_known_water_pct": 13.5283,
+        "known_water_pct_of_eligible": 4.8728,
+        "flood_like_on_known_water_share_pct": 2.5326,
+        "eligible_pct": 72.9883,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 729,
+          "fp": 30543,
+          "fn": 7477,
+          "tn": 198098
+        },
+        "counts_excluding_known_water": {
+          "tp": 720,
+          "fp": 29760,
+          "fn": 7486,
+          "tn": 198881
+        },
+        "level": "inconclusive"
+      }
+    },
+    {
+      "name": "EMSR9284_01YLITORNIONORTHERN_DEL_MONIT01_v1",
+      "event_id": "EMSR9284",
+      "reference_has_flood": true,
+      "reference_flood_px": 16773,
+      "reference_flood_on_permanent_water_px": 410,
+      "tiled": {
+        "raw_flood_like_pct": 7.7432,
+        "outside_known_water_pct": 4.8089,
+        "known_water_pct_of_eligible": 6.4286,
+        "flood_like_on_known_water_share_pct": 41.8876,
+        "eligible_pct": 91.9311,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 2908,
+          "fp": 235432,
+          "fn": 13865,
+          "tn": 2825836
+        },
+        "counts_excluding_known_water": {
+          "tp": 2837,
+          "fp": 135668,
+          "fn": 13936,
+          "tn": 2925600
+        },
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_flood_like_pct": 1.126,
+        "outside_known_water_pct": 0.7768,
+        "known_water_pct_of_eligible": 6.4286,
+        "flood_like_on_known_water_share_pct": 35.4464,
+        "eligible_pct": 91.9311,
+        "quality_status": "ok",
+        "counts_raw": {
+          "tp": 209,
+          "fp": 34449,
+          "fn": 16564,
+          "tn": 3026819
+        },
+        "counts_excluding_known_water": {
+          "tp": 209,
+          "fp": 22164,
+          "fn": 16564,
+          "tn": 3039104
+        },
+        "level": "none_detected"
+      }
+    }
+  ],
+  "elapsed_s": 104.7
+}

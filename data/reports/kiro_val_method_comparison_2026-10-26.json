@@ -1,0 +1,1532 @@
+{
+  "kind": "inference_method_comparison",
+  "split": "val",
+  "note": "Validation split only. Not a generalisation estimate; the held-out test split was not used.",
+  "timestamp": "2026-10-26T02:58:01.443790",
+  "model": {
+    "checkpoint": "D:\\superiorparab\\final year DL project\\models\\flood\\segmentation_v1\\best_seg_model.pt",
+    "architecture": "U-Net",
+    "encoder": "efficientnet-b2",
+    "num_classes": 2,
+    "input_size": 256,
+    "epoch": 14,
+    "val_metrics_at_save": {
+      "flood_iou": 0.1204,
+      "flood_dice": 0.2149,
+      "flood_precision": 0.1623,
+      "flood_recall": 0.3178
+    },
+    "device": "cuda"
+  },
+  "settings": {
+    "threshold": 0.5,
+    "tile_size": 256,
+    "tile_overlap": 64,
+    "amp": true,
+    "reference": "stored EMS seg mask, validity==0 -> ignore"
+  },
+  "protocols": {
+    "A256": "resize to 256, scored on nearest-resized 256x256 reference (Phase H protocol)",
+    "A_full": "resize to 256, probability upsampled, scored at full resolution",
+    "B_full": "256 px tiles at native resolution with overlap blending, scored at full resolution"
+  },
+  "aggregate": {
+    "A256": {
+      "tp": 12410,
+      "fp": 63996,
+      "fn": 26620,
+      "tn": 875748,
+      "flood_iou": 0.12045503076893212,
+      "flood_dice": 0.2150109151391247,
+      "flood_precision": 0.16242179933513076,
+      "flood_recall": 0.317960543171919,
+      "pixel_accuracy": 0.9074188729982611
+    },
+    "A_full": {
+      "tp": 5212758,
+      "fp": 6178707,
+      "fn": 12690766,
+      "tn": 118397642,
+      "flood_iou": 0.21645660653284157,
+      "flood_dice": 0.3558805227747312,
+      "flood_precision": 0.4576020731310679,
+      "flood_recall": 0.29115820997028297,
+      "pixel_accuracy": 0.8675639400661173
+    },
+    "B_full": {
+      "tp": 9303631,
+      "fp": 20473788,
+      "fn": 8599893,
+      "tn": 104102561,
+      "flood_iou": 0.2424252902339799,
+      "flood_dice": 0.3902452600402639,
+      "flood_precision": 0.31243913382822064,
+      "flood_recall": 0.5196536167963357,
+      "pixel_accuracy": 0.7959453473123183
+    }
+  },
+  "per_event": {
+    "EMSR264": {
+      "A256": {
+        "tp": 19,
+        "fp": 4043,
+        "fn": 227,
+        "tn": 99264,
+        "flood_iou": 0.004429937048262999,
+        "flood_dice": 0.008820798514391829,
+        "flood_precision": 0.004677498769079271,
+        "flood_recall": 0.07723577235772358,
+        "pixel_accuracy": 0.9587650768205653
+      },
+      "A_full": {
+        "tp": 2028,
+        "fp": 221427,
+        "fn": 66109,
+        "tn": 14223467,
+        "flood_iou": 0.00700363304830711,
+        "flood_dice": 0.01390984663502428,
+        "flood_precision": 0.009075652816003222,
+        "flood_recall": 0.029763564583119302,
+        "pixel_accuracy": 0.9801877361110852
+      },
+      "B_full": {
+        "tp": 4756,
+        "fp": 560028,
+        "fn": 63381,
+        "tn": 13884866,
+        "flood_iou": 0.007571259143696322,
+        "flood_dice": 0.015028731863850307,
+        "flood_precision": 0.008420918439615854,
+        "flood_recall": 0.06980054889413975,
+        "pixel_accuracy": 0.9570448791847823
+      }
+    },
+    "EMSR265": {
+      "A256": {
+        "tp": 72,
+        "fp": 27843,
+        "fn": 719,
+        "tn": 276451,
+        "flood_iou": 0.0025144932597611232,
+        "flood_dice": 0.00501637288371769,
+        "flood_precision": 0.002579258463191832,
+        "flood_recall": 0.09102402022756005,
+        "pixel_accuracy": 0.9063801891276202
+      },
+      "A_full": {
+        "tp": 4818,
+        "fp": 1711061,
+        "fn": 92621,
+        "tn": 30672359,
+        "flood_iou": 0.0026640862593309373,
+        "flood_dice": 0.0053140155229253775,
+        "flood_precision": 0.0028078902999570483,
+        "flood_recall": 0.04944632026190745,
+        "pixel_accuracy": 0.9444693873397868
+      },
+      "B_full": {
+        "tp": 16823,
+        "fp": 5730938,
+        "fn": 80616,
+        "tn": 26652482,
+        "flood_iou": 0.0028863953035296102,
+        "flood_dice": 0.005756176007664408,
+        "flood_precision": 0.0029268788316006876,
+        "flood_recall": 0.17265160767249255,
+        "pixel_accuracy": 0.8210775767968452
+      }
+    },
+    "EMSR312": {
+      "A256": {
+        "tp": 0,
+        "fp": 20595,
+        "fn": 0,
+        "tn": 365373,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9466406541474941
+      },
+      "A_full": {
+        "tp": 0,
+        "fp": 1002300,
+        "fn": 0,
+        "tn": 41026971,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9761523344052292
+      },
+      "B_full": {
+        "tp": 0,
+        "fp": 4053361,
+        "fn": 0,
+        "tn": 37975910,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9035586175168253
+      }
+    },
+    "EMSR329": {
+      "A256": {
+        "tp": 0,
+        "fp": 2202,
+        "fn": 14,
+        "tn": 62457,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": 0.0,
+        "pixel_accuracy": 0.9657353145825924
+      },
+      "A_full": {
+        "tp": 0,
+        "fp": 24291,
+        "fn": 201,
+        "tn": 888714,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": 0.0,
+        "pixel_accuracy": 0.9731802024953844
+      },
+      "B_full": {
+        "tp": 14,
+        "fp": 28219,
+        "fn": 187,
+        "tn": 884786,
+        "flood_iou": 0.0004926108374384236,
+        "flood_dice": 0.0009847365829640572,
+        "flood_precision": 0.0004958736230652074,
+        "flood_recall": 0.06965174129353234,
+        "pixel_accuracy": 0.9688942034984439
+      }
+    },
+    "EMSR342": {
+      "A256": {
+        "tp": 12316,
+        "fp": 8835,
+        "fn": 25654,
+        "tn": 62830,
+        "flood_iou": 0.26313428052558485,
+        "flood_dice": 0.4166370663554405,
+        "flood_precision": 0.5822892534631933,
+        "flood_recall": 0.3243613378983408,
+        "pixel_accuracy": 0.6854198020705067
+      },
+      "A_full": {
+        "tp": 5205813,
+        "fp": 3185365,
+        "fn": 12530661,
+        "tn": 30538991,
+        "flood_iou": 0.2488219606316634,
+        "flood_dice": 0.3984906871845966,
+        "flood_precision": 0.6203912013307309,
+        "flood_recall": 0.2935089014874095,
+        "pixel_accuracy": 0.6946021663467146
+      },
+      "B_full": {
+        "tp": 9281897,
+        "fp": 10082324,
+        "fn": 8454577,
+        "tn": 23642032,
+        "flood_iou": 0.3336555734722974,
+        "flood_dice": 0.5003624325635948,
+        "flood_precision": 0.47933232119174846,
+        "flood_recall": 0.5233225611809879,
+        "pixel_accuracy": 0.6397862024378542
+      }
+    },
+    "EMSR422": {
+      "A256": {
+        "tp": 3,
+        "fp": 478,
+        "fn": 6,
+        "tn": 9373,
+        "flood_iou": 0.006160164271047228,
+        "flood_dice": 0.012244897959183673,
+        "flood_precision": 0.006237006237006237,
+        "flood_recall": 0.3333333333333333,
+        "pixel_accuracy": 0.9509127789046653
+      },
+      "A_full": {
+        "tp": 99,
+        "fp": 34263,
+        "fn": 1174,
+        "tn": 1047140,
+        "flood_iou": 0.002785907248986943,
+        "flood_dice": 0.005556335063841729,
+        "flood_precision": 0.002881089575694081,
+        "flood_recall": 0.07776904948939513,
+        "pixel_accuracy": 0.9672690629514278
+      },
+      "B_full": {
+        "tp": 141,
+        "fp": 18918,
+        "fn": 1132,
+        "tn": 1062485,
+        "flood_iou": 0.006983309395275123,
+        "flood_dice": 0.013869761951603384,
+        "flood_precision": 0.007398079647410672,
+        "flood_recall": 0.11076197957580518,
+        "pixel_accuracy": 0.9814810709759891
+      }
+    }
+  },
+  "per_sample": [
+    {
+      "name": "EMSR264_08VATOMANDRY_DEL_v2",
+      "event_id": "EMSR264",
+      "original_split": "test",
+      "width": 4251,
+      "height": 4569,
+      "n_tiles": 528,
+      "ref_flood_px_full": 68137,
+      "ref_supervised_px_full": 12642870,
+      "pred_coverage_pct": {
+        "A_full": 1.4588,
+        "B_full": 2.7211
+      },
+      "seconds": {
+        "A256": 12.75,
+        "A_full": 1.23,
+        "B_full": 20.01
+      },
+      "A256": {
+        "tp": 19,
+        "fp": 1509,
+        "fn": 227,
+        "tn": 40941,
+        "flood_iou": 0.010826210826210826,
+        "flood_dice": 0.02142051860202931,
+        "flood_precision": 0.012434554973821989,
+        "flood_recall": 0.07723577235772358,
+        "pixel_accuracy": 0.9593404534382612
+      },
+      "A_full": {
+        "tp": 2028,
+        "fp": 182405,
+        "fn": 66109,
+        "tn": 12392328,
+        "flood_iou": 0.008094451229733938,
+        "flood_dice": 0.01605891436037534,
+        "flood_precision": 0.010995862996318446,
+        "flood_recall": 0.029763564583119302,
+        "pixel_accuracy": 0.9803435454133437
+      },
+      "B_full": {
+        "tp": 4756,
+        "fp": 339270,
+        "fn": 63381,
+        "tn": 12235463,
+        "flood_iou": 0.011673829855648037,
+        "flood_dice": 0.023078248168807002,
+        "flood_precision": 0.013824536517588786,
+        "flood_recall": 0.06980054889413975,
+        "pixel_accuracy": 0.9681519306929518
+      }
+    },
+    {
+      "name": "EMSR264_18MIANDRIVAZODETAIL_DEL_v2",
+      "event_id": "EMSR264",
+      "original_split": "test",
+      "width": 1530,
+      "height": 1313,
+      "n_tiles": 56,
+      "ref_flood_px_full": 0,
+      "ref_supervised_px_full": 1870161,
+      "pred_coverage_pct": {
+        "A_full": 2.0866,
+        "B_full": 11.8042
+      },
+      "seconds": {
+        "A256": 0.61,
+        "A_full": 0.17,
+        "B_full": 0.71
+      },
+      "A256": {
+        "tp": 0,
+        "fp": 2534,
+        "fn": 0,
+        "tn": 58323,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9583614046042361
+      },
+      "A_full": {
+        "tp": 0,
+        "fp": 39022,
+        "fn": 0,
+        "tn": 1831139,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9791344167694653
+      },
+      "B_full": {
+        "tp": 0,
+        "fp": 220758,
+        "fn": 0,
+        "tn": 1649403,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.881957756578177
+      }
+    },
+    {
+      "name": "EMSR265_04ESBLY_DEL_MONIT01_v1",
+      "event_id": "EMSR265",
+      "original_split": "train",
+      "width": 1611,
+      "height": 1191,
+      "n_tiles": 54,
+      "ref_flood_px_full": 0,
+      "ref_supervised_px_full": 209146,
+      "pred_coverage_pct": {
+        "A_full": 1.4158,
+        "B_full": 4.4773
+      },
+      "seconds": {
+        "A256": 0.65,
+        "A_full": 0.13,
+        "B_full": 5.8
+      },
+      "A256": {
+        "tp": 0,
+        "fp": 263,
+        "fn": 0,
+        "tn": 6879,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9631755810697283
+      },
+      "A_full": {
+        "tp": 0,
+        "fp": 2961,
+        "fn": 0,
+        "tn": 206185,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9858424258651851
+      },
+      "B_full": {
+        "tp": 0,
+        "fp": 9364,
+        "fn": 0,
+        "tn": 199782,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9552274487678464
+      }
+    },
+    {
+      "name": "EMSR265_04ESBLY_DEL_MONIT02_v2",
+      "event_id": "EMSR265",
+      "original_split": "train",
+      "width": 1611,
+      "height": 1191,
+      "n_tiles": 54,
+      "ref_flood_px_full": 0,
+      "ref_supervised_px_full": 209146,
+      "pred_coverage_pct": {
+        "A_full": 1.4158,
+        "B_full": 4.4773
+      },
+      "seconds": {
+        "A256": 0.92,
+        "A_full": 0.17,
+        "B_full": 0.87
+      },
+      "A256": {
+        "tp": 0,
+        "fp": 263,
+        "fn": 0,
+        "tn": 6879,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9631755810697283
+      },
+      "A_full": {
+        "tp": 0,
+        "fp": 2961,
+        "fn": 0,
+        "tn": 206185,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9858424258651851
+      },
+      "B_full": {
+        "tp": 0,
+        "fp": 9364,
+        "fn": 0,
+        "tn": 199782,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9552274487678464
+      }
+    },
+    {
+      "name": "EMSR265_04ESBLY_DEL_v1",
+      "event_id": "EMSR265",
+      "original_split": "train",
+      "width": 1611,
+      "height": 1191,
+      "n_tiles": 54,
+      "ref_flood_px_full": 0,
+      "ref_supervised_px_full": 209146,
+      "pred_coverage_pct": {
+        "A_full": 1.4158,
+        "B_full": 4.4773
+      },
+      "seconds": {
+        "A256": 0.96,
+        "A_full": 0.15,
+        "B_full": 0.67
+      },
+      "A256": {
+        "tp": 0,
+        "fp": 263,
+        "fn": 0,
+        "tn": 6879,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9631755810697283
+      },
+      "A_full": {
+        "tp": 0,
+        "fp": 2961,
+        "fn": 0,
+        "tn": 206185,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9858424258651851
+      },
+      "B_full": {
+        "tp": 0,
+        "fp": 9364,
+        "fn": 0,
+        "tn": 199782,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9552274487678464
+      }
+    },
+    {
+      "name": "EMSR265_07DAMMARIELESLYS_DEL_MONIT01_v1",
+      "event_id": "EMSR265",
+      "original_split": "train",
+      "width": 2442,
+      "height": 2001,
+      "n_tiles": 143,
+      "ref_flood_px_full": 3553,
+      "ref_supervised_px_full": 993862,
+      "pred_coverage_pct": {
+        "A_full": 1.4688,
+        "B_full": 3.0016
+      },
+      "seconds": {
+        "A256": 1.87,
+        "A_full": 0.48,
+        "B_full": 12.24
+      },
+      "A256": {
+        "tp": 1,
+        "fp": 548,
+        "fn": 44,
+        "tn": 12734,
+        "flood_iou": 0.0016863406408094434,
+        "flood_dice": 0.003367003367003367,
+        "flood_precision": 0.0018214936247723133,
+        "flood_recall": 0.022222222222222223,
+        "pixel_accuracy": 0.9555788999774893
+      },
+      "A_full": {
+        "tp": 41,
+        "fp": 14557,
+        "fn": 3512,
+        "tn": 975752,
+        "flood_iou": 0.0022639425731639977,
+        "flood_dice": 0.004517657429342736,
+        "flood_precision": 0.002808603918344979,
+        "flood_recall": 0.011539544047283985,
+        "pixel_accuracy": 0.9818194075233785
+      },
+      "B_full": {
+        "tp": 150,
+        "fp": 29682,
+        "fn": 3403,
+        "tn": 960627,
+        "flood_iou": 0.0045133142771174965,
+        "flood_dice": 0.008986071589036993,
+        "flood_precision": 0.00502815768302494,
+        "flood_recall": 0.042217844075429216,
+        "pixel_accuracy": 0.966710670093031
+      }
+    },
+    {
+      "name": "EMSR265_07DAMMARIELESLYS_DEL_v1",
+      "event_id": "EMSR265",
+      "original_split": "train",
+      "width": 2442,
+      "height": 2001,
+      "n_tiles": 143,
+      "ref_flood_px_full": 3299,
+      "ref_supervised_px_full": 993862,
+      "pred_coverage_pct": {
+        "A_full": 1.4688,
+        "B_full": 3.0016
+      },
+      "seconds": {
+        "A256": 3.16,
+        "A_full": 0.51,
+        "B_full": 2.51
+      },
+      "A256": {
+        "tp": 0,
+        "fp": 549,
+        "fn": 43,
+        "tn": 12735,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": 0.0,
+        "pixel_accuracy": 0.9555788999774893
+      },
+      "A_full": {
+        "tp": 31,
+        "fp": 14567,
+        "fn": 3268,
+        "tn": 975996,
+        "flood_iou": 0.0017351393708720474,
+        "flood_dice": 0.0034642677543722414,
+        "flood_precision": 0.002123578572407179,
+        "flood_recall": 0.009396786905122764,
+        "pixel_accuracy": 0.9820548526857853
+      },
+      "B_full": {
+        "tp": 146,
+        "fp": 29686,
+        "fn": 3153,
+        "tn": 960877,
+        "flood_iou": 0.004426254358041534,
+        "flood_dice": 0.008813497932449971,
+        "flood_precision": 0.004894073478144275,
+        "flood_recall": 0.044255835101545925,
+        "pixel_accuracy": 0.9669581893663305
+      }
+    },
+    {
+      "name": "EMSR265_08FONTAINEBLEAU_DEL_MONIT04_v2",
+      "event_id": "EMSR265",
+      "original_split": "train",
+      "width": 2494,
+      "height": 2041,
+      "n_tiles": 143,
+      "ref_flood_px_full": 6616,
+      "ref_supervised_px_full": 5055284,
+      "pred_coverage_pct": {
+        "A_full": 4.316,
+        "B_full": 14.3697
+      },
+      "seconds": {
+        "A256": 1.92,
+        "A_full": 0.41,
+        "B_full": 2.26
+      },
+      "A256": {
+        "tp": 5,
+        "fp": 5175,
+        "fn": 79,
+        "tn": 59685,
+        "flood_iou": 0.0009507510933637574,
+        "flood_dice": 0.001899696048632219,
+        "flood_precision": 0.0009652509652509653,
+        "flood_recall": 0.05952380952380952,
+        "pixel_accuracy": 0.91909953190441
+      },
+      "A_full": {
+        "tp": 161,
+        "fp": 218026,
+        "fn": 6455,
+        "tn": 4830642,
+        "flood_iou": 0.0007166958983627282,
+        "flood_dice": 0.0014323652264427076,
+        "flood_precision": 0.0007378991415620546,
+        "flood_recall": 0.024334945586457074,
+        "pixel_accuracy": 0.9555947796404712
+      },
+      "B_full": {
+        "tp": 1253,
+        "fp": 725176,
+        "fn": 5363,
+        "tn": 4323492,
+        "flood_iou": 0.0017122351706495835,
+        "flood_dice": 0.0034186168652674803,
+        "flood_precision": 0.0017248760718528583,
+        "flood_recall": 0.18938935912938332,
+        "pixel_accuracy": 0.8554900179693169
+      }
+    },
+    {
+      "name": "EMSR265_09VOULX_DEL_MONIT04_v2",
+      "event_id": "EMSR265",
+      "original_split": "train",
+      "width": 2396,
+      "height": 1957,
+      "n_tiles": 130,
+      "ref_flood_px_full": 0,
+      "ref_supervised_px_full": 4650354,
+      "pred_coverage_pct": {
+        "A_full": 5.7454,
+        "B_full": 18.3753
+      },
+      "seconds": {
+        "A256": 1.76,
+        "A_full": 0.4,
+        "B_full": 11.16
+      },
+      "A256": {
+        "tp": 0,
+        "fp": 6590,
+        "fn": 0,
+        "tn": 58157,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.89821922251224
+      },
+      "A_full": {
+        "tp": 0,
+        "fp": 267182,
+        "fn": 0,
+        "tn": 4383172,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.942545879302952
+      },
+      "B_full": {
+        "tp": 0,
+        "fp": 854516,
+        "fn": 0,
+        "tn": 3795838,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.8162471072094727
+      }
+    },
+    {
+      "name": "EMSR265_13AUXERRE_DEL_v1",
+      "event_id": "EMSR265",
+      "original_split": "train",
+      "width": 2231,
+      "height": 1831,
+      "n_tiles": 120,
+      "ref_flood_px_full": 270,
+      "ref_supervised_px_full": 201610,
+      "pred_coverage_pct": {
+        "A_full": 1.9736,
+        "B_full": 2.0113
+      },
+      "seconds": {
+        "A256": 1.58,
+        "A_full": 0.3,
+        "B_full": 1.87
+      },
+      "A256": {
+        "tp": 0,
+        "fp": 195,
+        "fn": 6,
+        "tn": 3035,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": 0.0,
+        "pixel_accuracy": 0.9378862793572311
+      },
+      "A_full": {
+        "tp": 0,
+        "fp": 3979,
+        "fn": 270,
+        "tn": 197361,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": 0.0,
+        "pixel_accuracy": 0.9789246565150538
+      },
+      "B_full": {
+        "tp": 4,
+        "fp": 4051,
+        "fn": 266,
+        "tn": 197289,
+        "flood_iou": 0.0009257116408238834,
+        "flood_dice": 0.0018497109826589595,
+        "flood_precision": 0.0009864364981504315,
+        "flood_recall": 0.014814814814814815,
+        "pixel_accuracy": 0.9785873716581519
+      }
+    },
+    {
+      "name": "EMSR265_22LESMUREAUX_DEL_MONIT03_v1",
+      "event_id": "EMSR265",
+      "original_split": "train",
+      "width": 3269,
+      "height": 2746,
+      "n_tiles": 238,
+      "ref_flood_px_full": 57075,
+      "ref_supervised_px_full": 7304066,
+      "pred_coverage_pct": {
+        "A_full": 7.6498,
+        "B_full": 25.302
+      },
+      "seconds": {
+        "A256": 3.44,
+        "A_full": 0.69,
+        "B_full": 3.89
+      },
+      "A256": {
+        "tp": 47,
+        "fp": 6700,
+        "fn": 369,
+        "tn": 46202,
+        "flood_iou": 0.006604834176503654,
+        "flood_dice": 0.0131229931592908,
+        "flood_precision": 0.006966058989180376,
+        "flood_recall": 0.11298076923076923,
+        "pixel_accuracy": 0.867418132713155
+      },
+      "A_full": {
+        "tp": 3424,
+        "fp": 555324,
+        "fn": 53651,
+        "tn": 6691667,
+        "flood_iou": 0.005591126046907327,
+        "flood_dice": 0.011120078334196676,
+        "flood_precision": 0.0061279861404425606,
+        "flood_recall": 0.05999123959702146,
+        "pixel_accuracy": 0.9166252057415691
+      },
+      "B_full": {
+        "tp": 12565,
+        "fp": 1835513,
+        "fn": 44510,
+        "tn": 5411478,
+        "flood_iou": 0.006639057206322771,
+        "flood_dice": 0.013190541652035296,
+        "flood_precision": 0.006798955455343335,
+        "flood_recall": 0.22014892685063514,
+        "pixel_accuracy": 0.7426059676897772
+      }
+    },
+    {
+      "name": "EMSR265_22LESMUREAUX_DEL_MONIT04_v1",
+      "event_id": "EMSR265",
+      "original_split": "train",
+      "width": 3269,
+      "height": 2746,
+      "n_tiles": 238,
+      "ref_flood_px_full": 26626,
+      "ref_supervised_px_full": 7304066,
+      "pred_coverage_pct": {
+        "A_full": 7.6498,
+        "B_full": 25.302
+      },
+      "seconds": {
+        "A256": 4.6,
+        "A_full": 0.56,
+        "B_full": 3.67
+      },
+      "A256": {
+        "tp": 19,
+        "fp": 6728,
+        "fn": 178,
+        "tn": 46393,
+        "flood_iou": 0.002743682310469314,
+        "flood_dice": 0.005472350230414746,
+        "flood_precision": 0.0028160663998814286,
+        "flood_recall": 0.09644670050761421,
+        "pixel_accuracy": 0.8704752616377208
+      },
+      "A_full": {
+        "tp": 1161,
+        "fp": 557587,
+        "fn": 25465,
+        "tn": 6719853,
+        "flood_iou": 0.001987288882650677,
+        "flood_dice": 0.003966694796830744,
+        "flood_precision": 0.002077859786522726,
+        "flood_recall": 0.04360399609404342,
+        "pixel_accuracy": 0.9201743248212708
+      },
+      "B_full": {
+        "tp": 2705,
+        "fp": 1845373,
+        "fn": 23921,
+        "tn": 5432067,
+        "flood_iou": 0.00144497940436934,
+        "flood_dice": 0.0028857889032081864,
+        "flood_precision": 0.0014636828099246894,
+        "flood_recall": 0.10159242845339142,
+        "pixel_accuracy": 0.7440748755556151
+      }
+    },
+    {
+      "name": "EMSR265_24HONFLEUR_DEL_MONIT01_v1",
+      "event_id": "EMSR265",
+      "original_split": "train",
+      "width": 4916,
+      "height": 4078,
+      "n_tiles": 546,
+      "ref_flood_px_full": 0,
+      "ref_supervised_px_full": 5350317,
+      "pred_coverage_pct": {
+        "A_full": 1.3262,
+        "B_full": 7.0809
+      },
+      "seconds": {
+        "A256": 5.29,
+        "A_full": 1.17,
+        "B_full": 9.22
+      },
+      "A256": {
+        "tp": 0,
+        "fp": 569,
+        "fn": 0,
+        "tn": 16873,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9673775943125789
+      },
+      "A_full": {
+        "tp": 0,
+        "fp": 70956,
+        "fn": 0,
+        "tn": 5279361,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9867379820672307
+      },
+      "B_full": {
+        "tp": 0,
+        "fp": 378849,
+        "fn": 0,
+        "tn": 4971468,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9291912983847499
+      }
+    },
+    {
+      "name": "EMSR312_02CALAYAN_GRA_v1",
+      "event_id": "EMSR312",
+      "original_split": "train",
+      "width": 266,
+      "height": 218,
+      "n_tiles": 2,
+      "ref_flood_px_full": 0,
+      "ref_supervised_px_full": 49542,
+      "pred_coverage_pct": {
+        "A_full": 13.2877,
+        "B_full": 11.1461
+      },
+      "seconds": {
+        "A256": 0.2,
+        "A_full": 0.1,
+        "B_full": 0.15
+      },
+      "A256": {
+        "tp": 0,
+        "fp": 6895,
+        "fn": 0,
+        "tn": 40935,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.8558436127953167
+      },
+      "A_full": {
+        "tp": 0,
+        "fp": 6583,
+        "fn": 0,
+        "tn": 42959,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.8671228452626054
+      },
+      "B_full": {
+        "tp": 0,
+        "fp": 5522,
+        "fn": 0,
+        "tn": 44020,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.8885390173993784
+      }
+    },
+    {
+      "name": "EMSR312_05TUGUEGARAO_DEL_MONIT01_v1",
+      "event_id": "EMSR312",
+      "original_split": "train",
+      "width": 3294,
+      "height": 3544,
+      "n_tiles": 323,
+      "ref_flood_px_full": 0,
+      "ref_supervised_px_full": 7930343,
+      "pred_coverage_pct": {
+        "A_full": 2.28,
+        "B_full": 14.9135
+      },
+      "seconds": {
+        "A256": 4.45,
+        "A_full": 0.71,
+        "B_full": 12.88
+      },
+      "A256": {
+        "tp": 0,
+        "fp": 2294,
+        "fn": 0,
+        "tn": 42242,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9484911083168672
+      },
+      "A_full": {
+        "tp": 0,
+        "fp": 180811,
+        "fn": 0,
+        "tn": 7749532,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9772001034507587
+      },
+      "B_full": {
+        "tp": 0,
+        "fp": 1182692,
+        "fn": 0,
+        "tn": 6747651,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.8508649625873685
+      }
+    },
+    {
+      "name": "EMSR312_06ILAGAN_DEL_MONIT01_v1",
+      "event_id": "EMSR312",
+      "original_split": "train",
+      "width": 3228,
+      "height": 3443,
+      "n_tiles": 306,
+      "ref_flood_px_full": 0,
+      "ref_supervised_px_full": 8127226,
+      "pred_coverage_pct": {
+        "A_full": 2.5792,
+        "B_full": 14.1332
+      },
+      "seconds": {
+        "A256": 4.12,
+        "A_full": 0.65,
+        "B_full": 4.52
+      },
+      "A256": {
+        "tp": 0,
+        "fp": 2762,
+        "fn": 0,
+        "tn": 45208,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9424223473003961
+      },
+      "A_full": {
+        "tp": 0,
+        "fp": 209616,
+        "fn": 0,
+        "tn": 7917610,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9742081738590757
+      },
+      "B_full": {
+        "tp": 0,
+        "fp": 1148637,
+        "fn": 0,
+        "tn": 6978589,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.8586680129234747
+      }
+    },
+    {
+      "name": "EMSR312_07VIGAN_DEL_MONIT01_v1",
+      "event_id": "EMSR312",
+      "original_split": "train",
+      "width": 2843,
+      "height": 2331,
+      "n_tiles": 180,
+      "ref_flood_px_full": 0,
+      "ref_supervised_px_full": 6432009,
+      "pred_coverage_pct": {
+        "A_full": 3.8694,
+        "B_full": 9.9963
+      },
+      "seconds": {
+        "A256": 2.17,
+        "A_full": 0.4,
+        "B_full": 10.09
+      },
+      "A256": {
+        "tp": 0,
+        "fp": 3228,
+        "fn": 0,
+        "tn": 60394,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.949262833611015
+      },
+      "A_full": {
+        "tp": 0,
+        "fp": 248882,
+        "fn": 0,
+        "tn": 6183127,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9613057133471051
+      },
+      "B_full": {
+        "tp": 0,
+        "fp": 642965,
+        "fn": 0,
+        "tn": 5789044,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.900036675943706
+      }
+    },
+    {
+      "name": "EMSR312_07VIGAN_DEL_v1",
+      "event_id": "EMSR312",
+      "original_split": "train",
+      "width": 2843,
+      "height": 2331,
+      "n_tiles": 180,
+      "ref_flood_px_full": 0,
+      "ref_supervised_px_full": 6432009,
+      "pred_coverage_pct": {
+        "A_full": 3.8694,
+        "B_full": 9.9963
+      },
+      "seconds": {
+        "A256": 2.15,
+        "A_full": 0.37,
+        "B_full": 2.61
+      },
+      "A256": {
+        "tp": 0,
+        "fp": 3228,
+        "fn": 0,
+        "tn": 60394,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.949262833611015
+      },
+      "A_full": {
+        "tp": 0,
+        "fp": 248882,
+        "fn": 0,
+        "tn": 6183127,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9613057133471051
+      },
+      "B_full": {
+        "tp": 0,
+        "fp": 642965,
+        "fn": 0,
+        "tn": 5789044,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.900036675943706
+      }
+    },
+    {
+      "name": "EMSR312_08CANDON_DEL_MONIT01_v1",
+      "event_id": "EMSR312",
+      "original_split": "val",
+      "width": 2969,
+      "height": 2434,
+      "n_tiles": 208,
+      "ref_flood_px_full": 0,
+      "ref_supervised_px_full": 6529071,
+      "pred_coverage_pct": {
+        "A_full": 0.8234,
+        "B_full": 3.2974
+      },
+      "seconds": {
+        "A256": 2.35,
+        "A_full": 0.42,
+        "B_full": 2.63
+      },
+      "A256": {
+        "tp": 0,
+        "fp": 1094,
+        "fn": 0,
+        "tn": 58100,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9815183971348448
+      },
+      "A_full": {
+        "tp": 0,
+        "fp": 53763,
+        "fn": 0,
+        "tn": 6475308,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9917655972802256
+      },
+      "B_full": {
+        "tp": 0,
+        "fp": 215290,
+        "fn": 0,
+        "tn": 6313781,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9670259367680333
+      }
+    },
+    {
+      "name": "EMSR312_08CANDON_DEL_v1",
+      "event_id": "EMSR312",
+      "original_split": "train",
+      "width": 2969,
+      "height": 2434,
+      "n_tiles": 208,
+      "ref_flood_px_full": 0,
+      "ref_supervised_px_full": 6529071,
+      "pred_coverage_pct": {
+        "A_full": 0.8234,
+        "B_full": 3.2974
+      },
+      "seconds": {
+        "A256": 2.32,
+        "A_full": 0.39,
+        "B_full": 2.66
+      },
+      "A256": {
+        "tp": 0,
+        "fp": 1094,
+        "fn": 0,
+        "tn": 58100,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9815183971348448
+      },
+      "A_full": {
+        "tp": 0,
+        "fp": 53763,
+        "fn": 0,
+        "tn": 6475308,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9917655972802256
+      },
+      "B_full": {
+        "tp": 0,
+        "fp": 215290,
+        "fn": 0,
+        "tn": 6313781,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9670259367680333
+      }
+    },
+    {
+      "name": "EMSR329_05CASTIADAS_GRA_v3",
+      "event_id": "EMSR329",
+      "original_split": "val",
+      "width": 926,
+      "height": 998,
+      "n_tiles": 25,
+      "ref_flood_px_full": 201,
+      "ref_supervised_px_full": 913206,
+      "pred_coverage_pct": {
+        "A_full": 2.66,
+        "B_full": 3.0916
+      },
+      "seconds": {
+        "A256": 0.44,
+        "A_full": 0.11,
+        "B_full": 9.37
+      },
+      "A256": {
+        "tp": 0,
+        "fp": 2202,
+        "fn": 14,
+        "tn": 62457,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": 0.0,
+        "pixel_accuracy": 0.9657353145825924
+      },
+      "A_full": {
+        "tp": 0,
+        "fp": 24291,
+        "fn": 201,
+        "tn": 888714,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": 0.0,
+        "pixel_accuracy": 0.9731802024953844
+      },
+      "B_full": {
+        "tp": 14,
+        "fp": 28219,
+        "fn": 187,
+        "tn": 884786,
+        "flood_iou": 0.0004926108374384236,
+        "flood_dice": 0.0009847365829640572,
+        "flood_precision": 0.0004958736230652074,
+        "flood_recall": 0.06965174129353234,
+        "pixel_accuracy": 0.9688942034984439
+      }
+    },
+    {
+      "name": "EMSR342_06NORTHNORMANTON_DEL_v1",
+      "event_id": "EMSR342",
+      "original_split": "test",
+      "width": 5400,
+      "height": 5731,
+      "n_tiles": 840,
+      "ref_flood_px_full": 0,
+      "ref_supervised_px_full": 21534326,
+      "pred_coverage_pct": {
+        "A_full": 6.3743,
+        "B_full": 29.5014
+      },
+      "seconds": {
+        "A256": 20.53,
+        "A_full": 2.11,
+        "B_full": 14.44
+      },
+      "A256": {
+        "tp": 0,
+        "fp": 4066,
+        "fn": 0,
+        "tn": 41438,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.910645218002813
+      },
+      "A_full": {
+        "tp": 0,
+        "fp": 1372671,
+        "fn": 0,
+        "tn": 20161655,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.9362566072418519
+      },
+      "B_full": {
+        "tp": 0,
+        "fp": 6352923,
+        "fn": 0,
+        "tn": 15181403,
+        "flood_iou": 0.0,
+        "flood_dice": 0.0,
+        "flood_precision": 0.0,
+        "flood_recall": null,
+        "pixel_accuracy": 0.7049862159605088
+      }
+    },
+    {
+      "name": "EMSR342_07SOUTHNORMANTON_DEL_MONIT03_v2",
+      "event_id": "EMSR342",
+      "original_split": "test",
+      "width": 5469,
+      "height": 5579,
+      "n_tiles": 841,
+      "ref_flood_px_full": 17736474,
+      "ref_supervised_px_full": 29926504,
+      "pred_coverage_pct": {
+        "A_full": 23.4525,
+        "B_full": 43.4775
+      },
+      "seconds": {
+        "A256": 20.21,
+        "A_full": 1.63,
+        "B_full": 12.31
+      },
+      "A256": {
+        "tp": 12316,
+        "fp": 4769,
+        "fn": 25654,
+        "tn": 21392,
+        "flood_iou": 0.288167715669529,
+        "flood_dice": 0.44740713831622925,
+        "flood_precision": 0.7208662569505414,
+        "flood_recall": 0.3243613378983408,
+        "pixel_accuracy": 0.5256116386770828
+      },
+      "A_full": {
+        "tp": 5205813,
+        "fp": 1812694,
+        "fn": 12530661,
+        "tn": 10377336,
+        "flood_iou": 0.26629332767512154,
+        "flood_dice": 0.4205871133571058,
+        "flood_precision": 0.7417265523850015,
+        "flood_recall": 0.2935089014874095,
+        "pixel_accuracy": 0.5207139798220334
+      },
+      "B_full": {
+        "tp": 9281897,
+        "fp": 3729401,
+        "fn": 8454577,
+        "tn": 8460629,
+        "flood_iou": 0.4324024527302055,
+        "flood_dice": 0.6037443623557506,
+        "flood_precision": 0.7133721016919295,
+        "flood_recall": 0.5233225611809879,
+        "pixel_accuracy": 0.5928699857490871
+      }
+    },
+    {
+      "name": "EMSR422_AOI06_DEL_PRODUCT",
+      "event_id": "EMSR422",
+      "original_split": "test",
+      "width": 2111,
+      "height": 3410,
+      "n_tiles": 198,
+      "ref_flood_px_full": 1273,
+      "ref_supervised_px_full": 1082676,
+      "pred_coverage_pct": {
+        "A_full": 3.1738,
+        "B_full": 1.7604
+      },
+      "seconds": {
+        "A256": 2.64,
+        "A_full": 0.57,
+        "B_full": 2.77
+      },
+      "A256": {
+        "tp": 3,
+        "fp": 478,
+        "fn": 6,
+        "tn": 9373,
+        "flood_iou": 0.006160164271047228,
+        "flood_dice": 0.012244897959183673,
+        "flood_precision": 0.006237006237006237,
+        "flood_recall": 0.3333333333333333,
+        "pixel_accuracy": 0.9509127789046653
+      },
+      "A_full": {
+        "tp": 99,
+        "fp": 34263,
+        "fn": 1174,
+        "tn": 1047140,
+        "flood_iou": 0.002785907248986943,
+        "flood_dice": 0.005556335063841729,
+        "flood_precision": 0.002881089575694081,
+        "flood_recall": 0.07776904948939513,
+        "pixel_accuracy": 0.9672690629514278
+      },
+      "B_full": {
+        "tp": 141,
+        "fp": 18918,
+        "fn": 1132,
+        "tn": 1062485,
+        "flood_iou": 0.006983309395275123,
+        "flood_dice": 0.013869761951603384,
+        "flood_precision": 0.007398079647410672,
+        "flood_recall": 0.11076197957580518,
+        "pixel_accuracy": 0.9814810709759891
+      }
+    }
+  ],
+  "n_samples": 24,
+  "elapsed_s": 274.1
+}

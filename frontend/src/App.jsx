@@ -1,513 +1,286 @@
-import { useState, useCallback, useEffect } from 'react'
-import { MapContainer, TileLayer, Marker, useMapEvents } from 'react-leaflet'
-import axios from 'axios'
-import 'leaflet/dist/leaflet.css'
-import L from 'leaflet'
-import './index.css'
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react'
+import { Archive, BookOpen, CloudSun, FlaskConical, Moon, RefreshCw, Satellite, Sun, WifiOff } from 'lucide-react'
+import FloodPage from './pages/FloodPage'
+import { Spinner, Tooltip } from './components/ui'
+import ErrorBoundary from './components/ErrorBoundary'
+import { ROUTES, useRoute } from './lib/router'
+import { useAssessment } from './hooks/useAssessment'
+import { usePlaceName, useStoredLocation } from './hooks/useLocation'
+import { useCatalogue, useModelStatus } from './hooks/useServer'
+import { useTheme } from './hooks/useTheme'
 
-delete L.Icon.Default.prototype._getIconUrl
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon-2x.png',
-  iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-icon.png',
-  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
-})
+const loadWeather = () => import('./pages/WeatherPage')
+const loadDemo = () => import('./pages/DemoPage')
+const loadResearch = () => import('./pages/ResearchPage')
+const loadMethodology = () => import('./pages/MethodologyPage')
+const WeatherPage = lazy(loadWeather)
+const DemoPage = lazy(loadDemo)
+const ResearchPage = lazy(loadResearch)
+const MethodologyPage = lazy(loadMethodology)
 
-const API = 'http://localhost:8000'
-const WEATHER = 'https://api.open-meteo.com/v1/forecast'
-const AQI_URL = 'https://air-quality-api.open-meteo.com/v1/air-quality'
-const NOMINATIM = 'https://nominatim.openstreetmap.org/reverse'
+const NAV = [
+  { route: 'flood', label: 'Flood analysis', short: 'Flood', icon: Satellite },
+  { route: 'weather', label: 'Weather & air', short: 'Weather', icon: CloudSun },
+  { route: 'demo', label: 'Demo scenes', short: 'Demo', icon: Archive },
+  { route: 'research', label: 'Research', short: 'Research', icon: FlaskConical },
+  { route: 'methodology', label: 'Methodology', short: 'Method', icon: BookOpen },
+]
 
-function MapClickHandler({ onSelect }) {
-  useMapEvents({
-    click: (e) => onSelect({ lat: e.latlng.lat, lng: e.latlng.lng }),
-  })
-  return null
+const TITLES = {
+  flood: 'Flood analysis',
+  weather: 'Weather & air quality',
+  demo: 'Demo scenes',
+  research: 'Research dashboard',
+  methodology: 'Methodology',
 }
 
-export default function App() {
-  const [loc, setLoc] = useState(null)
-  const [placeName, setPlaceName] = useState(null)
-  const [assessment, setAssessment] = useState(null)
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(null)
-  const [modelStatus, setModelStatus] = useState('checking')
-  const [weather, setWeather] = useState(null)
-  const [aqi, setAqi] = useState(null)
-  const [expanded, setExpanded] = useState(null)
-  const [geoLoading, setGeoLoading] = useState(false)
-  const [mapOpen, setMapOpen] = useState(false)
-  const [mapSelection, setMapSelection] = useState(null)
-  const [activeTab, setActiveTab] = useState('flood')
-  const [satStatus, setSatStatus] = useState('checking')
-  const [assessMode, setAssessMode] = useState('demo')
+function BrandMark() {
+  return (
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true" className="brand__mark">
+      <defs>
+        <linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stopColor="var(--accent)" />
+          <stop offset="1" stopColor="var(--accent-2)" />
+        </linearGradient>
+      </defs>
+      <rect x="1" y="1" width="30" height="30" rx="9" fill="var(--surface-3)" stroke="var(--line-strong)" />
+      <path d="M6 19.5c3 0 3-2.5 6-2.5s3 2.5 6 2.5 3-2.5 6-2.5 2 1 2 1" fill="none" stroke="url(#bm-g)" strokeWidth="2.2" strokeLinecap="round" />
+      <path d="M6 24.5c3 0 3-2.5 6-2.5s3 2.5 6 2.5 3-2.5 6-2.5 2 1 2 1" fill="none" stroke="url(#bm-g)" strokeOpacity=".45" strokeWidth="2.2" strokeLinecap="round" />
+      <circle cx="16" cy="9.5" r="3.6" fill="none" stroke="var(--accent)" strokeWidth="1.8" />
+      <path d="M9 9.5h3.2M19.8 9.5H23" stroke="var(--accent)" strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  )
+}
 
-  useEffect(() => {
-    axios.get(`${API}/api/flood/model-status`)
-      .then(r => {
-        setModelStatus(r.data.status)
-        if (r.data.satellite === 'configured') {
-          setSatStatus('ready')
-          setAssessMode('live')
-        } else {
-          setSatStatus('not_configured')
-        }
-      })
-      .catch(() => setModelStatus('offline'))
-  }, [])
-
-  const reverseGeocode = async (lat, lng) => {
-    try {
-      const r = await axios.get(NOMINATIM, {
-        params: { lat, lon: lng, format: 'json', zoom: 16, addressdetails: 1 },
-        headers: { 'Accept-Language': 'en' },
-      })
-      const a = r.data.address
-      const parts = []
-      if (a.suburb || a.neighbourhood) parts.push(a.suburb || a.neighbourhood)
-      if (a.city || a.town || a.village || a.county) parts.push(a.city || a.town || a.village || a.county)
-      if (a.state) parts.push(a.state)
-      if (a.country) parts.push(a.country)
-      setPlaceName(parts.join(', ') || r.data.display_name)
-    } catch {
-      setPlaceName(`${lat.toFixed(4)}°N, ${lng.toFixed(4)}°E`)
-    }
-  }
-
-  const fetchWeather = async (lat, lng) => {
-    try {
-      const [w, a] = await Promise.all([
-        axios.get(WEATHER, {
-          params: {
-            latitude: lat, longitude: lng,
-            // best_match auto-selects most accurate model (ECMWF/ICON/GFS) per location
-            models: 'best_match',
-            current: 'temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m,cloud_cover,pressure_msl,uv_index',
-            daily: 'temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,weather_code,uv_index_max',
-            timezone: 'auto', forecast_days: 7,
-          },
-        }),
-        axios.get(AQI_URL, {
-          params: {
-            latitude: lat, longitude: lng,
-            current: 'pm10,pm2_5,nitrogen_dioxide,ozone,sulphur_dioxide,carbon_monoxide,us_aqi,european_aqi',
-          },
-        }),
-      ])
-      setWeather(w.data)
-      setAqi(a.data)
-    } catch (e) {
-      console.error('Weather fetch error:', e)
-    }
-  }
-
-  const applyLocation = useCallback((lat, lng) => {
-    setLoc({ lat, lng })
-    setAssessment(null)
-    setError(null)
-    setPlaceName(null)
-    reverseGeocode(lat, lng)
-    fetchWeather(lat, lng)
-  }, [])
-
-  const useMyLocation = () => {
-    if (!navigator.geolocation) {
-      setError('Geolocation is not supported by your browser')
-      return
-    }
-    setGeoLoading(true)
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        applyLocation(pos.coords.latitude, pos.coords.longitude)
-        setGeoLoading(false)
-      },
-      () => {
-        setError('Location permission denied. Please select on the map instead.')
-        setGeoLoading(false)
-      },
-      { enableHighAccuracy: true, timeout: 10000 },
+function StatusPill({ status }) {
+  if (status.state === 'ready') {
+    return (
+      <span className="pill pill--ok" title="Analysis service connected">
+        <span className="pill__dot" aria-hidden="true" /> Online
+        <span className="pill__meta">{status.data?.model_version?.replace('segmentation_', 'model ')}</span>
+      </span>
     )
   }
-
-  const openMap = () => {
-    setMapSelection(null)
-    setMapOpen(true)
+  if (status.state === 'loading') {
+    return (
+      <span className="pill" role="status">
+        <Spinner size={12} /> Connecting
+      </span>
+    )
   }
+  return (
+    <span className="pill pill--down" role="status">
+      <WifiOff size={13} aria-hidden="true" /> {status.state === 'not_ready' ? 'Model unavailable' : 'Service offline'}
+      <button type="button" className="icon-btn icon-btn--xs" onClick={status.retry} aria-label="Reconnect to the analysis service">
+        <RefreshCw size={12} aria-hidden="true" />
+      </button>
+    </span>
+  )
+}
 
-  const confirmMapSelection = () => {
-    if (mapSelection) {
-      applyLocation(mapSelection.lat, mapSelection.lng)
-      setMapOpen(false)
-      setMapSelection(null)
-    }
-  }
-
-  const runAssessment = async (modeOverride) => {
-    if (!loc) return
-    const mode = modeOverride || assessMode
-    setLoading(true)
-    setError(null)
-    setAssessment(null)
+function usePersistent(key, initial, allowed) {
+  const [v, setV] = useState(() => {
     try {
-      const r = await axios.post(`${API}/api/flood/assess`, {
-        latitude: loc.lat,
-        longitude: loc.lng,
-        mode,
-      })
-      setAssessment(r.data)
-      setActiveTab('flood')
-    } catch (e) {
-      setError(e.response?.data?.detail || e.message)
-    } finally {
-      setLoading(false)
+      const s = localStorage.getItem(key)
+      return s && (!allowed || allowed.includes(s)) ? s : initial
+    } catch {
+      return initial
     }
+  })
+  const set = useCallback(
+    (next) => {
+      setV(next)
+      try {
+        localStorage.setItem(key, next)
+      } catch {
+        /* ignore */
+      }
+    },
+    [key],
+  )
+  return [v, set]
+}
+
+const sameLoc = (a, b) => !!a && !!b && Math.abs(a.lat - b.lat) < 1e-6 && Math.abs(a.lng - b.lng) < 1e-6
+
+export default function App() {
+  const { theme, toggle } = useTheme()
+  const [route, go] = useRoute()
+  const status = useModelStatus()
+  const [location, setStoredLocation] = useStoredLocation()
+  const place = usePlaceName(location)
+  const live = useAssessment()
+  const demo = useAssessment()
+  const catalogue = useCatalogue(route === 'demo')
+  const [basemap, setBasemap] = usePersistent('di-basemap', 'minimal', ['minimal', 'streets'])
+  const [locating, setLocating] = useState(false)
+  const [notice, setNotice] = useState(null)
+  const searchRef = useRef(null)
+  const mainRef = useRef(null)
+  const shownRoute = useRef(route)
+  const { reset: resetLive } = live
+
+  /** A new location invalidates a live result for another place (never show a result for the wrong area). */
+  const chooseLocation = useCallback(
+    (loc) => {
+      if (sameLoc(loc, location)) return
+      setStoredLocation(loc)
+      resetLive()
+    },
+    [location, setStoredLocation, resetLive],
+  )
+
+  const locateMe = useCallback(() => {
+    if (!navigator.geolocation) {
+      setNotice('Location is not available in this browser. Search for a place instead.')
+      return
+    }
+    setLocating(true)
+    navigator.geolocation.getCurrentPosition(
+      (p) => {
+        setLocating(false)
+        chooseLocation({ lat: p.coords.latitude, lng: p.coords.longitude })
+      },
+      (err) => {
+        setLocating(false)
+        setNotice(err.code === 1 ? 'Location permission was denied. Search for a place instead.' : 'Could not get your location. Search for a place instead.')
+      },
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 60000 },
+    )
+  }, [chooseLocation])
+
+  useEffect(() => {
+    if (!notice) return undefined
+    const t = setTimeout(() => setNotice(null), 6000)
+    return () => clearTimeout(t)
+  }, [notice])
+
+  // Route changes: update the title, scroll to top and move focus to the page (not on first load)
+  useEffect(() => {
+    document.title = `${TITLES[route]} · Disaster Insights`
+    // Only on an actual route change (not on load, and not on StrictMode's effect re-run)
+    if (shownRoute.current === route) return
+    shownRoute.current = route
+    window.scrollTo?.(0, 0)
+    mainRef.current?.focus({ preventScroll: true })
+  }, [route])
+
+  // Warm the other pages' code once the app is idle, so first navigation is instant
+  useEffect(() => {
+    const warm = () => [loadWeather, loadDemo, loadResearch, loadMethodology].forEach((f) => f().catch(() => {}))
+    const id = 'requestIdleCallback' in window ? window.requestIdleCallback(warm, { timeout: 4000 }) : setTimeout(warm, 2500)
+    return () => ('cancelIdleCallback' in window ? window.cancelIdleCallback(id) : clearTimeout(id))
+  }, [])
+
+  // "/" focuses the place search on pages that have one
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key !== '/' || e.ctrlKey || e.metaKey || e.altKey) return
+      if (['INPUT', 'TEXTAREA', 'SELECT'].includes(e.target?.tagName) || e.target?.isContentEditable || document.querySelector('dialog[open]')) return
+      if (route !== 'flood' && route !== 'weather') return
+      e.preventDefault()
+      searchRef.current?.focus()
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [route])
+
+  // The most recent result (live or demo) feeds the research diagnostics
+  const last = [live.data, demo.data].filter(Boolean).sort((a, b) => (b._receivedAt || 0) - (a._receivedAt || 0))[0] || null
+  const lastIsLive = last && last === live.data
+  const rerun = (method) => {
+    if (!last) return
+    if (lastIsLive && live.request) live.run({ ...live.request, method })
+    else if (demo.request) demo.run({ ...demo.request, method }, { cacheKey: `${demo.request.sample_id}|${method}` })
   }
 
-  const wxIcon = (c) =>
-    c <= 3 ? '☀️' : c <= 48 ? '🌫️' : c <= 67 ? '🌧️' : c <= 77 ? '🌨️' : c <= 82 ? '🌧️' : '⛈️'
-
-  const aqiInfo = (v) =>
-    v <= 50
-      ? { label: 'Good', color: '#34d399' }
-      : v <= 100
-        ? { label: 'Moderate', color: '#fbbf24' }
-        : v <= 150
-          ? { label: 'Unhealthy (Sensitive)', color: '#fb923c' }
-          : { label: 'Unhealthy', color: '#f87171' }
+  const common = { theme, basemap, onBasemap: setBasemap, navigate: go, status }
+  const locProps = { location, onLocation: chooseLocation, place, onLocateMe: locateMe, locating, searchRef }
 
   return (
-    <div className="app">
-      {/* ─── Header ─── */}
-      <header className="header">
-        <div className="header-brand">
-          <div className="brand-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="10" />
-              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-            </svg>
-          </div>
-          <div>
-            <h1>Disaster Insights</h1>
-            <p>Climate-Induced Natural Disaster Assessment</p>
-          </div>
-        </div>
-        <div className={`status-pill ${modelStatus === 'ready' ? 'online' : ''}`}>
-          <span className="pulse" />
-          {modelStatus === 'ready' ? 'AI Model Online' : modelStatus === 'checking' ? 'Connecting...' : 'Offline'}
+    <div className={`app app--${route}`}>
+      <a
+        className="skip-link"
+        href="#main"
+        onClick={(e) => {
+          // Hash routing: move focus without changing the route
+          e.preventDefault()
+          mainRef.current?.focus()
+        }}
+      >
+        Skip to content
+      </a>
+      <header className="appbar">
+        <a className="brand" href={ROUTES.flood}>
+          <BrandMark />
+          <span className="brand__text">
+            <span className="brand__name">Disaster Insights</span>
+            <span className="brand__tag">Satellite flood analysis · research prototype</span>
+          </span>
+        </a>
+        <nav className="topnav" aria-label="Primary">
+          {NAV.map(({ route: r, label, icon: Icon }) => (
+            <a key={r} href={ROUTES[r]} className={`topnav__link ${route === r ? 'is-active' : ''}`} aria-current={route === r ? 'page' : undefined}>
+              <Icon size={15} aria-hidden="true" />
+              <span>{label}</span>
+            </a>
+          ))}
+        </nav>
+        <div className="appbar__right">
+          <StatusPill status={status} />
+          <Tooltip content={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}>
+            <button
+              type="button"
+              className="icon-btn"
+              onClick={toggle}
+              aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+              aria-pressed={theme === 'light'}
+            >
+              {theme === 'dark' ? <Sun size={17} aria-hidden="true" /> : <Moon size={17} aria-hidden="true" />}
+            </button>
+          </Tooltip>
         </div>
       </header>
 
-      {/* ─── Version Notice ─── */}
-      <div className="version-bar">
-        <span>v1.0 — This application is exclusively designed for <strong>Climate-Induced Natural Disasters</strong>. This is the first working release with many updates oncoming.</span>
-      </div>
-
-      {/* ─── Main Content ─── */}
-      <main className="main">
-        {!loc ? (
-          /* ── Welcome ── */
-          <div className="welcome">
-            <div className="welcome-inner">
-              <div className="welcome-glow" />
-              <div className="welcome-content">
-                <h2>Disaster Insights</h2>
-                <p className="welcome-tagline">
-                  AI-powered assessment platform for climate-induced natural disasters.
-                  Leveraging Sentinel-2 satellite imagery, EfficientNet-B0 deep learning,
-                  and Grad-CAM explainability.
-                </p>
-                <div className="welcome-chips">
-                  <span className="chip">🌊 Flood Detection</span>
-                  <span className="chip">🌡️ Weather Analysis</span>
-                  <span className="chip">💨 Air Quality</span>
-                  <span className="chip">🔬 Explainable AI</span>
-                </div>
-                <div className="welcome-actions">
-                  <button className="btn-hero" onClick={useMyLocation} disabled={geoLoading}>
-                    {geoLoading ? 'Detecting location...' : 'Use My Location'}
-                  </button>
-                  <button className="btn-secondary" onClick={openMap}>
-                    Select on Map
-                  </button>
-                </div>
-              </div>
+      <main id="main" className="main" ref={mainRef} tabIndex={-1}>
+        <ErrorBoundary key={route}>
+        <Suspense
+          fallback={
+            <div className="page-loading" role="status">
+              <Spinner size={18} /> Loading…
             </div>
-          </div>
-        ) : (
-          /* ── Dashboard ── */
-          <div className="dashboard">
-            {/* Location Header */}
-            <div className="loc-header glass-card">
-              <div className="loc-info">
-                <div className="loc-pin">📍</div>
-                <div>
-                  <h3 className="loc-name">{placeName || 'Resolving...'}</h3>
-                  <span className="loc-coords">{loc.lat.toFixed(4)}°N, {loc.lng.toFixed(4)}°E</span>
-                </div>
-              </div>
-              <div className="loc-actions">
-                <button className="btn-sm" onClick={useMyLocation} disabled={geoLoading}>
-                  {geoLoading ? '...' : '📱 Relocate'}
-                </button>
-                <button className="btn-sm" onClick={openMap}>🗺️ Map</button>
-              </div>
-            </div>
-
-            {/* Tabs */}
-            <div className="tabs">
-              <button className={`tab-btn ${activeTab === 'flood' ? 'active' : ''}`} onClick={() => setActiveTab('flood')}>
-                Flood Assessment
-              </button>
-              <button className={`tab-btn ${activeTab === 'climate' ? 'active' : ''}`} onClick={() => setActiveTab('climate')}>
-                Weather & AQI
-              </button>
-            </div>
-
-            {/* Tab Panels */}
-            <div className="tab-panel">
-              {/* ── Flood Tab ── */}
-              {activeTab === 'flood' && (
-                <>
-                  {!assessment && !loading && (
-                    <div className="glass-card action-prompt">
-                      <h3>Satellite Flood Analysis</h3>
-                      <p>Analyze Sentinel-2 satellite imagery using deep learning to detect flood patterns and assess risk at your selected location.</p>
-
-                      {/* Mode Toggle */}
-                      <div className="mode-toggle">
-                        <button
-                          className={`mode-btn ${assessMode === 'live' ? 'active' : ''}`}
-                          onClick={() => setAssessMode('live')}
-                          disabled={satStatus !== 'ready'}
-                        >
-                          🛰️ Live Satellite
-                        </button>
-                        <button
-                          className={`mode-btn ${assessMode === 'demo' ? 'active' : ''}`}
-                          onClick={() => setAssessMode('demo')}
-                        >
-                          📂 Demo (Archived)
-                        </button>
-                      </div>
-
-                      {assessMode === 'live' && satStatus === 'ready' && (
-                        <p className="mode-info">🛰️ Will fetch real-time Sentinel-2 imagery from <strong>Copernicus Data Space</strong> for your exact coordinates.</p>
-                      )}
-                      {assessMode === 'live' && satStatus !== 'ready' && (
-                        <p className="warn-text">⚠️ Live satellite requires Copernicus credentials. Using demo mode instead.</p>
-                      )}
-                      {assessMode === 'demo' && (
-                        <p className="mode-info">📂 Will analyze an archived WorldFloods Sentinel-2 image.</p>
-                      )}
-
-                      <button
-                        className="btn-hero"
-                        onClick={() => runAssessment(assessMode === 'live' && satStatus !== 'ready' ? 'demo' : undefined)}
-                        disabled={loading || modelStatus !== 'ready'}
-                      >
-                        Run Flood Assessment
-                      </button>
-                      {modelStatus !== 'ready' && modelStatus !== 'checking' && (
-                        <p className="warn-text">Backend server is offline. Start it to enable assessments.</p>
-                      )}
-                    </div>
-                  )}
-
-                  {loading && (
-                    <div className="glass-card" style={{ textAlign: 'center', padding: '3rem' }}>
-                      <div className="loader" />
-                      <p style={{ marginTop: '1rem', color: 'var(--text-2)' }}>Analyzing satellite imagery...</p>
-                    </div>
-                  )}
-
-                  {error && <div className="alert-card">{error}</div>}
-
-                  {assessment && (
-                    <>
-                      {assessment.mode === 'demo' ? (
-                        <div className="demo-tag">
-                          📂 Demo Mode — Analyzed archived WorldFloods image: <strong>{assessment.location.demo_image}</strong>
-                        </div>
-                      ) : (
-                        <div className="live-tag">
-                          🛰️ Live Satellite — Imagery from <strong>{assessment.location.satellite_data?.source}</strong>
-                          {assessment.location.satellite_data?.date_range && (
-                            <span> · {assessment.location.satellite_data.date_range}</span>
-                          )}
-                          {assessment.location.satellite_data?.resolution && (
-                            <span> · {assessment.location.satellite_data.resolution} resolution</span>
-                          )}
-                          {assessment.location.satellite_data?.coverage && (
-                            <span> · {assessment.location.satellite_data.coverage}</span>
-                          )}
-                        </div>
-                      )}
-
-                      {/* Risk Result */}
-                      <div className="glass-card risk-card">
-                        <div className="risk-row">
-                          <div className={`risk-circle ${assessment.risk.level}`}>
-                            <span className="risk-pct">{(assessment.prediction.flood_probability * 100).toFixed(0)}%</span>
-                            <span className="risk-txt">{assessment.risk.label}</span>
-                          </div>
-                          <div className="risk-meta">
-                            <div className="meta-row"><span>Classification</span><strong>{assessment.prediction.class_name === 'flood' ? '🌊 Flood Detected' : '✅ No Flood'}</strong></div>
-                            <div className="meta-row"><span>Confidence</span><strong>{(assessment.prediction.flood_probability * 100).toFixed(1)}%</strong></div>
-                            <div className="meta-row"><span>Model</span><strong>EfficientNet-B0</strong></div>
-                            <div className="meta-row"><span>Explainability</span><strong>Grad-CAM</strong></div>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Grad-CAM */}
-                      {(assessment.image_base64 || assessment.gradcam_base64) && (
-                        <div className="glass-card">
-                          <h4 className="section-title">Model Explainability (Grad-CAM)</h4>
-                          <div className="img-grid">
-                            {assessment.image_base64 && (
-                              <figure className="img-figure" onClick={() => setExpanded(`data:image/png;base64,${assessment.image_base64}`)}>
-                                <img src={`data:image/png;base64,${assessment.image_base64}`} alt="Sentinel-2 RGB" />
-                                <figcaption>Sentinel-2 RGB</figcaption>
-                              </figure>
-                            )}
-                            {assessment.gradcam_base64 && (
-                              <figure className="img-figure" onClick={() => setExpanded(`data:image/png;base64,${assessment.gradcam_base64}`)}>
-                                <img src={`data:image/png;base64,${assessment.gradcam_base64}`} alt="Grad-CAM" />
-                                <figcaption>Grad-CAM Heatmap</figcaption>
-                              </figure>
-                            )}
-                          </div>
-                          <p className="caption">Click to enlarge · Red = high model attention</p>
-                        </div>
-                      )}
-
-                      <button className="btn-secondary" style={{ width: '100%' }} onClick={() => setAssessment(null)}>
-                        ↻ New Assessment
-                      </button>
-                      <p className="disclaimer-text">{assessment.disclaimer}</p>
-                    </>
-                  )}
-                </>
-              )}
-
-              {/* ── Climate Tab ── */}
-              {activeTab === 'climate' && (
-                <>
-                  {!weather ? (
-                    <div className="glass-card" style={{ textAlign: 'center', padding: '3rem' }}>
-                      <div className="loader" />
-                      <p style={{ marginTop: '1rem', color: 'var(--text-2)' }}>Loading weather data...</p>
-                    </div>
-                  ) : (
-                    <>
-                      {weather.current && (
-                        <div className="glass-card">
-                          <h4 className="section-title">{wxIcon(weather.current.weather_code)} Current Conditions</h4>
-                          <div className="temp-hero">
-                            <span className="temp-big">{weather.current.temperature_2m}°C</span>
-                            <span className="temp-sub">Feels like {weather.current.apparent_temperature}°C</span>
-                          </div>
-                          <div className="metrics-row">
-                            <div className="metric"><strong>{weather.current.relative_humidity_2m}%</strong><span>Humidity</span></div>
-                            <div className="metric"><strong>{weather.current.wind_speed_10m}</strong><span>Wind km/h</span></div>
-                            <div className="metric"><strong>{weather.current.precipitation}</strong><span>Rain mm</span></div>
-                            <div className="metric"><strong>{weather.current.cloud_cover}%</strong><span>Clouds</span></div>
-                            {weather.current.pressure_msl && <div className="metric"><strong>{Math.round(weather.current.pressure_msl)}</strong><span>hPa</span></div>}
-                            {weather.current.uv_index != null && <div className="metric"><strong>{weather.current.uv_index}</strong><span>UV Index</span></div>}
-                          </div>
-                          <p className="data-source">Source: ECMWF/DWD ICON/NOAA GFS (best match)</p>
-                        </div>
-                      )}
-
-                      {weather.daily && (
-                        <div className="glass-card">
-                          <h4 className="section-title">7-Day Forecast</h4>
-                          <div className="forecast">
-                            {weather.daily.time.map((d, i) => (
-                              <div key={d} className="fc-row">
-                                <span className="fc-day">{new Date(d).toLocaleDateString('en', { weekday: 'short', month: 'short', day: 'numeric' })}</span>
-                                <span>{wxIcon(weather.daily.weather_code[i])}</span>
-                                <span className="fc-temp">{Math.round(weather.daily.temperature_2m_max[i])}° / {Math.round(weather.daily.temperature_2m_min[i])}°</span>
-                                <span className="fc-rain">{weather.daily.precipitation_sum[i]}mm</span>
-                                <span className="fc-prob">{weather.daily.precipitation_probability_max[i]}%</span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
-                      {aqi?.current && (() => {
-                        const info = aqiInfo(aqi.current.us_aqi)
-                        return (
-                          <div className="glass-card">
-                            <h4 className="section-title">Air Quality Index</h4>
-                            <div className="aqi-ring" style={{ '--aqi-color': info.color }}>
-                              <span className="aqi-val">{aqi.current.us_aqi}</span>
-                              <span className="aqi-label">{info.label}</span>
-                            </div>
-                            <div className="metrics-row two-col">
-                              <div className="metric"><strong>{aqi.current.pm2_5?.toFixed(1)}</strong><span>PM2.5 µg/m³</span></div>
-                              <div className="metric"><strong>{aqi.current.pm10?.toFixed(1)}</strong><span>PM10 µg/m³</span></div>
-                              <div className="metric"><strong>{aqi.current.ozone?.toFixed(1)}</strong><span>O₃ µg/m³</span></div>
-                              <div className="metric"><strong>{aqi.current.nitrogen_dioxide?.toFixed(1)}</strong><span>NO₂ µg/m³</span></div>
-                              {aqi.current.sulphur_dioxide != null && <div className="metric"><strong>{aqi.current.sulphur_dioxide?.toFixed(1)}</strong><span>SO₂ µg/m³</span></div>}
-                              {aqi.current.carbon_monoxide != null && <div className="metric"><strong>{aqi.current.carbon_monoxide?.toFixed(0)}</strong><span>CO µg/m³</span></div>}
-                            </div>
-                            {aqi.current.european_aqi != null && (
-                              <p className="data-source">EU AQI: {aqi.current.european_aqi} · US AQI: {aqi.current.us_aqi}</p>
-                            )}
-                          </div>
-                        )
-                      })()}
-                    </>
-                  )}
-                </>
-              )}
-            </div>
-          </div>
-        )}
+          }
+        >
+          {route === 'flood' && <FloodPage {...common} {...locProps} live={live} />}
+          {route === 'weather' && <WeatherPage {...locProps} />}
+          {route === 'demo' && <DemoPage {...common} demo={demo} catalogue={catalogue} />}
+          {route === 'research' && (
+            <ResearchPage
+              status={status}
+              last={last}
+              loading={lastIsLive ? live.status === 'loading' : demo.status === 'loading'}
+              startedAt={lastIsLive ? live.startedAt : demo.startedAt}
+              onRerun={rerun}
+              onShowOnMap={() => go(lastIsLive ? 'flood' : 'demo')}
+            />
+          )}
+          {route === 'methodology' && <MethodologyPage status={status} />}
+        </Suspense>
+        </ErrorBoundary>
       </main>
 
-      {/* ─── Map Modal ─── */}
-      {mapOpen && (
-        <div className="modal-overlay" onClick={() => setMapOpen(false)}>
-          <div className="modal-window" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-header">
-              <h3>Select Location</h3>
-              <button className="modal-close" onClick={() => setMapOpen(false)}>✕</button>
-            </div>
-            <div className="modal-map">
-              <MapContainer
-                center={loc ? [loc.lat, loc.lng] : [20.5, 78.9]}
-                zoom={loc ? 10 : 5}
-                style={{ height: '100%', width: '100%' }}
-              >
-                <TileLayer
-                  attribution='&copy; OpenStreetMap'
-                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                <MapClickHandler onSelect={setMapSelection} />
-                {mapSelection && <Marker position={[mapSelection.lat, mapSelection.lng]} />}
-                {!mapSelection && loc && <Marker position={[loc.lat, loc.lng]} />}
-              </MapContainer>
-            </div>
-            <div className="modal-footer">
-              {mapSelection ? (
-                <p className="modal-coords">Selected: {mapSelection.lat.toFixed(4)}°N, {mapSelection.lng.toFixed(4)}°E</p>
-              ) : (
-                <p className="modal-coords">Click on the map to pick a location</p>
-              )}
-              <button className="btn-hero" onClick={confirmMapSelection} disabled={!mapSelection}>
-                Confirm Location
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      <nav className="tabbar" aria-label="Primary">
+        {NAV.map(({ route: r, short, icon: Icon }) => (
+          <a key={r} href={ROUTES[r]} className={`tabbar__link ${route === r ? 'is-active' : ''}`} aria-current={route === r ? 'page' : undefined}>
+            <Icon size={19} aria-hidden="true" />
+            <span>{short}</span>
+          </a>
+        ))}
+      </nav>
 
-      {/* ─── Image Lightbox ─── */}
-      {expanded && (
-        <div className="modal-overlay" onClick={() => setExpanded(null)}>
-          <img src={expanded} alt="Enlarged" className="lightbox-img" />
+      {notice && (
+        <div className="toast" role="alert">
+          {notice}
         </div>
       )}
     </div>

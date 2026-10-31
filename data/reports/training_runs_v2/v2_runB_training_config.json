@@ -1,0 +1,66 @@
+{
+  "version": "segmentation_v2",
+  "task": "surface_water",
+  "architecture": "U-Net",
+  "encoder_name": "efficientnet-b2",
+  "encoder_weights": "imagenet",
+  "in_channels": 6,
+  "num_classes": 2,
+  "input_size": 256,
+  "bands": [
+    "B02",
+    "B03",
+    "B04",
+    "B08",
+    "B11",
+    "B12"
+  ],
+  "band_source": "Sentinel-2 L1C TOA DN (x10000)",
+  "normalization": {
+    "kind": "standardize",
+    "scale": 10000.0,
+    "clip": [
+      0,
+      1
+    ],
+    "mean": [
+      0.12035019530494977,
+      0.10847974248228787,
+      0.09605712956591753,
+      0.20362372122066003,
+      0.14898938588128974,
+      0.0882404563320006
+    ],
+    "std": [
+      0.04216385482795191,
+      0.045275031171214446,
+      0.058618617719886586,
+      0.0968213727250936,
+      0.08827997325653128,
+      0.06483468568417938
+    ]
+  },
+  "target": "surface_water",
+  "flood_rule": "water & ~JRC permanent water",
+  "train_scenes": 203,
+  "train_events": 101,
+  "train_patches": 3646,
+  "train_water_fraction": 0.16559219061910582,
+  "class_weights": [
+    1.0,
+    2.244756585365849
+  ],
+  "batch": 16,
+  "lr": 0.0003,
+  "epochs": 20,
+  "patience": 8,
+  "seed": 42,
+  "ema_decay": null,
+  "selection_metric": "val flood IoU (water & ~permanent vs EMS flood), 256 px tiles",
+  "pytorch": "2.14.0+cu126",
+  "device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "started": "2026-10-28T03:28:16.992283",
+  "finished": "2026-10-28T03:51:26.642986",
+  "best_val_flood_iou_tiles": 0.4532371379169962,
+  "train_seconds": 1390
+}

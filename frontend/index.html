@@ -4,8 +4,20 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Disaster Insights — AI-Powered Climate-Induced Natural Disaster Assessment using Sentinel-2 Satellite Imagery, EfficientNet-B0 Deep Learning, and Grad-CAM Explainability" />
-    <title>Disaster Insights — Climate-Induced Natural Disaster Assessment</title>
+    <meta name="description" content="Disaster Insights — research prototype for flood extent analysis in Sentinel-2 satellite imagery, with local weather and air quality." />
+    <meta name="theme-color" content="#070b14" />
+    <meta name="color-scheme" content="dark light" />
+    <script>
+      // Apply the saved/OS theme before first paint (no flash of the wrong theme)
+      try {
+        var t = localStorage.getItem('di-theme')
+        if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+        document.documentElement.dataset.theme = t
+      } catch (e) {
+        document.documentElement.dataset.theme = 'dark'
+      }
+    </script>
+    <title>Disaster Insights — Satellite flood extent analysis</title>
   </head>
   <body>
     <div id="root"></div>

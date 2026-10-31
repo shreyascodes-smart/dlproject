@@ -16,6 +16,7 @@ build/
 
 # Dataset - DO NOT commit raw satellite rasters or rasterized masks
 data/raw/
+data/cache/
 data/interim/
 data/metadata/
 data/processed/flood/segmentation_v1/masks/

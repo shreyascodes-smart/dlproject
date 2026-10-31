@@ -75,8 +75,82 @@ function evaluatePixel(sample) {
 """
 
 
+# ─── Evalscript: single-acquisition L1C bands + L2A scene classification (cloud mask) ───
+# Model input comes from Level-1C (top-of-atmosphere), the same product level as the
+# WorldFloods training images. SCL from Level-2A is used ONLY to mask clouds/shadows.
+# Output bands: B02, B03, B04, B08, B11, B12 (DN, harmonized), dataMask, SCL (0 = not available)
+EVALSCRIPT_L1C_SCL = """
+//VERSION=3
+function setup() {
+  return {
+    input: [
+      { datasource: "l1c", bands: ["B02", "B03", "B04", "B08", "B11", "B12", "dataMask"], units: "DN" },
+      { datasource: "l2a", bands: ["SCL"], units: "DN" }
+    ],
+    output: { bands: 8, sampleType: "UINT16" }
+  };
+}
+function evaluatePixel(samples) {
+  var a = samples.l1c[0];
+  var b = (samples.l2a && samples.l2a.length) ? samples.l2a[0] : null;
+  return [a.B02, a.B03, a.B04, a.B08, a.B11, a.B12, a.dataMask, b ? b.SCL : 0];
+}
+"""
+
+EVALSCRIPT_L1C_ONLY = """
+//VERSION=3
+function setup() {
+  return {
+    input: [{ bands: ["B02", "B03", "B04", "B08", "B11", "B12", "dataMask"], units: "DN" }],
+    output: { bands: 8, sampleType: "UINT16" }
+  };
+}
+function evaluatePixel(s) {
+  return [s.B02, s.B03, s.B04, s.B08, s.B11, s.B12, s.dataMask, 0];
+}
+"""
+
+# Sen2Cor scene classes treated as unusable for flood mapping
+SCL_INVALID = (0, 1, 3, 8, 9, 10)  # no data, saturated, cloud shadow, cloud medium, cloud high, cirrus
+
+
+def _api_error_text(resp) -> str:
+    """Error message from a Sentinel Hub JSON error body (never includes request headers/credentials)."""
+    try:
+        err = resp.json().get("error", {})
+        return str(err.get("message") or err.get("reason") or err)[:300]
+    except Exception:
+        return "(non-JSON error body)"
+
+
+def pick_acquisition(features: list, max_cloud: float = 30.0) -> Optional[dict]:
+    """Most recent acquisition with tile cloud cover <= max_cloud; otherwise the least cloudy one."""
+    items = []
+    for f in features or []:
+        p = f.get("properties", {})
+        dt = p.get("datetime")
+        if not dt:
+            continue
+        items.append({"datetime": dt, "cloud_cover": p.get("eo:cloud_cover"), "id": f.get("id", "")})
+    if not items:
+        return None
+    clear = [i for i in items if i["cloud_cover"] is not None and i["cloud_cover"] <= max_cloud]
+    if clear:
+        return max(clear, key=lambda i: i["datetime"])
+    return min(items, key=lambda i: (i["cloud_cover"] if i["cloud_cover"] is not None else 101, i["datetime"]))
+
+
+def validity_from_scl(data_mask: np.ndarray, scl: np.ndarray) -> Tuple[Optional[np.ndarray], str]:
+    """Validity (1 usable, 0 not) from dataMask + SCL. Returns (None, reason) when SCL is unavailable."""
+    has = data_mask > 0
+    if not np.any(scl[has] > 0):
+        return None, "unavailable"
+    valid = has & ~np.isin(scl, SCL_INVALID)
+    return valid.astype(np.uint8), "sen2cor_scl"
+
+
 class SentinelDataService:
-    """Fetches Sentinel-2 L2A data from Copernicus Data Space."""
+    """Fetches Sentinel-2 data from Copernicus Data Space."""
 
     def __init__(self, client_id: Optional[str] = None, client_secret: Optional[str] = None):
         self.client_id = client_id or os.getenv("CDSE_CLIENT_ID", "")
@@ -110,7 +184,8 @@ class SentinelDataService:
         }, timeout=30)
 
         if resp.status_code != 200:
-            logger.error(f"Token request failed: {resp.status_code} {resp.text}")
+            # Do not log the response body: identity-server errors can echo request parameters.
+            logger.error("Token request failed: HTTP %s", resp.status_code)
             raise RuntimeError(f"Failed to authenticate with Copernicus: {resp.status_code}")
 
         data = resp.json()
@@ -288,6 +363,118 @@ class SentinelDataService:
             logger.info(f"Saved GeoTIFF to {output_path}")
 
         return image, metadata
+
+    def search_acquisitions(self, bbox: list, days_back: int, collection: str = "sentinel-2-l1c",
+                            end: Optional[datetime] = None) -> list:
+        """Catalog search: Sentinel-2 acquisitions intersecting bbox in the `days_back` days before `end` (default now)."""
+        end = end or datetime.utcnow()
+        start = end - timedelta(days=days_back)
+        payload = {
+            "bbox": bbox,
+            "datetime": f"{start.strftime('%Y-%m-%dT00:00:00Z')}/{end.strftime('%Y-%m-%dT23:59:59Z')}",
+            "collections": [collection],
+            "limit": 100,
+        }
+        resp = self._session.post(
+            CATALOG_URL, json=payload, timeout=30,
+            # STAC search responses are GeoJSON; a plain application/json Accept header returns 406
+            headers={**self._auth_headers(), "Accept": "application/geo+json, application/json"},
+        )
+        if resp.status_code != 200:
+            logger.error("Catalog API error %s: %s", resp.status_code, _api_error_text(resp))
+            raise RuntimeError(f"Sentinel Hub catalog error {resp.status_code}")
+        return resp.json().get("features", [])
+
+    def fetch_scene(
+        self,
+        lat: float,
+        lng: float,
+        size_km: float = 5.0,
+        resolution: int = 10,
+        days_back: int = 45,
+        max_cloud: float = 30.0,
+        end: Optional[datetime] = None,
+    ) -> Tuple[np.ndarray, Optional[np.ndarray], dict]:
+        """Fetch ONE Sentinel-2 acquisition (known date) around a point.
+
+        Picks the most recent Level-1C acquisition with tile cloud cover <= max_cloud
+        (else the least cloudy) from the `days_back` days before `end` (default: now), then
+        downloads that day only. The grid depends only on (lat, lng, size_km, resolution), so two
+        calls with different `end` dates return pixel-aligned images.
+
+        Returns (image [6, H, W] uint16 as B02,B03,B04,B08,B11,B12; validity HxW or None; metadata).
+        Raises LookupError when no acquisition exists in the period.
+        """
+        bbox = self._make_bbox(lat, lng, size_km)
+        features = self.search_acquisitions(bbox, days_back, end=end)
+        acq = pick_acquisition(features, max_cloud)
+        if acq is None:
+            raise LookupError(f"No Sentinel-2 acquisition found for this area in the last {days_back} days.")
+
+        day = acq["datetime"][:10]
+        meters_per_deg_lng = 111320 * np.cos(np.radians(lat))
+        width_px = min(max(int((bbox[2] - bbox[0]) * meters_per_deg_lng / resolution), 64), 2500)
+        height_px = min(max(int((bbox[3] - bbox[1]) * 110540 / resolution), 64), 2500)
+        time_range = {"from": f"{day}T00:00:00Z", "to": f"{day}T23:59:59Z"}
+        bounds = {"bbox": bbox, "properties": {"crs": "http://www.opengis.net/def/crs/EPSG/0/4326"}}
+        output = {"width": width_px, "height": height_px,
+                  "responses": [{"identifier": "default", "format": {"type": "image/tiff"}}]}
+
+        def process(data, evalscript):
+            r = self._session.post(
+                PROCESS_URL,
+                json={"input": {"bounds": bounds, "data": data}, "output": output, "evalscript": evalscript},
+                headers={**self._auth_headers(), "Accept": "image/tiff"},
+                timeout=120,
+            )
+            if r.status_code != 200:
+                logger.error("Process API error %s: %s", r.status_code, _api_error_text(r))
+                raise RuntimeError(f"Sentinel Hub Process API error {r.status_code}")
+            with MemoryFile(r.content) as mem, mem.open() as ds:
+                return ds.read()
+
+        l1c = {"type": "sentinel-2-l1c", "id": "l1c",
+               "dataFilter": {"timeRange": time_range, "mosaickingOrder": "mostRecent"}}
+        l2a = {"type": "sentinel-2-l2a", "id": "l2a",
+               "dataFilter": {"timeRange": time_range, "mosaickingOrder": "mostRecent"}}
+        cloud_source = "sen2cor_scl"
+        try:
+            arr = process([l1c, l2a], EVALSCRIPT_L1C_SCL)
+        except RuntimeError as e:
+            logger.warning("L1C+SCL request failed (%s); retrying without cloud mask", e)
+            single = {k: v for k, v in l1c.items() if k != "id"}
+            arr = process([single], EVALSCRIPT_L1C_ONLY)
+            cloud_source = "unavailable"
+
+        image = arr[:6]
+        data_mask = arr[6]
+        validity, how = validity_from_scl(data_mask, arr[7]) if cloud_source != "unavailable" else (None, "unavailable")
+        cloud_source = how
+        n = data_mask.size
+        coverage = round(100.0 * float((data_mask > 0).sum()) / n, 1) if n else 0.0
+        cloud_pct = None
+        if validity is not None and (data_mask > 0).any():
+            cloud_pct = round(100.0 * (1 - validity.sum() / float((data_mask > 0).sum())), 1)
+
+        metadata = {
+            "source": "Copernicus Sentinel-2 Level-1C",
+            "processing_level": "L1C",
+            "location": {"lat": lat, "lng": lng},
+            "bbox": bbox,
+            "resolution_m": resolution,
+            "size_px": [width_px, height_px],
+            "acquisition_datetime": acq["datetime"],
+            "acquisition_date": day,
+            "tile_cloud_cover_pct": acq["cloud_cover"],
+            "acquisitions_considered": len(features),
+            "search_days": days_back,
+            "data_coverage_pct": coverage,
+            "quality_status": "empty" if coverage < 10 else "partial" if coverage < 50 else "good",
+            "cloud_mask_source": cloud_source,
+            "cloudy_pct_of_data": cloud_pct,
+            "fetched_at": datetime.utcnow().isoformat(),
+        }
+        return image, validity, metadata
 
     def fetch_rgb_preview(
         self,

@@ -1,19 +1,27 @@
+# Disaster Insights — backend + ML runtime (pinned to the versions verified on 28 Oct 2026, Python 3.14)
+#
+# PyTorch: install the build for your hardware FIRST, e.g. CUDA 12.6:
+#   pip install torch==2.14.0 torchvision==0.29.0 --index-url https://download.pytorch.org/whl/cu126
+# (CPU-only: use the default PyPI index.) Then: pip install -r backend/requirements.txt
+
 # Core ML
-torch>=2.14.0
-torchvision>=0.29.0
-numpy
-Pillow
-scikit-learn
-tqdm
+torch==2.14.0
+torchvision==0.29.0
+segmentation-models-pytorch==0.5.0
+timm==1.0.30
+safetensors==0.8.0
+huggingface_hub==2.0.0
+numpy==2.5.2
+pillow==12.3.0
 
-# Data handling
-rasterio
-tifffile
-matplotlib
+# Geospatial / data
+rasterio==1.5.1
+affine==3.0.1
 
-# Backend
-fastapi
-uvicorn[standard]
-
-# Utilities
-python-dotenv
+# API
+fastapi==0.141.1
+starlette==1.7.0
+pydantic==2.13.5
+uvicorn[standard]==0.54.0
+python-dotenv==1.2.3
+requests==2.34.2

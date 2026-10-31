@@ -1,0 +1,9 @@
+{
+  "promoted": "2026-10-28T04:13:10",
+  "source_run": "scratch/v2_runB",
+  "source_sha256": "66ea16977fec63a8658daa055776cb1e20aa748095c90523860527c709c1b8ca",
+  "served_sha256": "dd90f70de387056a7305c15680f4c7553396e90c1a46eb2de99032d33ca9b7d3",
+  "epoch": 4,
+  "selection_rule": "Pre-declared rule: highest full-resolution VALIDATION flood IoU (tiled, positives outside JRC permanent water vs EMS flood); within 0.005 prefer the EMA run. Candidates: runB (no EMA, epoch 4) 0.4565; runC (EMA 0.998, epoch 7) 0.4452. Test split not used for selection.",
+  "loads_with_weights_only": true
+}

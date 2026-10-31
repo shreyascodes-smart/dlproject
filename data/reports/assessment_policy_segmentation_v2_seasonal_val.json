@@ -1,0 +1,1664 @@
+{
+  "kind": "assessment_policy",
+  "model_version": "segmentation_v2",
+  "model": {
+    "version": "segmentation_v2",
+    "architecture": "U-Net",
+    "encoder": "efficientnet-b2",
+    "bands": [
+      "B02",
+      "B03",
+      "B04",
+      "B08",
+      "B11",
+      "B12"
+    ],
+    "target": "surface_water",
+    "preprocessing": "segmentation_v2:B02-B03-B04-B08-B11-B12:standardize",
+    "postprocessing": "B11<0.100 if B02p5>0.1403",
+    "epoch": 4
+  },
+  "split": "val",
+  "timestamp": "2026-10-31T21:02:32.972597",
+  "note": "Thresholds DERIVED from the validation split.",
+  "protocol": "full-resolution inference; flood = positive & ~JRC permanent water vs EMS flood (validity applied); raw = positive vs EMS flood",
+  "known_water_source": "WorldFloods v2 PERMANENTWATERJRC (JRC Global Surface Water, class 3 = permanent, class 2 = seasonal)",
+  "known_water_mode": "permanent+seasonal",
+  "policy": {
+    "version": "segmentation_v2-val-20261031-seasonal",
+    "model_version": "segmentation_v2",
+    "known_water_mode": "permanent+seasonal",
+    "none_below_pct": 1.0,
+    "min_assessable_land_frac": 0.25,
+    "water_dominated_frac": 0.5,
+    "inconclusive_ceiling_pct": {
+      "tiled": 28.57,
+      "resize": 14.28
+    },
+    "provenance": "inconclusive_ceiling_pct = maximum flood-like share (outside JRC permanent water) predicted on validation scenes that have no EMS-mapped flood. Other values are documented design choices, not fitted."
+  },
+  "summary": {
+    "tiled": {
+      "n_negative_scenes": 14,
+      "n_positive_scenes": 10,
+      "negative_outside_water_pct": {
+        "min": 1.0922,
+        "max": 28.5607,
+        "median": 2.79775
+      },
+      "positive_outside_water_pct": [
+        0.1952,
+        0.5006,
+        0.5006,
+        0.5628,
+        1.294,
+        1.294,
+        1.8894,
+        2.8293,
+        10.7496,
+        55.0231
+      ],
+      "pixel_metrics_raw": {
+        "tp": 14244402,
+        "fp": 28142638,
+        "fn": 3659122,
+        "tn": 96433711,
+        "flood_iou": 0.30935047311869335,
+        "flood_dice": 0.472525087010299,
+        "flood_precision": 0.33605559623885034,
+        "flood_recall": 0.7956200131326101,
+        "pixel_accuracy": 0.7767982288979159
+      },
+      "pixel_metrics_excluding_known_water": {
+        "tp": 13238356,
+        "fp": 8912983,
+        "fn": 4665168,
+        "tn": 115663366,
+        "flood_iou": 0.4936644433221672,
+        "flood_dice": 0.6610111735995702,
+        "flood_precision": 0.5976323146876132,
+        "flood_recall": 0.7394273887085023,
+        "pixel_accuracy": 0.9047012696312552
+      },
+      "per_event_excluding_known_water": {
+        "EMSR264": {
+          "tp": 8023,
+          "fp": 162449,
+          "fn": 60114,
+          "tn": 14282445,
+          "flood_iou": 0.0347939597373648,
+          "flood_dice": 0.06724809206693796,
+          "flood_precision": 0.047063447369656015,
+          "flood_recall": 0.11774806639564407,
+          "pixel_accuracy": 0.9846646093431483
+        },
+        "EMSR265": {
+          "tp": 29455,
+          "fp": 397576,
+          "fn": 67984,
+          "tn": 31985844,
+          "flood_iou": 0.05950324737634213,
+          "flood_dice": 0.11232291646805347,
+          "flood_precision": 0.06897625699305203,
+          "flood_recall": 0.3022916901856546,
+          "pixel_accuracy": 0.985666635232769
+        },
+        "EMSR312": {
+          "tp": 0,
+          "fp": 876738,
+          "fn": 0,
+          "tn": 41152533,
+          "flood_iou": 0.0,
+          "flood_dice": 0.0,
+          "flood_precision": 0.0,
+          "flood_recall": null,
+          "pixel_accuracy": 0.9791398237671074
+        },
+        "EMSR329": {
+          "tp": 7,
+          "fp": 1581,
+          "fn": 194,
+          "tn": 911424,
+          "flood_iou": 0.003928170594837262,
+          "flood_dice": 0.007825600894354388,
+          "flood_precision": 0.004408060453400504,
+          "flood_recall": 0.03482587064676617,
+          "pixel_accuracy": 0.9980562983598443
+        },
+        "EMSR342": {
+          "tp": 13200796,
+          "fp": 7467725,
+          "fn": 4535678,
+          "tn": 26256631,
+          "flood_iou": 0.5237538395883956,
+          "flood_dice": 0.6874520358614811,
+          "flood_precision": 0.6386908864935231,
+          "flood_recall": 0.7442739746355448,
+          "pixel_accuracy": 0.766746805288605
+        },
+        "EMSR422": {
+          "tp": 75,
+          "fp": 6914,
+          "fn": 1198,
+          "tn": 1074489,
+          "flood_iou": 0.009160864785635764,
+          "flood_dice": 0.01815541031227306,
+          "flood_precision": 0.010731148948347403,
+          "flood_recall": 0.0589159465828751,
+          "pixel_accuracy": 0.9925074537534775
+        }
+      },
+      "seconds_total": 113.0,
+      "levels": {
+        "with_mapped_flood": {
+          "uncertain_water": 1,
+          "insufficient_coverage": 4,
+          "inconclusive": 3,
+          "none_detected": 1,
+          "flood_like": 1
+        },
+        "without_mapped_flood": {
+          "inconclusive": 11,
+          "insufficient_coverage": 3
+        }
+      }
+    },
+    "resize": {
+      "n_negative_scenes": 14,
+      "n_positive_scenes": 10,
+      "negative_outside_water_pct": {
+        "min": 0.024,
+        "max": 14.2757,
+        "median": 1.05955
+      },
+      "positive_outside_water_pct": [
+        0.0133,
+        0.0279,
+        0.0279,
+        0.0475,
+        0.0665,
+        0.1092,
+        0.1092,
+        0.1209,
+        7.3434,
+        51.4147
+      ],
+      "pixel_metrics_raw": {
+        "tp": 13602829,
+        "fp": 16611313,
+        "fn": 4300695,
+        "tn": 107965036,
+        "flood_iou": 0.3941154060788408,
+        "flood_dice": 0.5653985378260035,
+        "flood_precision": 0.45021397595867524,
+        "flood_recall": 0.759785000986398,
+        "pixel_accuracy": 0.8532283363278966
+      },
+      "pixel_metrics_excluding_known_water": {
+        "tp": 12688936,
+        "fp": 4766073,
+        "fn": 5214588,
+        "tn": 119810276,
+        "flood_iou": 0.559733637964539,
+        "flood_dice": 0.7177297768547128,
+        "flood_precision": 0.726950985817309,
+        "flood_recall": 0.708739575515971,
+        "pixel_accuracy": 0.9299503797283705
+      },
+      "per_event_excluding_known_water": {
+        "EMSR264": {
+          "tp": 63,
+          "fp": 19542,
+          "fn": 68074,
+          "tn": 14425352,
+          "flood_iou": 0.0007185300927245976,
+          "flood_dice": 0.001436028355861503,
+          "flood_precision": 0.0032134659525631217,
+          "flood_recall": 0.0009246077755111026,
+          "pixel_accuracy": 0.9939629426823384
+        },
+        "EMSR265": {
+          "tp": 0,
+          "fp": 32808,
+          "fn": 97439,
+          "tn": 32350612,
+          "flood_iou": 0.0,
+          "flood_dice": 0.0,
+          "flood_precision": 0.0,
+          "flood_recall": 0.0,
+          "pixel_accuracy": 0.9959900383176442
+        },
+        "EMSR312": {
+          "tp": 0,
+          "fp": 143537,
+          "fn": 0,
+          "tn": 41885734,
+          "flood_iou": 0.0,
+          "flood_dice": 0.0,
+          "flood_precision": 0.0,
+          "flood_recall": null,
+          "pixel_accuracy": 0.9965848325087533
+        },
+        "EMSR329": {
+          "tp": 0,
+          "fp": 108,
+          "fn": 201,
+          "tn": 912897,
+          "flood_iou": 0.0,
+          "flood_dice": 0.0,
+          "flood_precision": 0.0,
+          "flood_recall": 0.0,
+          "pixel_accuracy": 0.9996616316581363
+        },
+        "EMSR342": {
+          "tp": 12688700,
+          "fp": 4552111,
+          "fn": 5047774,
+          "tn": 29172245,
+          "flood_iou": 0.5692914108275604,
+          "flood_dice": 0.725539446529369,
+          "flood_precision": 0.7359688590055306,
+          "flood_recall": 0.7154014941188424,
+          "pixel_accuracy": 0.813452581312816
+        },
+        "EMSR422": {
+          "tp": 173,
+          "fp": 17967,
+          "fn": 1100,
+          "tn": 1063436,
+          "flood_iou": 0.008991683991683992,
+          "flood_dice": 0.017823108226446196,
+          "flood_precision": 0.009536934950385887,
+          "flood_recall": 0.1358994501178319,
+          "pixel_accuracy": 0.9823890064987124
+        }
+      },
+      "seconds_total": 48.5,
+      "levels": {
+        "with_mapped_flood": {
+          "uncertain_water": 1,
+          "insufficient_coverage": 4,
+          "inconclusive": 3,
+          "none_detected": 1,
+          "flood_like": 1
+        },
+        "without_mapped_flood": {
+          "none_detected": 7,
+          "insufficient_coverage": 3,
+          "inconclusive": 4
+        }
+      }
+    }
+  },
+  "per_sample": [
+    {
+      "name": "EMSR264_08VATOMANDRY_DEL_v2",
+      "event_id": "EMSR264",
+      "reference_has_flood": true,
+      "reference_flood_px": 68137,
+      "reference_flood_on_permanent_water_px": 22086,
+      "tiled": {
+        "raw_positive_pct": 51.8897,
+        "outside_known_water_pct": 1.8894,
+        "known_water_pct_of_eligible": 51.2834,
+        "flood_like_on_known_water_share_pct": 98.2261,
+        "eligible_pct": 65.0929,
+        "quality_status": "ok",
+        "haze_index": 0.0888,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 23885,
+          "fp": 6536464,
+          "fn": 44252,
+          "tn": 6038269
+        },
+        "counts_excluding_known_water": {
+          "tp": 8023,
+          "fp": 108351,
+          "fn": 60114,
+          "tn": 12466382
+        },
+        "seconds": 14.1,
+        "level": "uncertain_water"
+      },
+      "resize": {
+        "raw_positive_pct": 27.6692,
+        "outside_known_water_pct": 0.0665,
+        "known_water_pct_of_eligible": 51.2834,
+        "flood_like_on_known_water_share_pct": 99.8829,
+        "eligible_pct": 65.0929,
+        "quality_status": "ok",
+        "haze_index": 0.0888,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 63,
+          "fp": 3498113,
+          "fn": 68074,
+          "tn": 9076620
+        },
+        "counts_excluding_known_water": {
+          "tp": 63,
+          "fp": 4033,
+          "fn": 68074,
+          "tn": 12570700
+        },
+        "seconds": 6.79,
+        "level": "uncertain_water"
+      }
+    },
+    {
+      "name": "EMSR264_18MIANDRIVAZODETAIL_DEL_v2",
+      "event_id": "EMSR264",
+      "reference_has_flood": false,
+      "reference_flood_px": 0,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_positive_pct": 10.2349,
+        "outside_known_water_pct": 3.2061,
+        "known_water_pct_of_eligible": 9.774,
+        "flood_like_on_known_water_share_pct": 71.7371,
+        "eligible_pct": 93.0942,
+        "quality_status": "ok",
+        "haze_index": 0.0933,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 191410,
+          "fn": 0,
+          "tn": 1678751
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 54098,
+          "fn": 0,
+          "tn": 1816063
+        },
+        "seconds": 0.87,
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_positive_pct": 4.0568,
+        "outside_known_water_pct": 0.9191,
+        "known_water_pct_of_eligible": 9.774,
+        "flood_like_on_known_water_share_pct": 79.5582,
+        "eligible_pct": 93.0942,
+        "quality_status": "ok",
+        "haze_index": 0.0933,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 75869,
+          "fn": 0,
+          "tn": 1794292
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 15509,
+          "fn": 0,
+          "tn": 1854652
+        },
+        "seconds": 0.34,
+        "level": "none_detected"
+      }
+    },
+    {
+      "name": "EMSR265_04ESBLY_DEL_MONIT01_v1",
+      "event_id": "EMSR265",
+      "reference_has_flood": false,
+      "reference_flood_px": 0,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_positive_pct": 32.6767,
+        "outside_known_water_pct": 27.6832,
+        "known_water_pct_of_eligible": 7.2356,
+        "flood_like_on_known_water_share_pct": 21.4114,
+        "eligible_pct": 10.9004,
+        "quality_status": "limited",
+        "haze_index": 0.1369,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 68342,
+          "fn": 0,
+          "tn": 140804
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 53709,
+          "fn": 0,
+          "tn": 155437
+        },
+        "seconds": 2.99,
+        "level": "insufficient_coverage"
+      },
+      "resize": {
+        "raw_positive_pct": 1.8437,
+        "outside_known_water_pct": 1.6849,
+        "known_water_pct_of_eligible": 7.2356,
+        "flood_like_on_known_water_share_pct": 15.223,
+        "eligible_pct": 10.9004,
+        "quality_status": "limited",
+        "haze_index": 0.1369,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 3856,
+          "fn": 0,
+          "tn": 205290
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 3269,
+          "fn": 0,
+          "tn": 205877
+        },
+        "seconds": 0.25,
+        "level": "insufficient_coverage"
+      }
+    },
+    {
+      "name": "EMSR265_04ESBLY_DEL_MONIT02_v2",
+      "event_id": "EMSR265",
+      "reference_has_flood": false,
+      "reference_flood_px": 0,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_positive_pct": 32.6767,
+        "outside_known_water_pct": 27.6832,
+        "known_water_pct_of_eligible": 7.2356,
+        "flood_like_on_known_water_share_pct": 21.4114,
+        "eligible_pct": 10.9004,
+        "quality_status": "limited",
+        "haze_index": 0.1369,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 68342,
+          "fn": 0,
+          "tn": 140804
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 53709,
+          "fn": 0,
+          "tn": 155437
+        },
+        "seconds": 0.56,
+        "level": "insufficient_coverage"
+      },
+      "resize": {
+        "raw_positive_pct": 1.8437,
+        "outside_known_water_pct": 1.6849,
+        "known_water_pct_of_eligible": 7.2356,
+        "flood_like_on_known_water_share_pct": 15.223,
+        "eligible_pct": 10.9004,
+        "quality_status": "limited",
+        "haze_index": 0.1369,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 3856,
+          "fn": 0,
+          "tn": 205290
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 3269,
+          "fn": 0,
+          "tn": 205877
+        },
+        "seconds": 0.28,
+        "level": "insufficient_coverage"
+      }
+    },
+    {
+      "name": "EMSR265_04ESBLY_DEL_v1",
+      "event_id": "EMSR265",
+      "reference_has_flood": false,
+      "reference_flood_px": 0,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_positive_pct": 32.6767,
+        "outside_known_water_pct": 27.6832,
+        "known_water_pct_of_eligible": 7.2356,
+        "flood_like_on_known_water_share_pct": 21.4114,
+        "eligible_pct": 10.9004,
+        "quality_status": "limited",
+        "haze_index": 0.1369,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 68342,
+          "fn": 0,
+          "tn": 140804
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 53709,
+          "fn": 0,
+          "tn": 155437
+        },
+        "seconds": 0.46,
+        "level": "insufficient_coverage"
+      },
+      "resize": {
+        "raw_positive_pct": 1.8437,
+        "outside_known_water_pct": 1.6849,
+        "known_water_pct_of_eligible": 7.2356,
+        "flood_like_on_known_water_share_pct": 15.223,
+        "eligible_pct": 10.9004,
+        "quality_status": "limited",
+        "haze_index": 0.1369,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 3856,
+          "fn": 0,
+          "tn": 205290
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 3269,
+          "fn": 0,
+          "tn": 205877
+        },
+        "seconds": 0.26,
+        "level": "insufficient_coverage"
+      }
+    },
+    {
+      "name": "EMSR265_07DAMMARIELESLYS_DEL_MONIT01_v1",
+      "event_id": "EMSR265",
+      "reference_has_flood": true,
+      "reference_flood_px": 3553,
+      "reference_flood_on_permanent_water_px": 415,
+      "tiled": {
+        "raw_positive_pct": 2.0443,
+        "outside_known_water_pct": 1.294,
+        "known_water_pct_of_eligible": 1.3762,
+        "flood_like_on_known_water_share_pct": 37.5726,
+        "eligible_pct": 20.3392,
+        "quality_status": "limited",
+        "haze_index": 0.1279,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 614,
+          "fp": 19704,
+          "fn": 2939,
+          "tn": 970605
+        },
+        "counts_excluding_known_water": {
+          "tp": 453,
+          "fp": 12231,
+          "fn": 3100,
+          "tn": 978078
+        },
+        "seconds": 4.66,
+        "level": "insufficient_coverage"
+      },
+      "resize": {
+        "raw_positive_pct": 0.1077,
+        "outside_known_water_pct": 0.1092,
+        "known_water_pct_of_eligible": 1.3762,
+        "flood_like_on_known_water_share_pct": 0.0,
+        "eligible_pct": 20.3392,
+        "quality_status": "limited",
+        "haze_index": 0.1279,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 1070,
+          "fn": 3553,
+          "tn": 989239
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 1070,
+          "fn": 3553,
+          "tn": 989239
+        },
+        "seconds": 0.6,
+        "level": "insufficient_coverage"
+      }
+    },
+    {
+      "name": "EMSR265_07DAMMARIELESLYS_DEL_v1",
+      "event_id": "EMSR265",
+      "reference_has_flood": true,
+      "reference_flood_px": 3299,
+      "reference_flood_on_permanent_water_px": 414,
+      "tiled": {
+        "raw_positive_pct": 2.0443,
+        "outside_known_water_pct": 1.294,
+        "known_water_pct_of_eligible": 1.3762,
+        "flood_like_on_known_water_share_pct": 37.5726,
+        "eligible_pct": 20.3392,
+        "quality_status": "limited",
+        "haze_index": 0.1279,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 556,
+          "fp": 19762,
+          "fn": 2743,
+          "tn": 970801
+        },
+        "counts_excluding_known_water": {
+          "tp": 395,
+          "fp": 12289,
+          "fn": 2904,
+          "tn": 978274
+        },
+        "seconds": 1.44,
+        "level": "insufficient_coverage"
+      },
+      "resize": {
+        "raw_positive_pct": 0.1077,
+        "outside_known_water_pct": 0.1092,
+        "known_water_pct_of_eligible": 1.3762,
+        "flood_like_on_known_water_share_pct": 0.0,
+        "eligible_pct": 20.3392,
+        "quality_status": "limited",
+        "haze_index": 0.1279,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 1070,
+          "fn": 3299,
+          "tn": 989493
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 1070,
+          "fn": 3299,
+          "tn": 989493
+        },
+        "seconds": 0.61,
+        "level": "insufficient_coverage"
+      }
+    },
+    {
+      "name": "EMSR265_08FONTAINEBLEAU_DEL_MONIT04_v2",
+      "event_id": "EMSR265",
+      "reference_has_flood": true,
+      "reference_flood_px": 6616,
+      "reference_flood_on_permanent_water_px": 479,
+      "tiled": {
+        "raw_positive_pct": 1.6067,
+        "outside_known_water_pct": 0.5628,
+        "known_water_pct_of_eligible": 1.2311,
+        "flood_like_on_known_water_share_pct": 65.4006,
+        "eligible_pct": 99.313,
+        "quality_status": "ok",
+        "haze_index": 0.1754,
+        "hazy": true,
+        "water_gate_applied": true,
+        "counts_raw": {
+          "tp": 2839,
+          "fp": 78385,
+          "fn": 3777,
+          "tn": 4970283
+        },
+        "counts_excluding_known_water": {
+          "tp": 2360,
+          "fp": 25743,
+          "fn": 4256,
+          "tn": 5022925
+        },
+        "seconds": 1.37,
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_positive_pct": 0.0475,
+        "outside_known_water_pct": 0.0475,
+        "known_water_pct_of_eligible": 1.2311,
+        "flood_like_on_known_water_share_pct": 1.2484,
+        "eligible_pct": 99.313,
+        "quality_status": "ok",
+        "haze_index": 0.1754,
+        "hazy": true,
+        "water_gate_applied": true,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 2403,
+          "fn": 6616,
+          "tn": 5046265
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 2373,
+          "fn": 6616,
+          "tn": 5046295
+        },
+        "seconds": 0.67,
+        "level": "inconclusive"
+      }
+    },
+    {
+      "name": "EMSR265_09VOULX_DEL_MONIT04_v2",
+      "event_id": "EMSR265",
+      "reference_has_flood": false,
+      "reference_flood_px": 0,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_positive_pct": 3.7123,
+        "outside_known_water_pct": 1.1139,
+        "known_water_pct_of_eligible": 3.2612,
+        "flood_like_on_known_water_share_pct": 70.9734,
+        "eligible_pct": 99.1764,
+        "quality_status": "ok",
+        "haze_index": 0.1273,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 172635,
+          "fn": 0,
+          "tn": 4477719
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 50110,
+          "fn": 0,
+          "tn": 4600244
+        },
+        "seconds": 4.51,
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_positive_pct": 0.0457,
+        "outside_known_water_pct": 0.024,
+        "known_water_pct_of_eligible": 3.2612,
+        "flood_like_on_known_water_share_pct": 49.2004,
+        "eligible_pct": 99.1764,
+        "quality_status": "ok",
+        "haze_index": 0.1273,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 2126,
+          "fn": 0,
+          "tn": 4648228
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 1080,
+          "fn": 0,
+          "tn": 4649274
+        },
+        "seconds": 0.61,
+        "level": "none_detected"
+      }
+    },
+    {
+      "name": "EMSR265_13AUXERRE_DEL_v1",
+      "event_id": "EMSR265",
+      "reference_has_flood": true,
+      "reference_flood_px": 270,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_positive_pct": 10.9439,
+        "outside_known_water_pct": 10.7496,
+        "known_water_pct_of_eligible": 1.1641,
+        "flood_like_on_known_water_share_pct": 2.9188,
+        "eligible_pct": 4.9354,
+        "quality_status": "limited",
+        "haze_index": 0.1369,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 233,
+          "fp": 21831,
+          "fn": 37,
+          "tn": 179509
+        },
+        "counts_excluding_known_water": {
+          "tp": 233,
+          "fp": 21187,
+          "fn": 37,
+          "tn": 180153
+        },
+        "seconds": 1.3,
+        "level": "insufficient_coverage"
+      },
+      "resize": {
+        "raw_positive_pct": 0.1195,
+        "outside_known_water_pct": 0.1209,
+        "known_water_pct_of_eligible": 1.1641,
+        "flood_like_on_known_water_share_pct": 0.0,
+        "eligible_pct": 4.9354,
+        "quality_status": "limited",
+        "haze_index": 0.1369,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 241,
+          "fn": 270,
+          "tn": 201099
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 241,
+          "fn": 270,
+          "tn": 201099
+        },
+        "seconds": 0.53,
+        "level": "insufficient_coverage"
+      }
+    },
+    {
+      "name": "EMSR265_22LESMUREAUX_DEL_MONIT03_v1",
+      "event_id": "EMSR265",
+      "reference_has_flood": true,
+      "reference_flood_px": 57075,
+      "reference_flood_on_permanent_water_px": 1777,
+      "tiled": {
+        "raw_positive_pct": 1.4035,
+        "outside_known_water_pct": 0.5006,
+        "known_water_pct_of_eligible": 1.1438,
+        "flood_like_on_known_water_share_pct": 64.7401,
+        "eligible_pct": 81.3672,
+        "quality_status": "ok",
+        "haze_index": 0.2111,
+        "hazy": true,
+        "water_gate_applied": true,
+        "counts_raw": {
+          "tp": 15256,
+          "fp": 87257,
+          "fn": 41819,
+          "tn": 7159734
+        },
+        "counts_excluding_known_water": {
+          "tp": 14523,
+          "fp": 21623,
+          "fn": 42552,
+          "tn": 7225368
+        },
+        "seconds": 2.35,
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_positive_pct": 0.0277,
+        "outside_known_water_pct": 0.0279,
+        "known_water_pct_of_eligible": 1.1438,
+        "flood_like_on_known_water_share_pct": 0.4447,
+        "eligible_pct": 81.3672,
+        "quality_status": "ok",
+        "haze_index": 0.2111,
+        "hazy": true,
+        "water_gate_applied": true,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 2024,
+          "fn": 57075,
+          "tn": 7244967
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 2015,
+          "fn": 57075,
+          "tn": 7244976
+        },
+        "seconds": 1.15,
+        "level": "inconclusive"
+      }
+    },
+    {
+      "name": "EMSR265_22LESMUREAUX_DEL_MONIT04_v1",
+      "event_id": "EMSR265",
+      "reference_has_flood": true,
+      "reference_flood_px": 26626,
+      "reference_flood_on_permanent_water_px": 574,
+      "tiled": {
+        "raw_positive_pct": 1.4035,
+        "outside_known_water_pct": 0.5006,
+        "known_water_pct_of_eligible": 1.1438,
+        "flood_like_on_known_water_share_pct": 64.7401,
+        "eligible_pct": 81.3672,
+        "quality_status": "ok",
+        "haze_index": 0.2111,
+        "hazy": true,
+        "water_gate_applied": true,
+        "counts_raw": {
+          "tp": 11816,
+          "fp": 90697,
+          "fn": 14810,
+          "tn": 7186743
+        },
+        "counts_excluding_known_water": {
+          "tp": 11491,
+          "fp": 24655,
+          "fn": 15135,
+          "tn": 7252785
+        },
+        "seconds": 2.27,
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_positive_pct": 0.0277,
+        "outside_known_water_pct": 0.0279,
+        "known_water_pct_of_eligible": 1.1438,
+        "flood_like_on_known_water_share_pct": 0.4447,
+        "eligible_pct": 81.3672,
+        "quality_status": "ok",
+        "haze_index": 0.2111,
+        "hazy": true,
+        "water_gate_applied": true,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 2024,
+          "fn": 26626,
+          "tn": 7275416
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 2015,
+          "fn": 26626,
+          "tn": 7275425
+        },
+        "seconds": 1.08,
+        "level": "inconclusive"
+      }
+    },
+    {
+      "name": "EMSR265_24HONFLEUR_DEL_MONIT01_v1",
+      "event_id": "EMSR265",
+      "reference_has_flood": false,
+      "reference_flood_px": 0,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_positive_pct": 24.2886,
+        "outside_known_water_pct": 1.69,
+        "known_water_pct_of_eligible": 24.1217,
+        "flood_like_on_known_water_share_pct": 94.7203,
+        "eligible_pct": 26.6883,
+        "quality_status": "limited",
+        "haze_index": 0.1048,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 1299519,
+          "fn": 0,
+          "tn": 4050798
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 68611,
+          "fn": 0,
+          "tn": 5281706
+        },
+        "seconds": 9.48,
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_positive_pct": 9.921,
+        "outside_known_water_pct": 0.3236,
+        "known_water_pct_of_eligible": 24.1217,
+        "flood_like_on_known_water_share_pct": 97.5251,
+        "eligible_pct": 26.6883,
+        "quality_status": "limited",
+        "haze_index": 0.1048,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 530805,
+          "fn": 0,
+          "tn": 4819512
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 13137,
+          "fn": 0,
+          "tn": 5337180
+        },
+        "seconds": 5.42,
+        "level": "none_detected"
+      }
+    },
+    {
+      "name": "EMSR312_02CALAYAN_GRA_v1",
+      "event_id": "EMSR312",
+      "reference_has_flood": false,
+      "reference_flood_px": 0,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_positive_pct": 39.296,
+        "outside_known_water_pct": 2.3894,
+        "known_water_pct_of_eligible": 39.7683,
+        "flood_like_on_known_water_share_pct": 96.3376,
+        "eligible_pct": 85.4349,
+        "quality_status": "ok",
+        "haze_index": 0.0895,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 19468,
+          "fn": 0,
+          "tn": 30074
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 713,
+          "fn": 0,
+          "tn": 48829
+        },
+        "seconds": 0.1,
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_positive_pct": 39.625,
+        "outside_known_water_pct": 2.7212,
+        "known_water_pct_of_eligible": 39.7683,
+        "flood_like_on_known_water_share_pct": 95.8637,
+        "eligible_pct": 85.4349,
+        "quality_status": "ok",
+        "haze_index": 0.0895,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 19631,
+          "fn": 0,
+          "tn": 29911
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 812,
+          "fn": 0,
+          "tn": 48730
+        },
+        "seconds": 0.07,
+        "level": "inconclusive"
+      }
+    },
+    {
+      "name": "EMSR312_05TUGUEGARAO_DEL_MONIT01_v1",
+      "event_id": "EMSR312",
+      "reference_has_flood": false,
+      "reference_flood_px": 0,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_positive_pct": 6.2903,
+        "outside_known_water_pct": 2.2561,
+        "known_water_pct_of_eligible": 5.4375,
+        "flood_like_on_known_water_share_pct": 66.0839,
+        "eligible_pct": 67.932,
+        "quality_status": "ok",
+        "haze_index": 0.0907,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 498842,
+          "fn": 0,
+          "tn": 7431501
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 169188,
+          "fn": 0,
+          "tn": 7761155
+        },
+        "seconds": 9.59,
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_positive_pct": 0.5193,
+        "outside_known_water_pct": 0.065,
+        "known_water_pct_of_eligible": 5.4375,
+        "flood_like_on_known_water_share_pct": 88.1607,
+        "eligible_pct": 67.932,
+        "quality_status": "ok",
+        "haze_index": 0.0907,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 41185,
+          "fn": 0,
+          "tn": 7889158
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 4876,
+          "fn": 0,
+          "tn": 7925467
+        },
+        "seconds": 2.55,
+        "level": "none_detected"
+      }
+    },
+    {
+      "name": "EMSR312_06ILAGAN_DEL_MONIT01_v1",
+      "event_id": "EMSR312",
+      "reference_has_flood": false,
+      "reference_flood_px": 0,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_positive_pct": 4.6424,
+        "outside_known_water_pct": 1.9757,
+        "known_water_pct_of_eligible": 3.3475,
+        "flood_like_on_known_water_share_pct": 58.8677,
+        "eligible_pct": 73.126,
+        "quality_status": "ok",
+        "haze_index": 0.087,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 377302,
+          "fn": 0,
+          "tn": 7749924
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 155193,
+          "fn": 0,
+          "tn": 7972033
+        },
+        "seconds": 5.1,
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_positive_pct": 0.0977,
+        "outside_known_water_pct": 0.0301,
+        "known_water_pct_of_eligible": 3.3475,
+        "flood_like_on_known_water_share_pct": 70.2355,
+        "eligible_pct": 73.126,
+        "quality_status": "ok",
+        "haze_index": 0.087,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 7939,
+          "fn": 0,
+          "tn": 8119287
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 2363,
+          "fn": 0,
+          "tn": 8124863
+        },
+        "seconds": 2.53,
+        "level": "none_detected"
+      }
+    },
+    {
+      "name": "EMSR312_07VIGAN_DEL_MONIT01_v1",
+      "event_id": "EMSR312",
+      "reference_has_flood": false,
+      "reference_flood_px": 0,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_positive_pct": 21.5902,
+        "outside_known_water_pct": 4.1998,
+        "known_water_pct_of_eligible": 18.2761,
+        "flood_like_on_known_water_share_pct": 84.1029,
+        "eligible_pct": 97.0571,
+        "quality_status": "ok",
+        "haze_index": 0.0722,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 1388684,
+          "fn": 0,
+          "tn": 5043325
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 220761,
+          "fn": 0,
+          "tn": 6211248
+        },
+        "seconds": 7.93,
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_positive_pct": 14.9931,
+        "outside_known_water_pct": 1.2,
+        "known_water_pct_of_eligible": 18.2761,
+        "flood_like_on_known_water_share_pct": 93.4592,
+        "eligible_pct": 97.0571,
+        "quality_status": "ok",
+        "haze_index": 0.0722,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 964357,
+          "fn": 0,
+          "tn": 5467652
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 63077,
+          "fn": 0,
+          "tn": 6368932
+        },
+        "seconds": 1.44,
+        "level": "inconclusive"
+      }
+    },
+    {
+      "name": "EMSR312_07VIGAN_DEL_v1",
+      "event_id": "EMSR312",
+      "reference_has_flood": false,
+      "reference_flood_px": 0,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_positive_pct": 21.5902,
+        "outside_known_water_pct": 4.1998,
+        "known_water_pct_of_eligible": 18.2761,
+        "flood_like_on_known_water_share_pct": 84.1029,
+        "eligible_pct": 97.0571,
+        "quality_status": "ok",
+        "haze_index": 0.0722,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 1388684,
+          "fn": 0,
+          "tn": 5043325
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 220761,
+          "fn": 0,
+          "tn": 6211248
+        },
+        "seconds": 2.87,
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_positive_pct": 14.9931,
+        "outside_known_water_pct": 1.2,
+        "known_water_pct_of_eligible": 18.2761,
+        "flood_like_on_known_water_share_pct": 93.4592,
+        "eligible_pct": 97.0571,
+        "quality_status": "ok",
+        "haze_index": 0.0722,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 964357,
+          "fn": 0,
+          "tn": 5467652
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 63077,
+          "fn": 0,
+          "tn": 6368932
+        },
+        "seconds": 1.8,
+        "level": "inconclusive"
+      }
+    },
+    {
+      "name": "EMSR312_08CANDON_DEL_MONIT01_v1",
+      "event_id": "EMSR312",
+      "reference_has_flood": false,
+      "reference_flood_px": 0,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_positive_pct": 23.5891,
+        "outside_known_water_pct": 1.0922,
+        "known_water_pct_of_eligible": 22.785,
+        "flood_like_on_known_water_share_pct": 96.425,
+        "eligible_pct": 90.3484,
+        "quality_status": "ok",
+        "haze_index": 0.0698,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 1540147,
+          "fn": 0,
+          "tn": 4988924
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 55061,
+          "fn": 0,
+          "tn": 6474010
+        },
+        "seconds": 3.44,
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_positive_pct": 20.5699,
+        "outside_known_water_pct": 0.0926,
+        "known_water_pct_of_eligible": 22.785,
+        "flood_like_on_known_water_share_pct": 99.6526,
+        "eligible_pct": 90.3484,
+        "quality_status": "ok",
+        "haze_index": 0.0698,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 1343021,
+          "fn": 0,
+          "tn": 5186050
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 4666,
+          "fn": 0,
+          "tn": 6524405
+        },
+        "seconds": 1.66,
+        "level": "none_detected"
+      }
+    },
+    {
+      "name": "EMSR312_08CANDON_DEL_v1",
+      "event_id": "EMSR312",
+      "reference_has_flood": false,
+      "reference_flood_px": 0,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_positive_pct": 23.5891,
+        "outside_known_water_pct": 1.0922,
+        "known_water_pct_of_eligible": 22.785,
+        "flood_like_on_known_water_share_pct": 96.425,
+        "eligible_pct": 90.3484,
+        "quality_status": "ok",
+        "haze_index": 0.0698,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 1540147,
+          "fn": 0,
+          "tn": 4988924
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 55061,
+          "fn": 0,
+          "tn": 6474010
+        },
+        "seconds": 3.57,
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_positive_pct": 20.5699,
+        "outside_known_water_pct": 0.0926,
+        "known_water_pct_of_eligible": 22.785,
+        "flood_like_on_known_water_share_pct": 99.6526,
+        "eligible_pct": 90.3484,
+        "quality_status": "ok",
+        "haze_index": 0.0698,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 1343021,
+          "fn": 0,
+          "tn": 5186050
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 4666,
+          "fn": 0,
+          "tn": 6524405
+        },
+        "seconds": 1.91,
+        "level": "none_detected"
+      }
+    },
+    {
+      "name": "EMSR329_05CASTIADAS_GRA_v3",
+      "event_id": "EMSR329",
+      "reference_has_flood": true,
+      "reference_flood_px": 201,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_positive_pct": 10.8038,
+        "outside_known_water_pct": 0.1952,
+        "known_water_pct_of_eligible": 10.8934,
+        "flood_like_on_known_water_share_pct": 98.3904,
+        "eligible_pct": 98.816,
+        "quality_status": "ok",
+        "haze_index": 0.0836,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 7,
+          "fp": 98654,
+          "fn": 194,
+          "tn": 814351
+        },
+        "counts_excluding_known_water": {
+          "tp": 7,
+          "fp": 1581,
+          "fn": 194,
+          "tn": 911424
+        },
+        "seconds": 0.42,
+        "level": "none_detected"
+      },
+      "resize": {
+        "raw_positive_pct": 10.2442,
+        "outside_known_water_pct": 0.0133,
+        "known_water_pct_of_eligible": 10.8934,
+        "flood_like_on_known_water_share_pct": 99.8846,
+        "eligible_pct": 98.816,
+        "quality_status": "ok",
+        "haze_index": 0.0836,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 93551,
+          "fn": 201,
+          "tn": 819454
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 108,
+          "fn": 201,
+          "tn": 912897
+        },
+        "seconds": 0.2,
+        "level": "none_detected"
+      }
+    },
+    {
+      "name": "EMSR342_06NORTHNORMANTON_DEL_v1",
+      "event_id": "EMSR342",
+      "reference_has_flood": false,
+      "reference_flood_px": 0,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_positive_pct": 41.7783,
+        "outside_known_water_pct": 28.5607,
+        "known_water_pct_of_eligible": 22.4692,
+        "flood_like_on_known_water_share_pct": 46.998,
+        "eligible_pct": 69.5836,
+        "quality_status": "ok",
+        "haze_index": 0.0935,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 8996673,
+          "fn": 0,
+          "tn": 12537653
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 4768415,
+          "fn": 0,
+          "tn": 16765911
+        },
+        "seconds": 15.76,
+        "level": "inconclusive"
+      },
+      "resize": {
+        "raw_positive_pct": 21.6534,
+        "outside_known_water_pct": 14.2757,
+        "known_water_pct_of_eligible": 22.4692,
+        "flood_like_on_known_water_share_pct": 48.8854,
+        "eligible_pct": 69.5836,
+        "quality_status": "ok",
+        "haze_index": 0.0935,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 0,
+          "fp": 4662923,
+          "fn": 0,
+          "tn": 16871403
+        },
+        "counts_excluding_known_water": {
+          "tp": 0,
+          "fp": 2383433,
+          "fn": 0,
+          "tn": 19150893
+        },
+        "seconds": 8.32,
+        "level": "inconclusive"
+      }
+    },
+    {
+      "name": "EMSR342_07SOUTHNORMANTON_DEL_MONIT03_v2",
+      "event_id": "EMSR342",
+      "reference_has_flood": true,
+      "reference_flood_px": 17736474,
+      "reference_flood_on_permanent_water_px": 997294,
+      "tiled": {
+        "raw_positive_pct": 56.5384,
+        "outside_known_water_pct": 55.0231,
+        "known_water_pct_of_eligible": 3.4396,
+        "flood_like_on_known_water_share_pct": 6.0275,
+        "eligible_pct": 98.0825,
+        "quality_status": "ok",
+        "haze_index": 0.0983,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 14189121,
+          "fp": 2730840,
+          "fn": 3547353,
+          "tn": 9459190
+        },
+        "counts_excluding_known_water": {
+          "tp": 13200796,
+          "fp": 2699310,
+          "fn": 4535678,
+          "tn": 9490720
+        },
+        "seconds": 14.45,
+        "level": "flood_like"
+      },
+      "resize": {
+        "raw_positive_pct": 52.7901,
+        "outside_known_water_pct": 51.4147,
+        "known_water_pct_of_eligible": 3.4396,
+        "flood_like_on_known_water_share_pct": 5.9554,
+        "eligible_pct": 98.0825,
+        "quality_status": "ok",
+        "haze_index": 0.0983,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 13602593,
+          "fp": 2195628,
+          "fn": 4133881,
+          "tn": 9994402
+        },
+        "counts_excluding_known_water": {
+          "tp": 12688700,
+          "fp": 2168678,
+          "fn": 5047774,
+          "tn": 10021352
+        },
+        "seconds": 7.85,
+        "level": "flood_like"
+      }
+    },
+    {
+      "name": "EMSR422_AOI06_DEL_PRODUCT",
+      "event_id": "EMSR422",
+      "reference_has_flood": true,
+      "reference_flood_px": 1273,
+      "reference_flood_on_permanent_water_px": 0,
+      "tiled": {
+        "raw_positive_pct": 77.6393,
+        "outside_known_water_pct": 2.8293,
+        "known_water_pct_of_eligible": 77.1839,
+        "flood_like_on_known_water_share_pct": 99.1686,
+        "eligible_pct": 15.0403,
+        "quality_status": "limited",
+        "haze_index": 0.1131,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 75,
+          "fp": 840507,
+          "fn": 1198,
+          "tn": 240896
+        },
+        "counts_excluding_known_water": {
+          "tp": 75,
+          "fp": 6914,
+          "fn": 1198,
+          "tn": 1074489
+        },
+        "seconds": 3.39,
+        "level": "insufficient_coverage"
+      },
+      "resize": {
+        "raw_positive_pct": 78.3762,
+        "outside_known_water_pct": 7.3434,
+        "known_water_pct_of_eligible": 77.1839,
+        "flood_like_on_known_water_share_pct": 97.8623,
+        "eligible_pct": 15.0403,
+        "quality_status": "limited",
+        "haze_index": 0.1131,
+        "hazy": false,
+        "water_gate_applied": false,
+        "counts_raw": {
+          "tp": 173,
+          "fp": 848387,
+          "fn": 1100,
+          "tn": 233016
+        },
+        "counts_excluding_known_water": {
+          "tp": 173,
+          "fp": 17967,
+          "fn": 1100,
+          "tn": 1063436
+        },
+        "seconds": 1.58,
+        "level": "insufficient_coverage"
+      }
+    }
+  ],
+  "elapsed_s": 215.1
+}

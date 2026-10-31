@@ -1,0 +1,18 @@
+{
+  "haze_check": {
+    "band": "B02",
+    "percentile": 5,
+    "max_toa_reflectance": 0.1403
+  },
+  "water_gate": {
+    "band": "B11",
+    "max_toa_reflectance": 0.10
+  },
+  "rule": "Haze index = 5th percentile of B02 (blue) top-of-atmosphere reflectance over the eligible pixels. If it is above 0.1403 (the maximum over all 203 training scenes, data/reports/haze_reference_training_v2.json), the scene is outside the training range: a model-positive pixel then counts as water only if its B11 (SWIR) reflectance is below 0.10, and the outcome is reported as inconclusive. Scenes within the training range are not changed.",
+  "history": [
+    "2026-10-28: an always-on B11 < 0.10 gate was chosen on validation (data/reports/swir_gate_validation_segmentation_v2.json; IoU 0.4555 vs 0.4565 ungated). On the held-out test split it lowered flood IoU from 0.157 to 0.081 (data/reports/evaluation_segmentation_v2_b11gate_test.json), so it is NOT applied to normal scenes. This decision used the test result and is disclosed in docs/milestone5_recovery_mission_report_2026-10-28.md.",
+    "The haze-conditional rule was added because a live image of Mumbai (18 Oct 2026) was hazier than any training image and the model marked dense urban blocks as water."
+  ],
+  "validation_status": "The haze threshold comes from training data only. On the frozen splits it flags 3 of 24 validation scenes (EMSR265 Fontainebleau and Les Mureaux, haze index 0.175-0.211; pooled tiled flood IoU unchanged at 0.4565, three outcomes become inconclusive) and 0 of 22 test scenes (test metrics identical to the ungated model). It is a documented safety rule for out-of-range scenes, not a measured accuracy improvement.",
+  "created": "2026-10-28"
+}

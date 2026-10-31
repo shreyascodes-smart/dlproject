@@ -1,0 +1,170 @@
+[
+  {
+    "name": "EMSR342_07SOUTHNORMANTON_DEL_MONIT03_v2",
+    "event_id": "EMSR342",
+    "split": "val",
+    "method": "resize",
+    "file": "docs\\figures\\seg_inspection_val_resize\\EMSR342_07SOUTHNORMANTON_DEL_MONIT03_v2.png",
+    "metrics": {
+      "tp": 5205813,
+      "fp": 1812694,
+      "fn": 12530661,
+      "tn": 10377336,
+      "flood_iou": 0.26629332767512154,
+      "flood_dice": 0.4205871133571058,
+      "flood_precision": 0.7417265523850015,
+      "flood_recall": 0.2935089014874095,
+      "pixel_accuracy": 0.5207139798220334
+    },
+    "stats": {
+      "source": "EMSR342_07SOUTHNORMANTON_DEL_MONIT03_v2",
+      "method": "resize",
+      "height": 5579,
+      "width": 5469,
+      "n_pixels": 30511551,
+      "n_eligible": 29926504,
+      "n_flood_pred": 7018507,
+      "flood_coverage_pct": 23.4525,
+      "coverage_definition": "predicted flood pixels / eligible pixels x 100 (pixel ratio, not area)",
+      "eligible_pct": 98.0825,
+      "nodata_pct": 0.8874,
+      "eligibility_source": "validity_mask+nodata",
+      "flood_threshold": 0.5,
+      "input_size": 256,
+      "tile_overlap": null,
+      "n_tiles": null,
+      "device": "cuda",
+      "elapsed_s": 13.076,
+      "quality_status": "ok"
+    },
+    "warnings": [
+      "Whole-scene resize: 5469x5579 px was shrunk to 256x256; small or narrow flood features may be lost."
+    ]
+  },
+  {
+    "name": "EMSR264_08VATOMANDRY_DEL_v2",
+    "event_id": "EMSR264",
+    "split": "val",
+    "method": "resize",
+    "file": "docs\\figures\\seg_inspection_val_resize\\EMSR264_08VATOMANDRY_DEL_v2.png",
+    "metrics": {
+      "tp": 2028,
+      "fp": 182405,
+      "fn": 66109,
+      "tn": 12392328,
+      "flood_iou": 0.008094451229733938,
+      "flood_dice": 0.01605891436037534,
+      "flood_precision": 0.010995862996318446,
+      "flood_recall": 0.029763564583119302,
+      "pixel_accuracy": 0.9803435454133437
+    },
+    "stats": {
+      "source": "EMSR264_08VATOMANDRY_DEL_v2",
+      "method": "resize",
+      "height": 4569,
+      "width": 4251,
+      "n_pixels": 19422819,
+      "n_eligible": 12642870,
+      "n_flood_pred": 184433,
+      "flood_coverage_pct": 1.4588,
+      "coverage_definition": "predicted flood pixels / eligible pixels x 100 (pixel ratio, not area)",
+      "eligible_pct": 65.0929,
+      "nodata_pct": 2.3668,
+      "eligibility_source": "validity_mask+nodata",
+      "flood_threshold": 0.5,
+      "input_size": 256,
+      "tile_overlap": null,
+      "n_tiles": null,
+      "device": "cuda",
+      "elapsed_s": 0.757,
+      "quality_status": "ok"
+    },
+    "warnings": [
+      "Whole-scene resize: 4251x4569 px was shrunk to 256x256; small or narrow flood features may be lost."
+    ]
+  },
+  {
+    "name": "EMSR265_22LESMUREAUX_DEL_MONIT03_v1",
+    "event_id": "EMSR265",
+    "split": "val",
+    "method": "resize",
+    "file": "docs\\figures\\seg_inspection_val_resize\\EMSR265_22LESMUREAUX_DEL_MONIT03_v1.png",
+    "metrics": {
+      "tp": 3424,
+      "fp": 555324,
+      "fn": 53651,
+      "tn": 6691667,
+      "flood_iou": 0.005591126046907327,
+      "flood_dice": 0.011120078334196676,
+      "flood_precision": 0.0061279861404425606,
+      "flood_recall": 0.05999123959702146,
+      "pixel_accuracy": 0.9166252057415691
+    },
+    "stats": {
+      "source": "EMSR265_22LESMUREAUX_DEL_MONIT03_v1",
+      "method": "resize",
+      "height": 2746,
+      "width": 3269,
+      "n_pixels": 8976674,
+      "n_eligible": 7304066,
+      "n_flood_pred": 558748,
+      "flood_coverage_pct": 7.6498,
+      "coverage_definition": "predicted flood pixels / eligible pixels x 100 (pixel ratio, not area)",
+      "eligible_pct": 81.3672,
+      "nodata_pct": 0.8817,
+      "eligibility_source": "validity_mask+nodata",
+      "flood_threshold": 0.5,
+      "input_size": 256,
+      "tile_overlap": null,
+      "n_tiles": null,
+      "device": "cuda",
+      "elapsed_s": 0.363,
+      "quality_status": "ok"
+    },
+    "warnings": [
+      "Whole-scene resize: 3269x2746 px was shrunk to 256x256; small or narrow flood features may be lost."
+    ]
+  },
+  {
+    "name": "EMSR264_18MIANDRIVAZODETAIL_DEL_v2",
+    "event_id": "EMSR264",
+    "split": "val",
+    "method": "resize",
+    "file": "docs\\figures\\seg_inspection_val_resize\\EMSR264_18MIANDRIVAZODETAIL_DEL_v2.png",
+    "metrics": {
+      "tp": 0,
+      "fp": 39022,
+      "fn": 0,
+      "tn": 1831139,
+      "flood_iou": 0.0,
+      "flood_dice": 0.0,
+      "flood_precision": 0.0,
+      "flood_recall": null,
+      "pixel_accuracy": 0.9791344167694653
+    },
+    "stats": {
+      "source": "EMSR264_18MIANDRIVAZODETAIL_DEL_v2",
+      "method": "resize",
+      "height": 1313,
+      "width": 1530,
+      "n_pixels": 2008890,
+      "n_eligible": 1870161,
+      "n_flood_pred": 39022,
+      "flood_coverage_pct": 2.0866,
+      "coverage_definition": "predicted flood pixels / eligible pixels x 100 (pixel ratio, not area)",
+      "eligible_pct": 93.0942,
+      "nodata_pct": 0.4534,
+      "eligibility_source": "validity_mask+nodata",
+      "flood_threshold": 0.5,
+      "input_size": 256,
+      "tile_overlap": null,
+      "n_tiles": null,
+      "device": "cuda",
+      "elapsed_s": 0.145,
+      "quality_status": "ok"
+    },
+    "warnings": [
+      "Whole-scene resize: 1530x1313 px was shrunk to 256x256; small or narrow flood features may be lost."
+    ]
+  }
+]
